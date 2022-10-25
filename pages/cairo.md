@@ -1,0 +1,7 @@
+- general computation on a blockchain allow a different relationship between results of interactions of stakeholders and  institutional oversight
+- this different relationship that seeks to lessen the demand for 'fiat' institutional oversight to establish the legitimacy of results of interactions of stakeholders leads to a scaling problem.
+- the scaling problem arises because the attempt to minimize institutional oversight leads to the verification of the results of interaction to be done across a permissionless class of participants, where each participant validates a computation.
+- [[interactive proof protocols]] allow a different approach to verification of computational claims, one that is more efficient.
+- cairo uses a method a particular cyptographic method, [[STARK]], to verify claims about the execution in one particular Turing complete model of computation, the [[Cairo machine]]
+- cairo uses STARK to represent a trace of an execution of a CAIRO machine as a table of values in a polynomial via an encoding the claims of an execution of a CAIRO program to an [[Algebraic Intermediate Representation]]
+	- the claim that a program has executed successfully is expressed as a claim about the existence of a solution to a family of [[polynomial]]s

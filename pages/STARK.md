@@ -1,0 +1,3 @@
+- allows a [[prover]] to efficiently convince a [[verifier]] that the prover possesses a table of values from a large [[finite field]], such that the tuples from the table satisfy a family of [[polynomial]]s that is shared by both the prover and the verifier
+-
+-

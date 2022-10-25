@@ -1,0 +1,2 @@
+- provide protocols by which a [[prover]] (with less constrained computational resources) can convince a [[verifier]] (more constrained computational resources) that the execution of a program with a given input terminates with a given result, without requiring the verifier to execute the program itself
+-
