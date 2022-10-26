@@ -8,6 +8,7 @@
 	- cairo uses STARK to represent a trace of an execution of a CAIRO machine as a table of values in a polynomial via an encoding the claims of an execution of a CAIRO program to an [[Algebraic Intermediate Representation]]
 		- the claim that a program has executed successfully is expressed as a claim about the existence of a solution to a family of [[polynomial]]s
 - memory model
+  collapsed:: true
 	- read-only nondeterministic memory
 		- the value for each memory cell is chosen by the prover, but it cannot change during a Cairo program execution
 	- memory cell is specified by square brackets
@@ -22,6 +23,7 @@
 		- fp -- the [[frame pointer]], this points to the function we are in, and the variables in the function then offsets from that
 		- pc -- the [[program counter]], this gives us the current instruction
 - variables / references
+  collapsed:: true
 	- alias
 		- value reference: let a = 5
 			- compiler 'any time I see a in the code, I will replace a with five'
@@ -29,3 +31,34 @@
 			- compiler 'wherever I see a, I replace with the value of x'
 	- evaluated
 		- temporary variable:
+- iteration
+	- ``` 
+	  // Array right fold: computes the following:
+	  //   callback(callback(... callback(value, a[n-1]) ..., a[1]), a[0])
+	  // Arguments:
+	  // value - the initial value.
+	  // array - a pointer to an array.
+	  // elm_size - the size of an element in the array.
+	  // n_elms - the number of elements in the array.
+	  // callback - a function pointer to the callback. Expected signature: (felt, T*) -> felt.
+	  //
+	  // Use starkware.cairo.common.registers.get_label_location() to convert a function label to
+	  // a callback value.
+	  func array_rfold(value, array: felt*, n_elms, elm_size, callback: felt*) -> (res: felt) {
+	      if (n_elms == 0) {
+	          return (res=value);
+	      }
+	  
+	      [ap] = value, ap++;
+	      [ap] = array, ap++;
+	      call abs callback;
+	      // [ap - 1] holds the return value of callback.
+	      return array_rfold(
+	          value=[ap - 1],
+	          array=array + elm_size,
+	          n_elms=n_elms - 1,
+	          elm_size=elm_size,
+	          callback=callback,
+	      );
+	  }
+	  ```
