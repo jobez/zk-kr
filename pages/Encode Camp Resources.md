@@ -8,3 +8,7 @@
 	- wednesday
 		- ![Lesson3.pdf](../assets/Lesson3_1666881715032_0.pdf)
 		- ![Homework3.pdf](../assets/Homework3_1666881646877_0.pdf)
+	- thursday
+		- ![Homework4.pdf](../assets/Homework4_1666885961936_0.pdf)
+		- ![Lesson4.pdf](../assets/Lesson4_1666885967781_0.pdf)
+		-
