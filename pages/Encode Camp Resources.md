@@ -1,0 +1,10 @@
+- week one
+	- monday
+		- ![Homework1.pdf](../assets/Homework1_1666881756622_0.pdf)
+		- ![Lesson1.pdf](../assets/Lesson1_1666881761941_0.pdf)
+	- tuesday
+		- ![Homework2.pdf](../assets/Homework2_1666881728016_0.pdf)
+		- ![Lesson3.pdf](../assets/Lesson3_1666881739876_0.pdf)
+	- wednesday
+		- ![Lesson3.pdf](../assets/Lesson3_1666881715032_0.pdf)
+		- ![Homework3.pdf](../assets/Homework3_1666881646877_0.pdf)
