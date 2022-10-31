@@ -1,0 +1,12 @@
+- Within your teams, discuss your experience of L2 solutions what are the important factors for you in choosing an L2 ?
+	- There is a consideration of whether a chain offers the right feature set in their smart contracts that a developer could use.
+	- There is also the consideration of, if the logic is able to be mapped to a chain's VM, that the chain's ability to interop with the outside world for users. That is, the withdrawal time, cost of transaction, and security of chain state.
+	- A couple of examples that come to mind is how Reddit is using polygon. They do so in the way where users can pay via fiat and are onboarded to a wallet in a rather simple way where the user isn't necessarily aware that a chain is being used. I also believe Reddit is covering fees.
+		- see https://decrypt.co/112783/reddit-nfts-surge-as-polygon-based-avatars-reach-millions-of-new-users
+	- Another is how Reddit will be using their own Arbitrum chain that stores data in an [Arbitrum Nova](https://nova.arbitrum.io/). This offers cheaper transaction cost via an acceptance of a [mild trust assumption](https://developer.offchainlabs.com/inside-anytrust) where a 'Data Availability Committee' to store and provide data on demand, as opposed to providing data via a posting it to an l1 ethereum as call data.
+		- Why is it necessary to have data available? It allows the validity of the state of transactions to be done by a permissionless role (where we bracket the intrinsic 'permissions' necessary for someone to have material access to the state).
+- Continue working on the cairo program exercises in the repo . We've added a hash chain exercise.
+	- see [solution](https://github.com/jobez/CairoBootcamp/commit/934e6544cbc7b0ed974d0c655927182104e15969)
+- What use cases can you think of for computing a hash chain ?
+	- I used a hash chain to maintain a machine assigned id to a sentence embedding.
+	- It can also be used as a way to efficiently determine whether a chain of historical actions is maintained when we append a new historical transaction.  I believe this is how transaction history of rollups is verified on L1s.
