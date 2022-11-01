@@ -15,4 +15,6 @@
 	- monday
 		- ![Homework5.pdf](../assets/Homework5_1667235840430_0.pdf)
 		- ![Lesson5.pdf](../assets/Lesson5_1667235861659_0.pdf)
-		-
+	- tuesday
+		- ![Homework6.pdf](../assets/Homework6_1667322144248_0.pdf)
+		- ![Lesson6.pdf](../assets/Lesson6_1667322151601_0.pdf)
