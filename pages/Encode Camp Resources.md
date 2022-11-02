@@ -18,3 +18,7 @@
 	- tuesday [[Nov 1st, 2022]]
 		- ![Homework6.pdf](../assets/Homework6_1667322144248_0.pdf)
 		- ![Lesson6.pdf](../assets/Lesson6_1667322151601_0.pdf)
+	- wednesday [[Nov 2nd, 2022]]
+		- ![Homework7.pdf](../assets/Homework7_1667407940089_0.pdf)
+		- ![Lesson7.pdf](../assets/Lesson7_1667407947237_0.pdf)
+		-

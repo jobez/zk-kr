@@ -1,0 +1,8 @@
+- client / l2
+	- accepts inputs from the client
+	- cairo contract creates state changes
+- sequence / prover
+	- produces a list of changes to storage/ balances
+	- creates a proof of correct computation of all the transactions
+- l1
+	- [[verifier contract]] checks the validity of the proof and applies the state changes

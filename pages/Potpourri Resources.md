@@ -1,3 +1,3 @@
 - [[Ethereum Data Structures]]
 	- ![2108.05513.pdf](../assets/2108.05513_1666884624900_0.pdf)
--
+- [zk whiteboard series](https://www.youtube.com/watch?v=h-94UhJLeck&list=PLj80z0cJm8QErn3akRcqvxUsyXWC81OGq&index=1)

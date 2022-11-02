@@ -2,3 +2,5 @@
 - trees and tries
 	- ((635ad1a3-6bdc-4abe-a6d3-a4d1416221fe))
 	- search trees
+		- standard method for effective searching
+		- binary encoding of prefix
