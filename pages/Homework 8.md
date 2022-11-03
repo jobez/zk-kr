@@ -1,0 +1,2 @@
+- added erc20 contract exercise
+	- see [solution](https://github.com/jobez/CairoBootcamp/commit/c58cb3e4a4fc291769c73e2d23071d3f7b07d041)

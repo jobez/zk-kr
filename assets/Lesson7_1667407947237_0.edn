@@ -1,1 +1,1 @@
-{:highlights []}
+{:highlights [{:id #uuid "6363ee0b-1464-4202-ae7d-190aa160c0ec", :page 7, :position {:bounding {:x1 27.8125, :y1 57.333343505859375, :x2 201.05479431152344, :y2 64.66665649414062, :width 319, :height 450.89795158652356}, :rects ({:x1 27.8125, :y1 57.333343505859375, :x2 201.05479431152344, :y2 64.66665649414062, :width 319, :height 450.89795158652356}), :page 7}, :content {:text "This is a good diagram to illustrate the transaction progress"}, :properties {:color "blue"}}]}

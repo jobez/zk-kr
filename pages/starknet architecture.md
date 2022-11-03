@@ -1,0 +1,26 @@
+- via ((6363ee94-4ed3-4ad6-9266-f8850aabca75))
+- starknet's architecture is composed of
+	- [[wallets]]
+		- implemented as smart contracts
+			- contrast with ethereum's externally owned accounts
+	- [[full node]]s
+		- machines that run the [[Pathfinder]] client to keep a record of all transactions perfomed in the rollup and to tracck the current global state of the system.
+		- they receive this information through a p2p network where changes in the global state and the validity proofs associated with it are shared every time a new block is created.
+		- when a new full node is set up it is able to reconstruct the history of the rollup by connecting it to an Ethereum node and processing all the L1 transactions associated with starknet
+	- a [[sequencer]]
+		- an off-chain server that receives all transactions
+			- orders, validates, bundles them into blocks
+			- ((6363ee0b-1464-4202-ae7d-190aa160c0ec))
+		- for a sequencer to validate transactions it has to execute them using the [[Cairo machine]]
+	- a [[prover]]
+		- in charge of generating a  cryptographic [[proof]] that attests to the integrity of the computation perfomed by the [[sequencer]] when deriving new global state by executing the transactions contained in a new block
+		- for prover to generate the validity proof it requires to be given the [[execution trace]] of the computation performed by the sequencer, something that only a language like [[cairo]] can generate
+		- there is currently a single prover in the system that not only generates proofs for starknet but also for all the other applicatitions that run their own [[StarkEx]] rollup
+			- this is why the service is called "Shared Prover" or [[SHARP]]
+	- a [[verifier]]
+		- a smart contract on ethereum that recieves the newly generates proofs from the [[Prover]] as L1 transactions and validates them on-chain
+		- the result of the validation is sent to starknet's core smart contract for record keeping and to trigger a new set of l1 transactions from starknet to update the global state on-chain for record keeping
+	- a core [[smart contract]]
+		- a smart contract that recieves changes to the l2 global state from StarkNet everytime a new l2 block is created and its cryptographic proof has been successfully validated on change by the [[verifier]].
+		- the state transition is sent as [[calldata]] to save on gas over multiple l1 transactions given limitations in individual block's space.
+		- this "metadata" about starknet is decodified by starknet's full nodes to reconstruct the history of the network when synchronizing for the first time
