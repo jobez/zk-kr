@@ -1,0 +1,17 @@
+- can be
+	- aliased
+		- value reference `let a = 5`
+		- expression reference `let a = x`
+	- evaluated
+		- temporary variable `tempvar a = 5 * b`
+			- based on [[allocation pointer]] so it can be [[revoked]] due to [[jumps]] or function calls
+			- is required when using `new` operator to reserve memory
+			- can be used with variables that will change during a function such as a loop
+			- can reduce the memory needed
+		- local `local a = 5 * b`
+			- requires `alloc_locals` statement
+			- based on [[frame pointer]] so will not be revoked
+			- note that unless the local variable is initialized in the same line, the local directive itself does not translate to a cairo instruction
+				- this is another difference from `tempvar`--it simpy translates to a reference definition
+					- this is one of the reasons you must increase the value of [[allocation pointer]] manually
+		- constant `const a = 5`
