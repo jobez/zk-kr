@@ -24,3 +24,7 @@
 	- thursday [[Nov 3rd, 2022]]
 		- ![Lesson8 (1).pdf](../assets/Lesson8_(1)_1667494315351_0.pdf)
 		- ![Homework8.pdf](../assets/Homework8_1667494241977_0.pdf)
+- week three
+	- monday [[Nov 7th, 2022]]
+		- ![Lesson9.pdf](../assets/Lesson9_1667840018056_0.pdf)
+		- ![Homework9.pdf](../assets/Homework9_1667840024372_0.pdf)

@@ -1,0 +1,13 @@
+- from ((636400b2-585a-4642-aecc-1ab689523e28))
+- some improvements account abstraction brings include
+	- paying for transactions in currencies other than ETH
+	- the ability for third parties to cover transaction fees
+	- support for efficient signature schemes as well as quantum safe ones
+	- support for multisig transactions
+	- support for social recovery
+- an account is a contract address that follows an abstract interface
+	- it's the who (address of contract) that matters, not the how
+	- execute
+		- check signature
+		- increment nonce
+		- call destination

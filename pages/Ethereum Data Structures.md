@@ -4,3 +4,8 @@
 	- search trees
 		- standard method for effective searching
 		- binary encoding of prefix
+	- [[patricia trie]]
+		- trie trees groups only commun suffixes of keys. there is no structure preserving of keys if there is a commonness or middle
+			- ((636405fd-626e-41d5-8ab5-22655fe5a169))
+		- patricia tries address this
+			- every node contains a number of bits that can be skipped when matching a key as all the keys in the dataset have this path the same

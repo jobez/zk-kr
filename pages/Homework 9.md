@@ -1,0 +1,2 @@
+- erc721 contract exercise
+	- see [solution](https://github.com/jobez/CairoBootcamp/commit/7ca6a58e5f1a82fc3130ea99fb598fc7380e2367)

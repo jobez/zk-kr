@@ -1,1 +1,1 @@
-{:highlights []}
+{:highlights [{:id #uuid "636400b2-585a-4642-aecc-1ab689523e28", :page 7, :position {:bounding {:x1 56.51041793823242, :y1 210.3229217529297, :x2 209.04214477539062, :y2 228.98959350585938, :width 644.9999999999999, :height 911.6902155903061}, :rects ({:x1 56.51041793823242, :y1 210.3229217529297, :x2 209.04214477539062, :y2 228.98959350585938, :width 644.9999999999999, :height 911.6902155903061}), :page 7}, :content {:text "Account Abstraction"}, :properties {:color "yellow"}}]}
