@@ -1,0 +1,3 @@
+- deploy own contract against view example
+	- deployed against devnet as opposed to testnet
+	- see [solution](https://github.com/jobez/CairoBootcamp/commit/acb5ce975f3333b4e108dc7dff80e588f6808ede)
