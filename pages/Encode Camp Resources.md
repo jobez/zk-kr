@@ -4,7 +4,7 @@
 		- ![Lesson1.pdf](../assets/Lesson1_1666881761941_0.pdf)
 	- tuesday [[Oct 25th, 2022]]
 		- ![Homework2.pdf](../assets/Homework2_1666881728016_0.pdf)
-		- ![Lesson3.pdf](../assets/Lesson3_1666881739876_0.pdf)
+		- ![Lesson2.pdf](../assets/Lesson2_1668013161021_0.pdf)
 	- wednesday [[Oct 26th, 2022]]
 		- ![Lesson3.pdf](../assets/Lesson3_1666881715032_0.pdf)
 		- ![Homework3.pdf](../assets/Homework3_1666881646877_0.pdf)
@@ -31,3 +31,6 @@
 	- tuesday [[Nov 8th, 2022]]
 		- ![Lesson10.pdf](../assets/Lesson10_1667925870991_0.pdf)
 		- ![Homework10.pdf](../assets/Homework10_1667925881217_0.pdf)
+	- wednesday [[Nov 9th, 2022]]
+		- ![Lesson11.pdf](../assets/Lesson11_1668012540073_0.pdf)
+		- ![Homework11.pdf](../assets/Homework11_1668012547690_0.pdf)

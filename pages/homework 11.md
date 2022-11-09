@@ -1,0 +1,8 @@
+- Discuss in your team the merits of using a DeFi application on Starknet rather than Ethereum L1
+	- cheaper fees allow applications that have network effects with volume of activity to shine on starknet
+- Is the centralisation of the [[sequencer]] a problem ?
+	- The stated goals of defi with respect to [[central authority]] does have resistance to the initial condition of the starknet sequencer not being an open role for people to participate in, currently.
+- If there were a private Starknet on L3, would this be used by DeFi applications ? , or is this area already covered by [[Aztec]] ?
+	- Theoretically, the privacy provided on an l3 would share prover costs across a broader set of participants, meaning it would be potentially cheaper than Aztec's privacy offering.
+- Choose a protocol that you would like us to investigate further in a future lesson.
+	- [empiric](https://empiric.network/)

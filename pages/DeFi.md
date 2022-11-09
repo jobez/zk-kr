@@ -1,0 +1,7 @@
+- [[financial services]] as traditional banking without any [[central authority]] or intermediaries
+- areas
+	- exchanges
+	- asset management
+	- stablecoins
+	- lending / borrowing
+	- remittance
