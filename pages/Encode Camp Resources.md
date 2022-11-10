@@ -34,3 +34,7 @@
 	- wednesday [[Nov 9th, 2022]]
 		- ![Lesson11.pdf](../assets/Lesson11_1668012540073_0.pdf)
 		- ![Homework11.pdf](../assets/Homework11_1668012547690_0.pdf)
+	- thursday [[Nov 10th, 2022]]
+		- ![Lesson12.pdf](../assets/Lesson12_1668099287230_0.pdf)
+		- ![Homework12.pdf](../assets/Homework12_1668099294007_0.pdf)
+		-
