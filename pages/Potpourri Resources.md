@@ -3,3 +3,6 @@
 - [zk whiteboard series](https://www.youtube.com/watch?v=h-94UhJLeck&list=PLj80z0cJm8QErn3akRcqvxUsyXWC81OGq&index=1)
 - [starknet's architecture review](https://david-barreto.com/starknets-architecture-review/)
   id:: 6363ee94-4ed3-4ad6-9266-f8850aabca75
+- ![ChainSecurity_MakerDAO_StarkNet-DAI-Bridge_audit.pdf](../assets/ChainSecurity_MakerDAO_StarkNet-DAI-Bridge_audit_1668442955230_0.pdf)
+  id:: 63726b46-ab4b-46c5-9753-07b2ccc54ecc
+-

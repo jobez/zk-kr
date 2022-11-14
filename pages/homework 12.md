@@ -43,5 +43,8 @@
 	  }
 	  ```
 		- is the issue not encoding erc20 values as [[uint256]]?
-		-
-- read through the issues in starknet-dai bridge [audit](https://chainsecurity.com/wp-content/uploads/2021/12/ChainSecurity_MakerDAO_StarkNet-DAI-Bridge_audit.pdf)
+		- asserting less than or greater than with field elements risks modulo overflow
+			- the upper bound where the function of the logic would follow expectations is the upper bound of the representational capacity of the field element type before it 'wraps around' that upper bound limit.
+			- when it 'wraps around' (modulo arithmetic), the rule that the logic is trying to enforce loses its hold, because the assert will fail and the max supply will lose coherent representation in the logic
+- read through the issues in starknet-dai bridge ((63726b46-ab4b-46c5-9753-07b2ccc54ecc))
+	- see [[Chain Security Audit on Starknet DAI Bridge]] notes

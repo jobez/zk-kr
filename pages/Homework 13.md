@@ -1,0 +1,9 @@
+- write a 'shame coin' contract where
+	- the shame coin needs to have an administration address that is set in the constructor
+	- the decimal places sould be set to 0
+	- the administrator can send 1 shame coin at a time to other addresses (but keep the transfer function signature the same)
+	- if non administrators try to transfer their shame coin, the transfer funcion will instead increase their balance by one
+	- non administrators can approve the administrator (and only the administrator) to spend one token on their behalf
+	- the transfer from function should just reduce the balance of the holder
+	- write unit tests to show that the functionality is correct
+- see [solution](https://github.com/jobez/CairoBootcamp/commit/ed26a7d88dc930b382afdcedf9a09901648e6f52)
