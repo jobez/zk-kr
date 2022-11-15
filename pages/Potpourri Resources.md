@@ -5,4 +5,7 @@
   id:: 6363ee94-4ed3-4ad6-9266-f8850aabca75
 - ![ChainSecurity_MakerDAO_StarkNet-DAI-Bridge_audit.pdf](../assets/ChainSecurity_MakerDAO_StarkNet-DAI-Bridge_audit_1668442955230_0.pdf)
   id:: 63726b46-ab4b-46c5-9753-07b2ccc54ecc
--
+- security
+	- https://ctrlc03.github.io/
+	- https://github.com/crytic/building-secure-contracts
+	- https://medium.com/ginger-security/how-to-hack-almost-any-starknet-cairo-smart-contract-67b4681ac0f6

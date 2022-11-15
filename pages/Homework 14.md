@@ -1,0 +1,3 @@
+- see [solution](https://github.com/jobez/CairoBootcamp/commit/c93e0227486bde8ace67a0046562ad7fc18c01a9)
+- Contract address: 0x05a05a73018be5bca9c129106a54ad5cda0079cf06add2ec008c27d281f07aec
+  Transaction hash: 0x733bd98c7d016386a49dd01974884381e76d55c6c5382f687c7d6ed84a7f059
