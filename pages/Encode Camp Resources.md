@@ -47,4 +47,6 @@
 	- wednesday [[Nov 16th, 2022]]
 		- ![Lesson15.pdf](../assets/Lesson15_1668617760985_0.pdf)
 		- ![Homework15.pdf](../assets/Homework15_1668617768781_0.pdf)
+	- thursday [[Nov 17th, 2022]]
+		- ![Lesson16.pdf](../assets/Lesson16_1668703900248_0.pdf)
 	-
