@@ -1,0 +1,22 @@
+- it is
+	- difficult to find zero knowledge resources that avoid
+		- the extremes of
+			- over simplifying the structure
+			- presenting so much mathematical detail that the reader gets bogged down and lose interest
+- is
+	- a proof that there exists or that we know something, plus a zero knowledge aspect
+		- that is
+			- the person verifying the proof only gains one piece of information that the proof is valid/invalid
+		- the only way of showing someone i know the password is by giving them the password
+- example
+	- colour blind verifier
+		- this is an interactive proof
+			- showing that
+				- the prover
+					- can distinguish between
+						- a red ball
+						- and a green billiard ball
+				- whereas
+					- the verifier
+						- cannot distinguish them
+		- the prover wants to show the verifier that they have different colors but does not want him to learn which is red and which is green

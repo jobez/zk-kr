@@ -1,0 +1,15 @@
+- ((640f5d82-518b-46e3-b180-f705972bb4ab))
+- a field is
+	- a set of say integers with two operations called addition and multiplication
+	- a set with operations that satisfies
+		- [[associativity]]
+		- commutativity of addition and multiplication
+		- additive and multiplcative identity
+		- additive inverses
+		- multiplicative inverses
+			- for every a not zero in F
+				- there exists an element in F, denoted by a^-1 called the multiplicative inverse of a, such that a^-1 =1
+		- distributivity of multiplication over addition
+- a [[finite field]] is an elaboration of a field
+  id:: 640f5e9d-d9bb-4b04-9f7f-5ebc2fe59599
+-

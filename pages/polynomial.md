@@ -1,0 +1,9 @@
+- is
+	- an expression that can be built from constants and variables by means of addition, multiplication, and exponentiation to a non-negative integer power
+	- ((640f628d-2a74-4101-823a-a2380a67ecd2))
+	- ((640f62b4-b4d4-4f66-83cb-151e77d6b1a2))
+- have
+	- roots
+		- a polynomial p of a single variable x in a field K and with coefficients in that field
+			- the root r of P is an element K such that P(r) = 0
+			- B is said to divide another polynomial A when the later can be written as BC

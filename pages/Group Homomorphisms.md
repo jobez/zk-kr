@@ -1,0 +1,7 @@
+- a homomorphism is
+	- a map between two algebraic structures of the same type
+		- that
+			- preserves the operations of the structures
+	- this means a map f: A -> B between groups A, B equipped with the same structure such that
+	- if dot is an operation of the structure (here a binary operation), then
+		- f(x dot y) = f(x) dot f(y)

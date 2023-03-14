@@ -1,0 +1,35 @@
+- a group
+	- is
+		- a set of elements plus a binary operation
+	- must have certain properties
+		- [[closure]]
+			- for all a, b, in G
+				- the result of the operation, a dot b, is also in G
+		- [[associativity]]
+			- for all a, b and c in G
+				- (a dot b) dot c = a dot (b dot c)
+		- identity element
+			- there exists an element e in G such that
+				- for every element a in G
+					- the equation e dot a = e dot e = a holds
+				- such an element is unique and speaks of the identity element
+		- inverse element
+			- for each a in G
+				- there exists an element b in G
+					- commonly denoted a^-1
+					- such that
+						- a dot b = b dot a = e
+							- where e is the identity element
+		- sub-groups
+			- if
+				- a subset of the elements in a group also satisfies the group properties, then that is a subgroup of the original group
+		- cyclic groups and generators
+			- a finite group can be cyclic
+			- that means that it has a [[generator element]]
+			- if you start at
+				- any point
+				- and then
+					- apply the group operation with the generator as argument a certian number of times
+						- you go around the whole group and end in the same place
+- a [[field]] is an elaboration of a [[group]]
+  id:: 640f5d82-518b-46e3-b180-f705972bb4ab

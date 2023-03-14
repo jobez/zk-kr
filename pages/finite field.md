@@ -1,0 +1,7 @@
+- ((640f5e9d-d9bb-4b04-9f7f-5ebc2fe59599))
+- a finite field is
+	- a finite set of elements
+		- such that
+			- the set of [[integers]] mod p where p is [[prime]]
+- the order of the field is the number of elements in the field's set
+-

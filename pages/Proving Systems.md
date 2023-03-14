@@ -1,0 +1,50 @@
+- a statement
+	- is
+		- a proposition we want to prove
+	- depends on
+		- instance variables (public)
+		- witness variables (private)
+- what do we require of a proof?
+	- completeness
+		- there exists
+			- an honest prover P
+				- that can convince
+					- the honest verifier V
+				- of
+					- any correct statement with high probability
+	- soundness
+		- even
+			- a dishonest prover P
+				- running in
+					- super-polynomial time
+						- cannot convince
+							- an honest verifier V
+						- of
+							- an incorrect statement
+		- note: P does not necessarily have to run in polynomial time, but V does
+- to make our proof a [[zero knowledge proofs]] we also need [[zero knowledginess]]
+	- to oversimplify
+		- represented on a computer,
+		- a ZKP is nothing more than a sequence of numbers, carefully computed by Peggy, together with a bunch of boolean checks that Victor can run in order to verify the proof of correctness for the computation
+		- a zero knowledge protocol is thus the mechanism used for deriving these numbers and defining the verification checks
+- interactive v noninteractive proofs
+	- non-interactivity is only useful if we want to allow multiple independent verifiers to verify a given proof without each one having to individually query the prover
+	- non-interactive zkp there is no repeated communication between prover and the verifier
+		- instead, there is only a single 'roud' which can be carried out asynchronously
+	- using publicly available data
+		- peggy generates a proof, which she publishes in a place accessible to victor (.e. on a distributed ledger)
+	- following this
+		- victor can verify the proof at any point to complete the "round"
+		- note that even though peggy produces a single proof, as opposed to multiple ones in the interactive version,
+			- the verifier can still be certain that except for negligible probability, she does indeed know the secret she is claiming
+- succinct v non succinct
+	- succinctness is necessary only if the medium used for storing the proof is very expensive and/or if we need very short verification times
+- proof v proof of knowledge
+	- a proof of knowledge is stronger and more useful than just proving the statement is true
+	- for instance, it allows me to prove that I know a secret key, rather than just that it exists
+- argument v proof
+	- in a proof, the soundness holds against a computationally unbounded prover
+	- in an argument, the soundness only holds against a polynomially bounded prover.
+	- arguments are thus often called 'computationally sound proofs'
+	- the prover and verifier have to agree on what they're proving
+	- this means that both know the statement that is sto be proven and what inputs to this statement represent
