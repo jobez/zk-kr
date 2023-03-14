@@ -2,6 +2,7 @@
 	- is
 		- a set of elements plus a binary operation
 	- must have certain properties
+	  id:: 640f5bcc-5f68-4581-b500-6f0f12f56cdc
 		- [[closure]]
 			- for all a, b, in G
 				- the result of the operation, a dot b, is also in G

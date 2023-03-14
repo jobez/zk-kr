@@ -1,0 +1,37 @@
+- modular arithmetic
+	- working w/ the following set of integers S = {0, 1,2,3,4,5,6}
+		- 4 + 4 = (4+ 4) mod 7 = 8 mod 7 = 1
+		- 3 x 5 = 15 mod 7 = 1
+		- inverse of 3
+			- 3x = 1 (mod 7)
+				- least positive residue is 5
+	- for S = {0, 1, 2,3,4,5,6}
+		- can we consider S and the operation '+' to be a [[group]]?
+			- ((640f5bcc-5f68-4581-b500-6f0f12f56cdc))
+				- closure
+					- the set is closed under addition since
+						- if a and be are elements in the set
+						- then a + b is also an element in the set
+				- associativity
+					- addition is associative
+				- identity
+					- there exists an identity element for addition: zero
+					- for any element a in the set a + 0 = 0 + a = a
+				- inverse element
+					- not every element in the set has an inverse under addition
+					- there is no element x in the set such that 2 + x = 0
+	- what is -13 mod 5?
+		- -13 mod 5 = (-13 % 5 + 5) % 5
+		- (-3 + 5) % 5 = 2
+- for the polynomial x^3 - x^2 + 4x - 12
+	- positive root:  2
+	- degree of polynmial -> coefficient of highest degree term -> 3
+- use cases
+	- any systems that you have used that involved zk proofs
+		- cairo
+	- have you seen any applications of zero knowledge proofs other than with a blockchain?
+	- what is to you, the most important feature of zkp technology?
+		- extending crypto from denotations of obscured identities to denotations of state machines
+	- think of some use cases of zkps that you would like to see developed
+		- linking stakeholders of things used for training ml models to users of model
+		- allowing the discovery of connections of two datums with respect to an ml model such that the two datums do not disclose their denotation without owners discretion
