@@ -1,0 +1,19 @@
+- the creator writes and compiles a program in the zokrates dsl
+	- the creator / prover generates a trusted setup for the compiled program
+	- the prover computes a witness for the compiled program
+	- the prover generates a proof
+		- using the proving key
+			- she generates a proof for
+				- a computation of the compiled program
+	- the creator/prover exports a verifier
+		- using the verifying key
+			- she generates a Solidity contract which contains
+				- the generated verification key and a public function
+					- to verify
+						- a solution to the compiled program
+- the program checks if the prover knows what it claims to know
+	- C creates proof
+	- verifier in solidity consumes proof and returns yes / or
+- parameters of system
+	- scheme
+	- curve

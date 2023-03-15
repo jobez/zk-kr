@@ -1,0 +1,47 @@
+- in a proof of replication
+	- a storage miner
+		- proves that
+			- they are storing a physically unique copy or replica of the data
+	- happens just once, at the time the data is first stored by the miner
+	- run once to prover that a miner stored a physically unique copy of the data at the time the sector was sealed
+- proof of space time
+	- ran repeatedly to prove that
+		- they are continuing to dedicate storage space to that same data over time
+- both these proofs use zk-snarks for compression
+- the process of creating filecoin's zk-snarks is computationally expensive (slow)
+- but the resulting end product is small and the verification process is very fast
+- compared to the original proofs, zk-snarks are tiny, making them efficient to store in a blockchain
+- for example, a proof that would have taken up hundreds of kilobytes on the filecoin chain can be compressed to just 192 bytes using a zk [[snarks]]
+- for storage to be verified on filecoin
+	- two proofs are involved
+		- proof of replication
+			- a storage provider proves that they are storing a unique copy of a piece of data or information
+			- each that goes on-chain includes 10 individual snarks, which together prove that the process was done correctly through probabilistic challenges
+		- proof of spacetime
+			- serves to prove that the storage provider continues to store the original data over time without manipulation or corruption
+			- when a storage provider first agrees to store data for a client, they must put down collateral in the form of FIL
+			- if
+				- at any point during the agreement the provider fails to prove POSt
+				- they are penalized and can lose all or some of their posted FIL collateral
+	- the result of an on-chain interaction
+		- in which
+			- the [[prover]] and [[verifier]]
+				- agree that
+					- data has been stored and maintained in an appropriate manner is a [[proof]]
+	- as mentioned above,
+		- without
+			- a solution to make these proofs small and efficient
+		- they
+			- would take up
+				- a tremendous amount of the network's bandwidth
+			- deliver
+				- high operational costs to both storage providers and miners
+		- by using
+			- zk snarks
+			- to generate
+			- the proofs
+			- the resulting proofs are small and the verification process is fast (and thus cheap)
+			- for example
+				- proofs that typically would require hundreds of kilobytes to verify can instead be compressed to just 192 bytes with zk-snarks
+				- as mentioned above, each proof of representation includes 10 snarks
+					- meaning 1920 bytes in each (10 by 192 bytes)

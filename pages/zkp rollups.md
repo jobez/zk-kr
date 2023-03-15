@@ -1,0 +1,22 @@
+- scheme consists of two types of users
+	- [[transactor]] and [[relayer]]
+		- transactors :: create their transfer and broadcast the transfer to the network
+			- the transfer data consists of
+				- an indexed to and from address
+				- a value to transact
+				- the network fee
+				- nonce
+			- a shortened 3 byted indexed version of the addresses reduces processing resource needs
+			- the value of the txn being greater than or less than zero creates a deposit or withdrawal respectively
+			- the smart contract records the data in two merkel trees
+				- addresses in one merkle tree and transfer amounts in another
+		- relayers
+			- collect a large amount of tranfers to create a rollup
+			- job of relayers to generate a [[snarks]] proof
+				- the snark proof is a hash that represents the delta of the blockchain state
+				- state refers to 'state of being'
+			- snark proof compares
+				- the snapshot of the blockchain before the transfers
+				- a snapshot of the blockchain after the transfers
+			- reports only the changes in a verifiable hash to the mainnet
+			- anyone can become a relayer so long as they have staked the required bond in the smart contract

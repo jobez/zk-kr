@@ -1,0 +1,11 @@
+- potential solutions
+	- on chain l1 solutions
+		- [[consensus mechanism]]
+		- [[sharding]]
+- off chain scaling (layer 2)
+	- transactions are submitted to these [[layer 2]] nodes instead of being submitted directly to [[layer 1]]
+		- for some solutions
+			- the layer 2 instance then batches them into groups before anchoring them to layer 1
+				- after which they are secured by layer 1 and cannot be altered
+			- a specific layer  2 instance may be open and shared by many applications, or may be deployed by one project and dedicated to supporting only their application
+- [[rollups]]

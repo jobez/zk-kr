@@ -1,0 +1,33 @@
+- how does dark forest use snarks?
+- a central mechanisc in dark forest is -> fog of war
+	- fog of war ensures that you don't automatically know where all players, planets, and other points of interest are in the universe
+	- you have to spend computational resources to discover them
+	- this mechanic is secured by [[snarks]]
+- in a universe w/ a fog of war
+	- the locations of all players are private and hidden from each other
+	- this means that players don't upload the coordinates of their planets to the ethereum blockchain, which can be publicly inspected
+	- instead, each player uploads the hash of their location to the blockchain
+	- this ensures that players stay "committed" to a specific location, but also that the location can't be determined from inspection of the ethereum data layer
+- without zkstarks
+	- there's an obvious attack player
+		- if
+			- a player uploads a random string of bytes that doesnt correspond to a real and valid location
+			- the [[integrity]] of the game is broken
+- to prevent this,
+	- dark forest requires players to submit zk snarks with every move
+		- to ensure that
+			- players are indeed submitting hashes corresponding to valid coordinates that they have knowledge of
+- when players make moves
+	- they're also required to submit ZK proofs that their moves are "valid"
+		- you can't move too far or too fast
+	- w/o zksnarks
+		- a malicious player could make illegal teleport moves
+			- by claiming that
+				- the hash they are moving from is next to the hash they're moving to
+					- even if the two locations are actually on opposite sides of the universe
+- once again, requiring zk proofs keep players honest
+- to use a chess analogy
+	- the required zk proofs basically tell the contract
+		- im moving my knight
+		- i'm not going to tell you where i moved my knight from or where I moved it to
+		- but this proof proves that it did in fact move in a legal L-shape

@@ -1,0 +1,25 @@
+- is
+	- a form of encryption that allows arbitrary computations on encrypted data
+	- a form of encryption with an additional evaluation capability for computing over encrypted data w/ access to the secret key
+		- the result of such a computation remains encrypted
+- can be viewed as
+	- an extension of either symmetric key or public-key cryptography
+- homomorphic
+	- refers to
+		- [[Group Homomorphisms]] in algebra
+			- the encryption and decryption functions can be thought as homomorphisms between plaintext and ciphertext spaces
+- ((6410a9bb-cde6-4c55-9100-53070d5b67bd))
+- examples
+	- bitcoin split-key vanity mining
+		- bitcoin addresses are hashes of public keys from ECDSA key pairs
+		- a vanity address is an address generated from parameters
+			- such that
+				- the resultant hash contains a humean readable string
+		- given that ECDSA key pairs have homomorphic properites for addition and multiplication, one can outsource the generation of a vanity address without having the generator know the full private key for this address
+		- alice generates a private key (a) and public key (A) pair, and publicly posts A
+		  id:: 6410aab0-688e-496c-a363-8e32ed180d05
+		- bob generates a key pair (b, B) such that the hash A+B results in a desired vanity address
+		- he sells b and B to alice
+		- A B and b are publicly known, so one can verify that address = hash(A+B) as desired
+		- alice computes the combined private key and uses it as the private key for public key (A + B)
+		- multiplication could be used instead of addition

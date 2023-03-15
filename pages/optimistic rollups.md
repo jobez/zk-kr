@@ -1,0 +1,3 @@
+- originates from how the solution works
+- optimistic is used b/c aggregators publish only the bare minimum information needed with no proofs
+	- assuming the aggregators run without commiting frauds and only providing proofs in case of fraud

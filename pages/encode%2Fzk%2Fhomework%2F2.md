@@ -1,0 +1,16 @@
+- maths 2
+	- modular arithmetic
+		- is it true that all odd squares are congruent to 1 (mod 8)?
+			- yes for odd
+		- is  it true about even squares mod 8?
+			- for even squares, it is equal to 0 mod8 except in the case for numbers divisible by 4
+	- ((6358059a-015f-4b6d-a0c7-342ee988332a))
+		- O(n)
+			- ((63580607-f30b-4b70-bc54-4e02e13be4f2))
+		- O(1)
+			- ((6358060e-6c85-46c3-86d5-367a5e1aff3d))
+		- O(log n)
+			- ((6358063b-3ccd-4076-a450-7bdcd74e9501))
+	- for a proof size, which of these would you want?
+		- ((6358120b-902e-4513-9e73-2ecdac8b708a))
+	-

@@ -1,0 +1,19 @@
+- scaling solutions that have
+	- transaction execution outside [[layer 1]]
+	- transaction data and proof of transactions is on [[layer 1]]
+	- a rollup smart contract in layer 1 that can enforce correct transaction execution on layer 2 by using transaction data on layer 1
+	- the main chain
+		- holds
+			- funds
+			- commitments
+	- sidechain hold additional state and performs execution
+	- there needs to be some proof, either a [[fraud proof]] or a [[validity proof]]
+	- rollups require 'operators' to stake a bond in the rollup contract
+		- this incentives operators to verify and execute transactions correctly
+	- anyone can publish a batch
+		- a collection of txns in a highly compressed form together with the previous state root and the new state root
+			- the merkel root after processing the txns
+		- the contract checks that the previous state root in the batch matches its current state root; if it does, it switches the state root to the new state root.
+- [[optimistic rollups]]
+- [[zkp rollups]]
+-

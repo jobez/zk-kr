@@ -1,0 +1,53 @@
+- ((6410ae00-8d42-477c-9a9c-ee93e01b3919))
+- looks at
+	- the time or space requirements to solve a problem
+		- particularly in terms of
+			- the size of the input
+- we can classify porblems
+	- according to
+		- the time required to find a solution
+			- for some problems
+				- there may exist an algorithm to find a solution in a reasonable time
+					- whereas
+						- for other problems
+							- we may not know of such an algorithm, and my have to 'brute force' a solution, trying out all potential solutions until one is found that works
+	- for example
+		- [[the travelling salesman problem]]
+			- tries to find
+				- the shortest route for a salesman required to travel between a number of cities, visiting every city exactly once
+			- for a small number of cities, say 3,
+				- we can quickly try all alternatives to find the shortest route
+			- as the number of cities grows
+				- this quickly becomes unfeasible
+			- if increase the size of input, the time to solve solution corresponds in a polynomial, they are tractable
+- complexity classes
+	- P is a complexity class that represents the set of all decision problems that can be solved in polynomial time
+		- that is
+			- given
+				- an instance of the problem
+			- the answer yes or no
+				- can be decided in
+					- polynomial time
+	- np
+		- is a complexity class
+			- that represents
+				- the set of all decision problems
+					- for which
+						- the instances where
+							- the answer is "yes" have proofs
+								- that can be verufued ub
+									- polynomial time
+			- even though the solution may be hard to find
+			- this means that
+				- if someone gives us
+					- an instance of the problem
+					- and a witness to the answer being yes
+				- we can check that it is correct in polynomial time
+					- that is
+						- you can run some polynomial time algorithm
+							- that will verify whether
+								- you've found an actual solution
+		- for example
+			- the problem of recovering a secret key with a known plaintext is in NP
+			- because you can check that a candidate key is the correct key by verifying that encrypting the plaintext with that key and showing that it equals the supplied cypher text
+			- the process of finding a potential key (the solution) can't be done in polynomial time, but cchecking wheter the key is correct using a polynomial-time algorithm

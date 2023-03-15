@@ -1,0 +1,1 @@
+- https://math.stackexchange.com/questions/782767/fundamental-theorem-of-algebra-for-finite-fields

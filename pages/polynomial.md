@@ -7,3 +7,24 @@
 		- a polynomial p of a single variable x in a field K and with coefficients in that field
 			- the root r of P is an element K such that P(r) = 0
 			- B is said to divide another polynomial A when the later can be written as BC
+- in zkps
+	- if a [[prover]]
+		- claims to know
+			- some polynomial (no matter how large its degree is) that the verifier also knows
+	- they can follow a simple protocol to verify the statement
+		- [[verifier]]
+			- chooses a random value for ex and evaluates his polynomial locally
+			- gives x to the prover and asks to evaluate the polynomial in question
+		- [[prover]]
+			- evaluates her polynomial at x and gives the result to the verifier
+		- [[verifier]]
+			- checks if the local result is equal to the prover's result, and if so then the statement is proven with a high confidence
+	- ((6410b228-22fe-4e3e-8930-f6ff904e4023))
+- what does it mean to say that 2 polynomials are equal?
+	- they evaluate to the same value at all points
+	- they have the same coefficients
+- if we are working with real numbers, these two points would be simultaneous
+	- not the case with [[finite field]]s
+- for example, all elements of a field size q satisfy the identity
+	- x field size q = x
+		- the polynomials xq and X take the same values at all points, but do not have the same coefficients

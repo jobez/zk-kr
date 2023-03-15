@@ -59,8 +59,5 @@
 			- ![workshop_encode.pdf](../assets/workshop_encode_1669129872948_0.pdf)
 		-
 		-
-- zk 2023
-	- week one
-		- monday [[Mar 13th, 2023]]
-			- ![Homework1.pdf](../assets/Homework1_1678726155196_0.pdf)
-			- ![Lesson1.pdf](../assets/Lesson1_1678726250793_0.pdf)
+- [[encode/zk]]
+	-

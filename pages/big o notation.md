@@ -1,0 +1,7 @@
+- describes
+	- the complexity of your code
+		- using
+			- algebrraic terms
+	- the time or space required
+		- to solve  a problem
+			- in the worst case in terms of the size of the input
