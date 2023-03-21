@@ -1,0 +1,23 @@
+- has the following fields
+	- `parent_block_hash`
+		- the hash of this block's parent
+	- `block_number`
+		- the number (height) of this block
+	- `global_state_root`
+		- the state [[commitment]] after this block
+	- `sequencer_address`
+		- the starknet address of the sequencer who created this block
+	- `block_timestamp`
+		- the time the sequencer created this block before executing transactions
+	- `transaction_count`
+		- the number of transactions in a block
+	- `transaction_commitment`
+		- a commitment to the transactions included in the block
+	- `event_count`
+		- the number of events
+	- `event_commitment`
+		- a commitment to the events produced in this block
+	- `protocol_version`
+		- the version of the starknet protocol used when creating this block
+	- `extra data`
+		- extraneous data that might be useful for running transactions

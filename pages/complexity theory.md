@@ -41,7 +41,7 @@
 			- this means that
 				- if someone gives us
 					- an instance of the problem
-					- and a witness to the answer being yes
+					- and a [[witness]] to the answer being yes
 				- we can check that it is correct in polynomial time
 					- that is
 						- you can run some polynomial time algorithm

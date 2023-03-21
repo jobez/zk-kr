@@ -1,0 +1,26 @@
+- what is the relationship between a [[transaction]], a [[block]], and a [[sequencer]]?
+	- In the StarkNet protocol, the sequencers are responsible for ordering the transactions and producing blocks.
+	- After the block
+		- is
+			- created by
+				- a sequencer,
+			- and approved by
+				- the consensus protocol,
+		- the [[prover]] s take over and generate a proof for l1
+	- When a transaction is submitted (by a user) in StarkNet, it goes to a sequencer node.
+	- The [[sequencer]]
+		- takes
+			- batches of transactions
+		- and generates
+			- two things:
+				- A list of changes caused by all the transactions in the batch (changes in storage, balances, etc)
+				- an [[execution trace]]
+					- that represents
+						- the sequence of transactions that were included in a block
+					- which is then used to generate
+						- A [[proof]] that,
+							- if
+								- all transactions included in the batch
+									- are executed successfully against
+										- the previous state of the network,
+							- the result will be the list of changes listed before.

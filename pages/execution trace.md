@@ -1,0 +1,11 @@
+- when we do a computation
+	- break it into steps
+- within a particular cpu
+	- we will see that
+		- a register will change from this value to an other value
+		- a memory will change from this value to another value
+- looking at all changes within cpu
+- an encoded value of each program step
+- is the execution trace like opcode sequences in EVM for instances?
+	- it is more like a bunch of [[polynomial]] s, [[provable programs]] execute in a completely different way
+-

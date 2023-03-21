@@ -1,0 +1,13 @@
+- https://medium.com/yagi-fi/reading-sierra-starknets-secret-sauce-for-cairo-1-0-5bc73409e43c
+- a stable layer to allow for rapid iteration and innovation at the Cairo 1.0 language level
+- reading Sierra code can help us get a deeper understanding of the underlying type system, security risks and improving efficiency where it matters (e.g., reducing the storage footprint or execution steps in highly recursive functions)
+- For Cairo 0.x programmers, Sierra is the bridge between our past and the future, a familiar blueprint guiding our craft. Let's take a look.
+- The Sierra output is organized into 4 separate sections always presented in the same order.
+	- First come the type declarations.
+	- Next, declarations of built-in library functions that will be used.
+	- Then the sequence of statements and finally the declared Cairo functions.
+- A couple of observations:
+	- The Unit type `()` is a special case of an empty struct and is used as a default return type for procedures (functions without a declared return type)
+	- New temporary variables are created and indexed using square brackets ( `[0]` and `[1]` )
+	- Statements have the following form `<libfunc>(<inputs>) -> (<outputs>);` , i.e., we don't see the more traditional `[0] = struct_construct<Unit>();`
+	- Code blocks are separate from Cairo function declarations. A function is tied to a specific block of code by starting at a dedicated statement index location (note the `do_nothing@0` which indicates that the function begins at the first statement).

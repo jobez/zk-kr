@@ -2,7 +2,8 @@
 	- Group theory is used in the construction of various cryptographic primitives, including those used in zero knowledge proofs.
 		- Specifically, [[group]] s such as [[Elliptic Curves]] and cyclic groups are used in constructing the underlying cryptographic protocols.
 			- ((640f6051-bab3-4d82-89f1-9f87b40112b3))
-		- These groups have special properties that make them useful for cryptography, such as being difficult to solve the discrete logarithm problem.
+		- These groups have special properties that make them useful for cryptography, such as being difficult to solve the [[Discrete Logarithm Problem]] .
+		  id:: 64131b44-266a-4a99-a566-eb9041eaeec3
 - Finite fields over integers are relevant for zk and inform the nature of the inverse of division being different than how it would be over just integers.
 	- [[Modular Arithmetic]]
 	- Finite fields are also used in zero knowledge proofs, as they provide a mathematical structure for performing arithmetic operations over a finite set of numbers. This is important because many cryptographic primitives, including those used in zero knowledge proofs, rely on mathematical operations such as addition, multiplication, and exponentiation. Finite fields also play a role in determining the structure of cryptographic protocols and in defining certain algebraic structures, such as rings and fields.

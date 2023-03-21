@@ -1,5 +1,6 @@
 - week one
 	- [[encode/zk/reflection/0]]
+	- [[encode/zk/reflection/1]]
 	- monday [[Mar 13th, 2023]]
 		- ![Homework1.pdf](../assets/Homework1_1678726155196_0.pdf)
 		- ![Lesson1.pdf](../assets/Lesson1_1678726250793_0.pdf)
@@ -9,5 +10,15 @@
 	- wednesday [[Mar 15th, 2023]]
 		- ![Lesson3.pdf](../assets/Lesson3_1678893302283_0.pdf)
 		- ![Homework3.pdf](../assets/Homework3_1678893311498_0.pdf)
-	- thursday
+	- thursday [[Mar 16th, 2023]]
 		- ![Lesson4.pdf](../assets/Lesson4_1678893323823_0.pdf)
+		- ![Homework4.pdf](../assets/Homework4_1678985516041_0.pdf)
+- week two
+	- [[encode/zk/reflection/2]]
+	- monday [[Mar 20th, 2023]]
+	  id:: 64186cc3-a46c-4b18-9472-c480d56af794
+		- ![Lesson5.pdf](../assets/Lesson5_1679322328443_0.pdf)
+		- ![Homework5.pdf](../assets/Homework5_1679322333755_0.pdf)
+	- tuesday [[Mar 21st, 2023]]
+		- ![Homework6.pdf](../assets/Homework6_1679414964340_0.pdf)
+		- ![Lesson6.pdf](../assets/Lesson6_1679414970753_0.pdf)
