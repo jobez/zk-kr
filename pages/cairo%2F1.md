@@ -1,0 +1,3 @@
+- resources
+	- https://medium.com/nethermind-eth/under-the-hood-of-cairo-1-0-exploring-sierra-7f32808421f5
+- [[sierra]]

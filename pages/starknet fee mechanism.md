@@ -1,6 +1,6 @@
 - ((6361572c-d147-4697-86e1-d0a7f9cf3d0e))
 - users can specify maximum fee that they are willing to pay for a transaction via the `max_fee` field
-- only limitation on the [[sequencer]] enforced by [[Starknet OS]] is the actual fee charged is bounded by `max_fee`, but for now, Starkware's sequencer will only charge the fee required to cover the [[proof]] cost (potentially less than the max fee)
+- only limitation on the [[sequencer]] enforced by [[starknet/os]] is the actual fee charged is bounded by `max_fee`, but for now, Starkware's sequencer will only charge the fee required to cover the [[proof]] cost (potentially less than the max fee)
 - the sequencer only takes into account L1 costs involving proof submission
 - there are two components affecting the L1 footprint of a transaction:
 	- computational complexity: the heavier the transaction, the larger its portion in the proof verification cost

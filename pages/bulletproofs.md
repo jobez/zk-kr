@@ -1,0 +1,26 @@
+- have
+	- short proofs without a trusted setup
+	- underlying cryptographic assumption
+		- is
+			- [[Discrete Logarithm Problem]]
+- made non interactive
+	- using
+		- [[Fiat-Shamir heuristic]]
+- designed to provide
+	- confidential transactions for cryptocurrencies
+- support [[proof aggregation]]
+	- so that
+		- proving that m transaction values are valid
+			- adds only
+				- O(log(m)) additional elements to the size of a single proof
+- pederson [[commitment]]s are used for the inputs
+- they do not require any pairings and work with any elliptic curve with reasonably large subgroup size
+- the verifier cost scales linearly with the computatio size
+- were based on the ideas of [[groth16]] snarks but changed various aspects
+	- they give a more compact version of the inner product argument of knowledge
+	- allow construction of a compact rangeproof using such an argument of knowledge
+	- they generalize this idea to general arithmetic circuits
+- some use cases for bulletproofs
+	- [[range proofs]]
+	- [[merkle proofs]]
+	- [[proof of solvency]]

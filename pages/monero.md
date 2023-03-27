@@ -1,0 +1,23 @@
+- ((6421a307-9b59-4a35-b124-c7908e8f57e4))
+	- initially used [[ring signatures]]
+	- later moved to using [[bulletproofs]]
+- overview
+	- [[commitment]]s to inputs are used to shield input details
+	- we need to show that
+		- the sum of inputs and outputs add up
+	- but
+		- there
+			- is
+				- a potential problem w/ overflow since we work on a finite field
+	- this is solved w/ [[range proofs]]
+		- to show that
+			- the values are in the correct range w/o revealing the values
+- monero comment on their move to bullet proofs
+	- w/ our current range proofs
+		- the txn is around 13.2 kb in size
+		- if i used single-output bullet proofs
+			- the transaction reduces in size to only around 2.5 kb
+	- this is approx an 80% reduction in transaction size, which then translates to an 80% reduction in fees as well
+	- the space savings are even better w/ multiple-output proofs
+	- this represents a significant decrease in txn sizes
+	- further, our initial testing shows that the time to verify a bulletproof is lower than the existing range proofs, meaning speedier blockchain validation

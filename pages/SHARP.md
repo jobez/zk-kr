@@ -1,1 +1,316 @@
 - https://www.youtube.com/live/VMNreeZkAgI
+- https://medium.com/starkware/recursive-starks-78f8dd401025
+- [(5) StarkCon on Twitter: "The next frontier is Recursive Proofs, not merely for some hard-coded logic, but for general computation. This is what a typical flow of a non-recursive proving flow looks like : 4/9 https://t.co/382Kcatxfp" / Twitter](https://twitter.com/stark_con/status/1608823573115817986)
+- takes transactions from several separate apps and proves them all in one single STARK-proofs
+- aps combine their batches of transactions, filling up the capacity of a stark proofs faster
+- transactions are processed at an improved rate and latency
+- the next frontier: recursive proofs, but not merely for some hard-coded logic, but rather general computation
+- to understand the full benefit of recursive proving
+  collapsed:: true
+	- it is worth understanding a little bit more how (non-recursive) proving was perfomed by SHARP until now
+- ![](https://miro.medium.com/v2/resize:fit:1050/0*iUF4pKRJ981SpAcP)s
+- statements arrive over time
+- when a certain capacity (or time) threshold is reached,
+	- a large combined statement (aka Train) is generated
+	- this combined statement is proven once all the individual statements hav ebeen received
+	- this proof takes a long time to prove
+		- roughly the sum of time it takes to prove each statement individually
+- proving extremely large statements is eventually limited by available compute resources such as memory
+	- prior to recursion, this was effectively [[the limiting scalability barrier of STARK proving]]
+- what is [[recursive ZK proofs]]?
+  collapsed:: true
+	- with stark proofs
+		- the time it takes to prove a statement is roughly linear with the time it takes to execute the statement
+		- in addition
+			- if proving a statement takes T time, then verifying the proof takes roughly log(T) time, which is typically called [[logarithmic compression]]
+		- in other words, with [[STARK]]s you spend much less time on verifying the statement than on calculating it
+	- [[cairo]]
+		- allows expressing
+			- [[general computational statements]]
+				- that
+					- can be
+						- proven by
+							- [[STARK]] proofs
+						- verified by
+							- the corresponding STARK [[verifier]]s
+	- this where the opportunity to perform [[recursion]] kicks in
+		- in the same way that
+			- we
+				- write
+					- a Cairo program
+						- that
+							- [[proves]]
+								- the correctness of thousands of transactions
+			- we
+				- can also write
+					- a cairo Program
+						- that
+							- [[verifies]]
+								- multiple STARK proofs
+	- because of
+		- the logarithmic compression and roughly linear proving time
+			- proving
+				- a verification of a stark proof
+					- takes
+						- relatively short time (expected to be just a few min in a near future)
+	- when implementing Recursion
+		- SHARP
+			- can prove
+				- statements
+					- upon their arrival
+		- their proofs can be merged over and over into recursive proofs in various patterns
+			- until, at a certain point,
+				- the resulting proof
+					- is submitted to
+						- an on-chain verifier contract
+	- ![](https://miro.medium.com/v2/resize:fit:1050/0*El7ccB61rigSlc_w)
+		- in this example
+			- four statements are sent to SHARP (possibly from four different sources)
+				- these statements are each proven in parallel
+				- then each pair of proofs is
+					- validated by
+						- [[a recursive verifier statement]]
+							- a Cairo program that verifies a stark proof
+								- for which a proof is generated
+									- this statement asserts that two proofs have been verified to be corrext
+				- next, the two proofs are merged again by [[a recursive verifier statement]]
+				- this results in
+					- one proof attesting to all four original statemnts
+				- this proof can then be finally submitted on-chain
+					- to be verified by
+						- a Solidity verifier smart contract
+- immediate benefits of recursive proving
+  collapsed:: true
+	- reduced on-chain costs
+		- off the bat, we achieve 'compression' of multiple proofs into one
+			- which implies lower on-chain verification cost per transaction
+				- where each statement may include many transactions
+		- with recursion
+			- the computational resources barrier that limited proof size up til now, is eliminated since each limited size statement can be proved separately
+		- hence, when using recursion,
+			- the effective train size of recursion is almost unlimited, and the cost per transaction can be reduced by orders of magnitude
+		- in practical terms
+			- the reduction
+				- depends on
+					- the acceptable latency
+					- and the rate which transactions arrive
+			- in additition
+				- since
+					- each proof
+						- is typically also accompanied by
+							- some output such as on-chain data
+								- there are
+									- limits to the amount of data that can be written on-chain together with a single proof
+			- nevertheless, reducing cost by an order of mangitude and even better is trivially achievable
+	- reduced latency
+		- the recursive proving pattern reduces the latency of proving large trains of statements because of two factors
+			- incoming statements can be proven in parallel (as opposed to proving an extremely large combined statement)
+			- there is no need to wait until the last statement in the train arrives to begin proving
+				- rather, proofs can be combined with new statements as they arrive
+				- this means that
+					- the latency of the last statement joining a train
+						- is roughly
+							- the time it takes to prove that very last statement
+								- plus
+							- the time it takes to prove [[a recursive verifier statement]]
+								- which
+									- attests to
+										- all those statements that have already "onboarded" this particular train
+		- we are actively developing and optimizng the latency of the recursive verifier statement
+			- we expect this to reach the order of a few minutes within a few months
+			- hence, a highly efficient sharp can offer latencies from a few minutes up to a few hours
+				- depending on the tradeoff versus on-chain cost per transaction
+					- this represents a meaningufl improvement to SHARP's latency
+	- facilitating l3
+		- the development of the recursive verifier statement in Cairo
+			- also opens up
+				- the possibility of submitting proofs to Starknet
+					- as
+						- that statement
+							- can be baked into a Starknet
+		-
+- more subtle benefits
+  collapsed:: true
+	- applicative recursion
+		- recursion
+		  collapsed:: true
+			- opens up
+				- even more opportunities for platforms and applications
+					- to further scale their cost and performance
+			- each stark proof
+				- attests to
+					- the validity of a statement
+						- applied to
+							- some input
+								- known as
+									- the [[public input]]
+									- or [[program output]] in cairo terms
+		- conceptually
+			- stark recursion
+				- compresses
+					- two proofs with two inputs
+						- into
+							- one proof w/ two inputs
+			- in other words,
+				- while
+					- the number of proofs is reduced
+					- the number of inputs is kept constant
+			- these inputs are then typically used by an application
+				- in order to
+					- update
+					- some state on l1
+					- (e.g.
+						- to update
+							- a state root
+						- or
+							- perform
+								- an on-chain withdrawal)
+			-
+			-
+		- if the recursive statement is allowed to be application-aware
+			- i.e. recognizes the semantics of the application itself
+				- it can
+					- both
+						- compress two proofs into one
+					- as well as
+						- combine the two inputs into one
+				- the resulting statement attetss to the validity of the input combination
+			- ![](https://miro.medium.com/v2/resize:fit:1050/0*4xp3zhWc1PIMeE0i)
+				- here,
+				  collapsed:: true
+					- statement 1
+						- attests to
+							- a state update from A to B
+					- statement 2
+						- attests to
+							- a further update from B to C
+					- proofs of statement 1 and statement 2
+						- may be combined into
+							- a third statement
+								- attesting to
+									- the direct update from A to C
+					- by
+						- applying similar logic recursively
+							- one
+								- can reduce
+									- the cost of state updates
+										- very significantly
+										- up to
+											- the finality latency requirement
+					-
+						-
+						-
+				- another important example of applicative recursion
+					- is to compress
+						- rollup data
+							- from
+								- multiple proofs
+					- for example
+						- a [[validity rollup]]
+							- such as
+								- [[starknet]]
+							- every [[storage update]] on [[layer 2]]
+								- is also included as
+									- [[transmission data]] on [[layer 1]]
+								- to ensure
+									- [[data availability]]
+					- however
+						- there is no need to send multiple updates for the same [[storage element]]
+							- as only
+								- the final final value of transactions
+									- attested to by
+										- the proof verified
+								- is required for
+									- [[data availability]]
+						- this optimization is already performed within a single Starknet block
+						- however, by generating a proof per block,
+							- applicative recursion may compress this roll up data across multiple l2 blocks
+						- this can result in significant cost reduction
+							- enabling shorter block intervals on l2, without sacrificing the scalability of l1 updates
+						- worth noting:
+							- [[applicative recursion]]
+								- may be combined with
+									- application-agnostic recursion depicted earlier
+									- these two optimizations are independent
+	- reduced on-chain verifier complexity
+	  collapsed:: true
+		- the complexity of the stark verifier
+		  collapsed:: true
+			- depends on
+				- the kinds of statements it is designed to veirfy
+		- in particular
+		  collapsed:: true
+			- for cairo statements
+				- the [[verifier complexity]]
+					- depends on
+						- the specific elements
+							- allowed in
+								- the cairo language
+									- and, more specifically, the supported [[builtins]]
+		- the cairo language
+			- continues to evolve and offer more and more useful builtins
+		- on the other hand,
+			- the [[recursive verifier]]
+				- only requires using
+					- a small subset of these built-ins
+			- hence
+				- a recursive SHARP
+					- can successfuly support
+						- any statement in Cairo
+							- by supporting
+								- the full language in the recursive verifiers
+			- specifically,
+				- the [[Solidity Verifier]]
+					- need only verify
+						- [[recursive ZK proofs]]
+					- and thus can be limited to
+						- a more stable subset of the Cairo language
+							- the [[Solidity Verifier]] need not keep up with the latest and greatest builtins
+						- in other words
+							- verification of  ever-evolving complex statements is relegated to l2
+								- leaving the l1 verifier to verify simpler and more stable statements
+		-
+	- reduced compute footprint
+		- before recursion
+			- the ability to aggregate multiple statements into one proof
+				- was limited by
+					- the maximal size of the statement that could be proved on available compute instances
+					- (and the time it could take to generate such proofs)
+		- with recursion,
+			- there is no longer a need to prove such extremely large statements
+			- as a result
+				- smaller, less expensive and more available compute instances
+					- can be used
+						- (though more of those may be needed than with large monolithic provers)
+			- this allows deployment of prover instances in more physical and viritual environments than previously possible
+- summary
+	- recursive proofs of general computation
+		- now serve
+			- multiple production systems, including starknet, and mainnet ethereum
+	- the benefits of recursion
+		- will be realized gradually
+			- as
+				- it
+					- continues to allow for
+						- new improvements
+		- and
+			- it
+				- will soon deliver
+					- hyper-scale,
+					- cut gas fees
+					- and improve latency by
+						- unlocking the potential of parallelization
+		- it
+			- will bring sifnicant
+				- cost and latency benefits w/ it
+			- together with
+				- new opportunities
+					- such as
+						- [[l3]]
+						- [[applicative recursion]]
+			- further
+				- optimization of the [[recursive verifier]]
+					- is
+						- ongoing and even better performance and cost benefents
+							- are expected to be provided
+								- over time

@@ -22,3 +22,13 @@
 	- tuesday [[Mar 21st, 2023]]
 		- ![Homework6.pdf](../assets/Homework6_1679414964340_0.pdf)
 		- ![Lesson6.pdf](../assets/Lesson6_1679414970753_0.pdf)
+	- wednesday [[Mar 22nd, 2023]]
+		- ![Lesson7.pdf](../assets/Lesson7_1679505138721_0.pdf)
+		- ![Homework7.pdf](../assets/Homework7_1679505149223_0.pdf)
+	- thursday [[Mar 23rd, 2023]]
+		- ![Homework8.pdf](../assets/Homework8_1679590814174_0.pdf)
+		- ![Lesson8.pdf](../assets/Lesson8_1679590823367_0.pdf)
+- week three
+	- monday [[Mar 27th, 2023]]
+		- ![Lesson9.pdf](../assets/Lesson9_1679923506285_0.pdf)
+		- ![Homework9.pdf](../assets/Homework9_1679923515061_0.pdf)

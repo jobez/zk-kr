@@ -3,13 +3,29 @@
 	- tc computes it through the [[pedersen hash]]
 	- then send the token and the hash to the smart contract
 	- the contract will then insert it into the [[merkel tree]]
+	- the random bytes are known to the depositor and are used to form the [[commitment]] hash
 - to process a withdrawal
+	- two pieces of info are used
+	- secret random bytes and a nullifier
 	- the same area of bytes is split into two separate parts
 		- the secret on one side
 		- the [[nullifier]] on the other side
 			- the nullifier is hashed
 		- the nullifier is a public input that is sent on-chain to get checked w/ the smart contract and the merkel tree data
 		- it avoids double spending, for instance
+- two zkps are provded
+	- to prove
+		- the hash of the initial commitment
+		- the nullifier
+			- forms part of the commitment hash, so it cannot be changed by the spender
+			- privacy is sustained as there is no way to link the hashed nullifier to the initial commitment
+			- besides, even if the information that the transaction is present in the [[merkel root]], the information about the exact Merkle path, thus the location of the transaction, is kept private
+			- de
+	- wiithout releaving any information
+- deposits
+	- are simple on a technological point of view
+	- but expensive in terms of gas as they need to compute the hash and update the merkle tree
+- withdrawals are complex, but cheaper as gas is only needed for the nullifier hash and the zkp
 - thanks to a zk [[snarks]]
 	- it is possible to prove the hash of the initial commitment and of the nullifier without revealing any information
 	- even if the nullifier is public, privacy is sustained as there is no way to link the hashed nullifier to the initial environment

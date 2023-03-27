@@ -1,0 +1,13 @@
+- https://medium.com/starkware/recursive-starks-78f8dd401025
+- [[StarkEx]] has a [[prover]] that performs large computations off-chain and produces a [[STARK]]
+	- the [[constraints]] for this first deployment were handwritten by starkware's engineers, thus greatly limiting feature velocity for starkex
+	- we concluded that a programming language to support general computation is needed -> [[cairo]]
+- cairo
+	- in the summer of 2020 made its first appearance on ethereum mainnet
+	- cairo stands for [[Algebraic Intermediate Representation]]
+		- includes a single AIR that veriies the instruction set of this [[cairo/cpu]]
+		- it opened the foor for coding proofs for more complex business logic, for arbitrary computaitonal systems, and doing so for in a faster and safer manner
+	- a cairo program can prove the execution of a single applications logic
+		- but a cairo program can also be a concatenation of mutliple such applications [[SHARP]]
+- [[SHARP]]
+	-

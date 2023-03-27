@@ -1,0 +1,3 @@
+- using the [[cairo/cpu]] metaphor
+	- then builtins are the equivalent of micro-circuits in a cpu:
+		- computations perfomed so secretly that they require their own [[optimized computation]]

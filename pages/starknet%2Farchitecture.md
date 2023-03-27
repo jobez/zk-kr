@@ -56,7 +56,7 @@
 							- the fact
 						- on
 							- [[layer 1]]
-	- [[Starknet OS]]
+	- [[starknet/os]]
 		- updates
 			- the [[layer 2]] state of the system
 				- based on

@@ -1,0 +1,6 @@
+- discuss in your teams the need for [[confidential tokens]]
+	- there is a tension between two broad views
+		- the restriction of arbitrary restrictions of an operating power on firms/individuals
+		- the desire to arbitrate/regulate firms/individuals such that they behave in what is deemed appropriate
+- have you / do you want to use [[zcash]] or other confidential tokens?
+- the future for aztec and private transactions on ethereum in light of what has happened to [[Tornado Cash]]

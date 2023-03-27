@@ -1,0 +1,121 @@
+- is
+	- an implementation of the Decentralized Anonymous Payment scheme
+		- [[Zerocash]]
+	- with security fixes and improvements to performance and functionality
+- bridges
+	- the existing transparent payment scheme used by [[Bitcoin]]
+		- with
+			- a shielded payment scheme
+				- secured by
+					- [[snarks]]
+- attempted to address
+	- the problem of mining centralization
+		- by use of
+			- the Equihash memory-hard proof of work algorithm
+- ((641c8873-782b-4a08-bfea-1387c1f94e6f))
+- overview
+	- value in zcash is either
+		- transparent
+		- shielded
+	- spend types
+		- public
+			- addresses starting w/ t
+		- shielding
+		- de-shielding
+		- private
+- [[trusted setup]]
+	- in order
+		- to ensure
+			- the [[toxic waste]]
+				- did not come into existence
+	- our team designed [[multi-party computation]] protocols
+		- which allowed
+			- multiple independent parties
+		- to collaboratively construct
+			- the parameters
+		- these protocols had the property that
+			- in order to compromise
+				- the final parameters
+			- all of the participants would have had to be compromised or be dishonest
+- ((64219cfb-00a7-4bcb-aadd-b7f1492fa48f))
+	- an attack could have created fake Zcash without being detected
+	- vulnerability around counterfeiting was so suble that it evaded years of analysis by expert cryptographers focused on zk proving systems and zk-snarks
+-
+- design
+	- based on bitcoin
+	- [[UTXO]] model
+		- ((64219dc4-041f-4fec-8e0a-592458098401))
+		- unspent transaction model
+			- keep track of how many transactions havent been spent by a person
+				- notes represent unspent transaction
+					- balance is derived
+			- alice
+				- siigns
+					- a transaction
+						- to cancel Note1
+						- and allow Bob
+							- to create Note2 of the same value
+			- zcash elaborates
+				- to the note we add random value r as an identifier
+				- rather than store these values directly, we store a hash of those values
+				- in order to cancel the notes we introduce the notion of a [[nullifier]]
+- the [[commitment]] / [[nullifier]] idea
+	- commitment scheme
+	  id:: 641c89f4-8a7d-4bcc-8d30-8d5f298d859a
+		- is defined by algorithms
+			- Commit
+			- Open
+		- given a message m and randomness r, compute as the output a value `c`
+		- `c = Commit(m, r)`
+		- a commitment scheme has 2 properties
+			- binding
+			- given a commitment c, it is hard to compute a different pair of message and randomness whose commitment is c
+	- in zcash [[pedersen hash]]es are used to create the commitments using generator points on an [[Elliptic Curves]]
+	- given a value v which we want commit ment to, and some random number r
+		- commitment c = v * G_v + r * G_r
+			- where G_v and G_r are generator points on an elliptic curve
+	- nullifiers
+		- are used to signal that a note has been spent
+		- each note can deterministically produce a unique nullifier
+		- when spending a note
+			- the nullifier set is checked to ascertain whether that note has already been spent
+			- if no nullifier exists for that note, the note can be spent
+			- once the note has been spent its nullifier is added to the nullifier set
+		- note that the nullifier is unlinkable, knowledge of a nullifier does not give knowledge of the note that produced it
+			- preserves privacy of the system
+	- shielded value is carried by notes
+		- which specify
+			- an amount and a shielded payment address
+				- which is an address controlling the note
+	- as in bitcoin
+		- this is
+			- associated with
+				- a private key that can be used to spend notes sent to the adress
+		- in zcash
+			- this is called a [[spending key]]
+- storing details of notes and nullifiers
+	- to each note
+		- there is cryptographically associated a note commitment
+	- once
+		- the transaction creating a note
+			- has been
+				- mined
+	- the note
+		- is associated with
+			- a fixed note position in a tree of note commitments
+	- an unspent valid note
+		- at
+			- a given point on the blockchain
+		- is one for which
+			- the note commitment has been publically revealed on the blockchain prior to that point, but the nullifier is not
+	- for each shielded input
+		- there is a revealed value commitment to the same value as the input note
+		- if the value is nonzero, some revealed note commitment exists for this note
+	- and for each shielded output
+		- there is a revealed value commitment to the same value as the output note
+		- the note commitment is computed correctly
+		- it is infeasible to cause the nullifier of the output note to collide with the nullifier of any other note
+	- ((6421a1be-73d9-4950-9874-eeeebf0989bf))
+	- ((6421a264-8a95-4480-bf4b-8637014b9516))
+		-
+	-

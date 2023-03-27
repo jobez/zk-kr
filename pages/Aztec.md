@@ -1,0 +1,43 @@
+- an open source layer 2 network bringing scalabity and privacy to Ethereum
+	- uses [[snarks]] to provide privacy and scaling via our zkrollup service
+- terms
+	- privacy :: all aspects of a transaction remain hidden from the public or third parites
+	- confidentiality :: the inputs and outputs of a transaction are hidden from the public but the transaction parties remain public
+	- anonymity ::  the inputs and outputs of a transaction are public but the transaction graph is obscured from one transaction to the next, preventing the identification of the transacttion parties
+- aztec follows a [[UTXO]] model similar to btc and zcash
+	- the core of any aztec transaction is a note
+	- the state of notes are managed by a note registry for any given asset
+	- aztec protocol does not represent value like a traditional balance, which maps owners to how much they own
+	- the user's balance of any aztec asset is made up the sum of all the valid notes their address owns in a note registry
+	- an aztec note owner can spend in a join-split style of confidential transaction
+		- in this txn
+			- the note owner will destroy some unspent aztec notes they own
+			- in their place, they will create a set of new notes
+				- the sum of the new notes must be equal to the sum of the values of old notes
+- a join split transaction
+	- suppose alice has a cluster of notes summing to 100zkdia and wants to send 75 zkdai to bob
+	- alice takes notes of size 60 zkdai and 40 zkdai (input notes, she needs both)
+	- aztec txns need to be confidential, so the zero-sum is zkp via the homomorphic additive property of elliptic curves
+	- alice would create an AZTEC zkp that proves this relationship in zk
+		- alice does not reveal to anybody how much the notes are actually worth, just that the balancing relationship holdes
+	- the aztec token smart contract will then
+		- validate this zkp
+		- destroy alice's input notes
+		- create the output notes in its note registry
+	- when alice is creating bob's notes
+		- she constructs note viewing keys that bob will be able to identify, via a non-interactive secret-sharing protocol
+		- bob is dependent on alice to act trustfully in this regard and not provide viewing keys that can be decoded by observers
+		- this is already implicitly required
+			- after all
+				- Alice could broadcast to the world how much she is sending bob if she did not want the txn to be confidential
+		- to achieve interoperability with other DApps,
+			- all AZTEC assets share a common trusted setup and their state is managed by a single smart contract, the AZTEC cryptography engine or ACE
+- anonymity
+	- aztec notes have owners defined by ethereum addresses
+	- on the surface, ownership is not anonymous
+	- the aztec protocol includes a monero-style stealth address protocol to derive ethereum addresses that are single use and cannot be linked to any other ethereum addresses
+		- e.g. if you have an aztec wallet, i can send a note to an eth address you control, but nobody but you and me will know this is the case
+	- the protocol supports both stealth addresses
+		- which require a specific wallet to work
+			- you need two public/private key pairs so a regular ethereum account wont work
+			- regular ethereum addresses (which are not anonymous, if you own a note everyone will be able to see that)
