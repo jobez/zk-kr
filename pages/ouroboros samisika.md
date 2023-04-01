@@ -1,0 +1,1 @@
+- https://minaprotocol.com/blog/what-is-ouroboros-samisika

@@ -1,0 +1,3 @@
+- w.r.t [[arithmetic circuit]], signals can be thought of as values that represent inputs, outputs, or intermediate results of computation #chatgpt/4
+	- analogous to variables
+-

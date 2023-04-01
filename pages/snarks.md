@@ -43,7 +43,8 @@
 		- [[arithmetisation]]
 			- flatten code
 			- arithmetic circuit
-			- r1cs
+			- [[r1cs]]1
+			  id:: 64231268-dd52-406b-9f75-71d57f1080f0
 			- qap
 		- [[polynomial]]s
 			- stores data

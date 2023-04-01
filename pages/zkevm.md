@@ -1,0 +1,15 @@
+- in general the evm will
+  title:: zkevm
+	- read elements from stack, memory, storage during execution
+	- perform some computation on those elements
+	- write back results to stack, memory or storage
+- so our circuit has to model/prove this process, in particular
+	- the bytecode is correctly loaded from persistent storage
+	- the opcodes in the bytecode are executed in sequence
+	- each opcode is executed correctly (following the above 3 steps)
+- design challenges in designing a zkEVM
+	- we are constrained by the cryptography (curves, hash functions) available on ethereum
+	- the evm is stack based rather than register based
+	- the evem has a 256 bit word
+	- evm storage uses keccak and [[merkle patricia trees]]
+	- we need to model the whole evm to do a simple op code

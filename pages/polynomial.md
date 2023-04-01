@@ -1,7 +1,15 @@
 - is
-	- an expression that can be built from constants and variables by means of addition, multiplication, and exponentiation to a non-negative integer power
+	- an expression
+		- that
+			- can be built from
+				- constants and variables
+					- by means of
+						- addition, multiplication, and exponentiation to a non-negative integer power
 	- ((640f628d-2a74-4101-823a-a2380a67ecd2))
 	- ((640f62b4-b4d4-4f66-83cb-151e77d6b1a2))
+		- for example, consider the A(x) + B(x) = C(x)
+			- if this equation is true, then its also true that
+				- A(0)+B(0)=C(0)
 - have
 	- roots
 		- a polynomial p of a single variable x in a field K and with coefficients in that field
@@ -28,3 +36,7 @@
 - for example, all elements of a field size q satisfy the identity
 	- x field size q = x
 		- the polynomials xq and X take the same values at all points, but do not have the same coefficients
+- [[Schwartz-Zippel Lemma]]
+- [[Lagrange Interpolation]]
+- [[polynomial/commitment]]
+-

@@ -6,3 +6,6 @@
 	- on chain (zk-rollup)
 	- off chain (validium)
 	- volition (hybrid of the above, offering a choice)
+- in order to recreate the state of a system
+	- transaction data is needed
+- the data availability question is where this data is stored and how to make sure it is available to the participants in the system

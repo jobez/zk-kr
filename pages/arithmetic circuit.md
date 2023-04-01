@@ -1,0 +1,7 @@
+- mathematical models used for [[computation]]
+	- where inputs and outputs
+		- are related through
+			- a series of arithmetic operations
+				- addition, subtraction, multiplication
+		- with
+			- [[finite field]] elements

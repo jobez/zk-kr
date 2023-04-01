@@ -1,0 +1,18 @@
+- ((640f628d-2a74-4101-823a-a2380a67ecd2))
+- ((640f62b4-b4d4-4f66-83cb-151e77d6b1a2))
+	- Furthermore, when he mentions that "a single equation between polynomials can represent an unbounded number of equations between numbers," he's referring to the fact that an equation involving polynomials can impose constraints on the coefficients of those polynomials, effectively creating multiple simultaneous equations between the coefficients themselves. #chatgpt/4
+		- for example, consider the following equation of two polynomials P(x) and Q(x)
+			- P(x) = a0 + a1 * x + a2 * x^2 + ... + an * x^n
+			- Q(x) = b0 + b1 * x + b2 * x^2 + ... + bm * x^m
+		- if we have an equation that relates P(x) and Q(x)
+			- say P(x) = Q(x) for some value of x
+				- then we effectively imposing constraints on the coefficients a0, a1, ... and the coefficients of Q(x)
+			- this equation
+				- may represent
+					- multiple simultaneous equations
+						- between
+							- the coffeficients
+								- especially encoding
+									- an unbounded amount of information
+										- within
+											- a single relationship

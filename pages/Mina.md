@@ -1,0 +1,112 @@
+- the first cryptocurrency protocol with a succinct blockchain
+  collapsed:: true
+	- blockchain keeps size constant even as usage of the network grows
+- what is needed for usable representation of the blockchain?
+  collapsed:: true
+	- a clear, usable representation of the basic data being queried of a state
+		- account balances
+	- data that a node needs in order to verify that this state is real in a trustless manner
+	- the ability to broadcast transactions on the network to make a transfer
+- roles
+  collapsed:: true
+	- block producer
+		- akin to miners or stalkers in other protocols
+			- by staking mina,
+				- they can be selected to produce a block and earn rewards in the form of coinbase, transaction fees and network fees
+				- block producers can decide to also be [[snarks]] producers
+		- a block in mina is constituted of:
+			- protocol state
+				- genesis state hash
+				- blockchain state
+				- consensus state
+				- consensus constants
+			- protocol state proof
+			- staged ledger diff
+			- delta transition chain proof
+			- current protocol version
+			- proposed protocol version
+	- snark worker
+		- the second type of consensus node operator on mina,
+			- snark producers help compress data in the network by generating SNARK proofs of transactions
+			- they then sell those proofs to block producers in return for a portion of block rewards
+	- professional block producer
+		- because staking requires nodes to be online,
+			- some may choose to delegate their mina to staking pools
+			- these groups run staking services in exchange for a fee, which is automatically deducted when the delegator gets selected to be a block producer
+- mina's consensus mechanism
+  collapsed:: true
+	- an implementation of ouroboros proof-of-stake
+	- due to mina's unique compressed blockchain
+		- certain aspects have diverged from the ourboros papers
+		- the version mina uses is called [[ouroboros samisika]]
+		- [[verifiable random functions]] are used to decide whether to produce a block, the probability is proportional to the producer's stake
+- recursive composition of proof (succinctness)
+  collapsed:: true
+	- the blockchain is dynmaic and new blocks keep getting added to it.
+	- as the blockchain grows
+		- we compute a new SNARK proof that only validates new blocks, but also the existing SNARK proof itself
+	- The notion of a SNARK proof that attests to the verifiability of another SNARK proof is the notion of“incrementally-computable SNARK”
+- zkApps
+  collapsed:: true
+	- mina protocol's smart contracts that use [[off-chain execution]] and mostly off-chain state model
+		- this allows for [[private computation]] and state that can be either private or public
+	- client generates state updates / proof
+		- network verifies proof x updates state on chain
+		- [[on-chain verification]]
+- zkApp use cases
+  collapsed:: true
+	- build privacy enabled apps
+		- develop dapps that use zero knowledge to ensure data-level prviacy
+			- verifying requirements without exposing underlying user information
+	- power enterprise interoperability
+		- use mina to combine the cost-efficiency and privacy of a private chain with the interoperability of a public chain
+	- minimize transaction fees
+		- power trustless e-commerce and global peer-to-peer transactions without using centralized intermediaries, or paying costly transaction fees
+	- power secure and fair financial services
+		- ensure lenders only use fair criteria to make decisions and securely verify relevant information w/o accessing private user data
+	- enable private & auditable elections
+		- guarantee fully verifiable and auditable elections, while keeping the process private and protecting individuals' voting invormation
+	- access money from anywhere in the world
+		- with a 22kb  mina chain, access to peer to peer stablecoins and tokens via smartphone and bring hard-earned money anywhere you go
+- zkBridge ETH & WMina example
+  collapsed:: true
+	- the bridge is currently only one way
+		- mina state can be read on ethereum, but not the other way around
+	- how does the bridge work?
+		- retrieve mina state proof and the [[verifying key]]
+		- generate an auxilliary proof for the state received
+		- post auxiliary proof to the ethereum blockchain, where a smart contract will update only if valid
+		- eth: a wrapped mina contract on eth will be created which will be the minter.
+			- this contract hs a mina address where a user will deposit funds into
+		- mina: user deposits funds into address above on MINA blockchain
+		- mina: deposit transaction gets committed
+		- eth: auxiliary proof of mina state is submitted to ETH
+		- eth: mina state proof is validated and confirmed
+		- eth: wrapped mina contract is called which uses the proof and validates the balance and mints
+- how mina creates proofs
+  collapsed:: true
+	- [[pickles]] and [[kimchi]]
+	- program gets written with snarkyjs
+	- snarky compiler produces verify solution
+	- kimchi compiler updates prover index and verifier index
+		- prover takes a public and private input and a proof (proof of correct execution)
+		- verifier takes public input and proof, returns true or false
+	- pickes has two components
+		- core zk-snark
+		- developer toolkit
+			- containing
+				- a wide array of library functionality
+				- the Pickles Inductive Proof System
+	- kimchi
+		- based on the [[plonk]] family of [[snarks]] [[proof system]]s
+			- one noteable improvement over plonk
+				- is that
+					- [[kimchi]] doesn't require a [[trusted setup]]
+						- this is achieved by adding a [[polynomial/commitment]] to the setup
+							- similar to [[bulletproofs]]
+		- other improvements in kimchi
+			- the gates used in the circuit have changed from being [[generic gates]] to specific gates to target known functionaltiy such as [[posiedon hashes]]
+- [[Elliptic Curves]] used
+	- mina uses curves [[Pallas]] and [[Vesta]]
+- zkApps are written in typescript using [[snarkyjs]]
+-
