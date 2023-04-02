@@ -1,6 +1,6 @@
 - ((640f628d-2a74-4101-823a-a2380a67ecd2))
 - ((640f62b4-b4d4-4f66-83cb-151e77d6b1a2))
-	- Furthermore, when he mentions that "a single equation between polynomials can represent an unbounded number of equations between numbers," he's referring to the fact that an equation involving polynomials can impose constraints on the coefficients of those polynomials, effectively creating multiple simultaneous equations between the coefficients themselves. #chatgpt/4
+	- Furthermore, when he mentions that "a single equation between polynomials can represent an unbounded number of equations between numbers," he's referring to the fact that an equation involving polynomials can impose constraints on the coefficients of those polynomials, effectively creating multiple simultaneous equations between the coefficients themselves. #gpt/4
 		- for example, consider the following equation of two polynomials P(x) and Q(x)
 			- P(x) = a0 + a1 * x + a2 * x^2 + ... + an * x^n
 			- Q(x) = b0 + b1 * x + b2 * x^2 + ... + bm * x^m
@@ -8,11 +8,159 @@
 			- say P(x) = Q(x) for some value of x
 				- then we effectively imposing constraints on the coefficients a0, a1, ... and the coefficients of Q(x)
 			- this equation
+			  id:: 64284ec1-77dc-46bf-8ee3-9306cda15a32
 				- may represent
 					- multiple simultaneous equations
 						- between
-							- the coffeficients
+							- the coefficients
 								- especially encoding
 									- an unbounded amount of information
 										- within
 											- a single relationship
+		- in the context of [[zero knowledge proofs]] and other cryptographic techniques
+			- [[information]]
+				- needs to be
+					- efficiently
+						- encoded and manipulated
+						  id:: 64284fe7-cb2a-4d36-a5d2-d529c0032301
+				- while
+					- preserving
+						- certain privacy and security properties
+			- by using [[polynomial]]s and their properties
+				- it
+					- is possible to create
+						- compact representations of complex relationships and computations
+						  id:: 6428526c-84ea-48d1-b52a-2fb7e9ebd9e0
+							- which
+								- can be
+									- efficiently processed and verified.
+	- Q: Ok, so lets take this intense (as in feeling like it goes over my head outside the curiousity I have toward it) sentence you said:
+	  collapsed:: true
+		- {{embed ((64284ec1-77dc-46bf-8ee3-9306cda15a32))}}
+		- Can you ask me follow up questions so we can get a sense of the best way to unpack this?
+	- A: Of course! Let's break down the sentence and explore its meaning through a series of follow-up questions.
+	  collapsed:: true
+		- Do you understand what it means to have multiple simultaneous equations between coefficients?
+			- we can think of [[simultaneous equations]]
+				- as
+					- a set of equations
+						- that
+							- must be satisfied
+								- together
+		- in the context of the example provided earlier
+			- P(x) and Q(x), the simultaneous equations involve the coefficients of both polynomials (a0, a1, and b0, b1, .. bm)
+		- Are you familiar with the concept of encoding information within a mathematical object or relationship?
+			- encoding [[information]]
+				- means
+					- representing
+						- [[data]] or [[facts]]
+							- within a
+								- specific structure or format
+			- in this case
+				- the [[information]]
+					- is encoded in the form of
+						- [[constraints]]
+							- between
+								- the coefficients of the polynomials
+		- Can you see how an equation relating two polynomials might encode more information than a simple equation between numbers?
+			- an equation involving polynomials
+				- can represent
+					- relationships between
+						- the coefficents
+					- which
+						- and
+							- can be more complex
+							- encode more information
+								- than
+									- a single equation between numbers
+						-
+				-
+		-
+	- Q: Are you familiar with the term 'datum' as William James used it? It seems like we have to refine what kinds of models are expressible in polynomials, or in other words, what kinds of facts.
+	- A: Yes, I'm familiar with the term 'datum' as used by William James, the American philosopher and psychologist. In James' work, a datum refers to a piece of information, a fact, or an experience that is immediately given to our consciousness or perception.
+		- when relating this concept to [[polynomial]]s and the kinds of models they can express
+			- it is
+				- essential to recognize
+					- that
+						- polynomials
+							- are
+								- [[mathematical constructs]]
+									- that
+										- can represent
+											- various types of information or relationships
+										- but
+											- are not directly tied to
+												- the specific experiences of perceptions James refers to his work
+		- [[polynomial]]s
+			- can represent
+				- numerical relationships, functions
+			- or even approximate
+				- complex data sets
+			- among other things
+		- However
+			- the facts or data that polynomials can modle
+				- must be translated into
+					- a mathematical form that can be expressed as a polynomial
+		- this means
+			- that
+				- not all kinds of facts,
+					- especially
+						- those related to
+							- human experiences or perceptions
+								- can be directly represented by
+									- a polynomial
+									-
+- the relationship between a [[polynomial/root]] and [[polynomial/division]]
+	- Q/C: A polynomial's root is an instance of input where its output is zero.
+	  collapsed:: true
+		- It relates to the division of polynomials in
+			- that
+				- if
+					- you know a root of a polynomial,
+					- you can express the polynomial as (some input - root)*Q(some input).
+						- Q is the quotient obtained from the division process.
+		- A [[polynomial/root]] relates to [[polynomial/division]]  because it  evaluates a polynomial to zero, we know that the division would have a quotient without remainder with the input of that root
+		- ((64287092-3458-4592-8241-86d50c7c8bbe))
+	- A: Yes, you have a good understanding of the relationship between a polynomial's root, division, and the resulting quotient.
+	  collapsed:: true
+		- To restate and elaborate on your points:
+			- A [[polynomial/root]] is a value of the input x for which the polynomial evaluates to zero
+			- If
+				- you know the/a [[polynomial/root]]
+					- you can express the [[polynomial]] as a product of a linear term (x-r) and another quotient polynomial
+			- the fact that a polynomial has a root r
+				- means that
+					- the polynomial is
+						- divisible by
+							- x-r with a quotient Q(x) and no remainder
+	- Q: Do you have an idea of why this is relevant in zero knowledge? Does it relate to the need for zkp for ((6428526c-84ea-48d1-b52a-2fb7e9ebd9e0))
+	- A: Yes, the properties of polynomials, including [[polynomial/root]] and their relationship to [[polynomial/division]] , are relevant to [[zero knowledge proofs]] (ZKPs) primarily because ZKPs rely on efficient encoding and manipulation of information.
+		- here are some reasons why [[polynomial]] play a significant role in [[zero knowledge proofs]]
+			- [[polynomial/interpolation]]
+			- [[polynomial/evaluation]]
+			- [[polynomial/division]] and [[polynomial/root]]
+				- knowing a root of a polynomial
+					- allows you to express
+						- the polynomial
+							- as
+								- a product of a linear term and another polynomial (its relationship is the quotient to the originating polynomial)
+					- this property is used in ZKP systems to
+						- enforce relationships
+							- or
+								- between different polymials
+								- between polynomials and their evaluations
+						- for example
+							- the [[vanishing polynomial]] in [[snarks]]
+								- is designed to have
+									- [[polynomial/root]]s
+										- at
+											- specific evaluation points
+								- ensuring
+									- that
+										- certain conditions
+											- are met
+												- during
+													- the proof construction and verification processes
+										-
+					-
+	-

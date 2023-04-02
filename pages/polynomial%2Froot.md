@@ -1,0 +1,13 @@
+- roots
+	- a polynomial p of a single variable x in a field K and with coefficients in that field
+		- the root r of P is an element K such that P(r) = 0
+		- B is said to divide another polynomial A when the later can be written as BC
+		- if one root r of a polynomial P(x) of degree n
+			- is known then
+				- polynomial long division
+					- can be used to factor P(x)
+						- into
+							- the form `(x - r)(Q(x))`
+								- where
+									- Q(x) is a polynomial of degree n-1
+									- Q(x) is simply the quotient obtained from the division process, since r is known to be a root of P(x), it is known that the remainder must be zero

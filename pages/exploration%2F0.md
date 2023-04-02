@@ -23,7 +23,7 @@ topic:: [[security]]
 	- @aeyakovenko @0xrwu Yeah, if you rely on confirmation and wait for finality, you need to run an L2 full node. Mar 26th, 2023, [[Toghrul Maharramov📜 🇺🇦]]
 		- dont wait*
 	- @aeyakovenko @0xrwu I’ve been shouting similar sentiments from the rooftops for quite a while now. I don’t want L2 security issues to be wholly overlooked because everyone assumes that security is simply inherited from ETH and that’s the end of the story. Mar 26th, 2023, [[permaweave.Ξ◎ⓐ]]
-- [[chatgpt/4]] summary
+- [[gpt/4]] summary
   collapsed:: true
 	- In this Twitter discussion, participants are debating the security aspects of Ethereum Layer 2 ([[layer 2]]) solutions and how they inherit security from Ethereum Layer 1 ([[layer 1]]).
 	- They are discussing the possible points of failure and the role of the users in maintaining the security of their assets on L2.
@@ -42,7 +42,7 @@ topic:: [[security]]
 		- While some believe that L2s do inherit security guarantees as long as certain security assumptions hold, others argue that users must run both L1 and L2 nodes to ensure the security of their assets.
 		- The conversation highlights the complexity of blockchain security and the importance of thoroughly understanding the potential risks and trade-offs in L2 solutions.
 	-
-- launch into chat w/ [[chatgpt/4]]
+- launch into chat w/ [[gpt/4]]
 	- Q: Can you give a broad compare/contrast of how the ethereum ecosystem sees security in the 'layer' metaphor versus how let's say the [[cosmos]] ecosystem sees it? My understanding is cosmos has a broader category of potential ways blockchains can interact.
 	  collapsed:: true
 		- Is this a good understanding?

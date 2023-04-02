@@ -1,0 +1,92 @@
+- ((64288088-44f5-4a37-9132-a8d07122b790))
+- simplified to point out the broad flow
+  collapsed:: true
+	- summary #gpt/4
+		- zk proving systems
+			- involves
+				- a [[prover]]
+				- a [[verifier]]
+			- engages in
+				- a protocol involving polynomials and their evaluations
+					- to convince
+						- the verifier
+							- of
+								- the truth of a [[statement]] `s`
+									- without revealing
+										- any additional information
+		-
+- steps
+  collapsed:: true
+	- [[prover]]
+	  collapsed:: true
+		- claims
+			- [[statement]] `S`
+		- #gpt/4 the [[prover]] wants to convince the [[verifier]]
+			- that
+				- a certain statement s is true
+					- without revealing
+						- any additional information
+			- this statement could represent
+				- a complex relationship
+				- a function
+				- or some kind of constraint
+	- [[verifier]]
+	  collapsed:: true
+		- provides
+			- some [[constraints]] about the polynomials
+		- #gpt/4 the [[verifier]] specifies
+			- constraints
+				- that
+					- the [[prover]] must satisfy to prive the statement `s`
+			- the [[constraints]] are usually defined in terms of [[polynomial constraints]]
+	- [[prover]]
+	  collapsed:: true
+		- provides or commits to
+			- `P_i ... P_k` polynimals
+		- #gpt/4 the prover constructs
+			- polynomials
+				- that
+					- satisfy the verifier's constraints
+				- and either
+					- provides them directly
+					- commits to them
+						- using a [[cryptographic commitment scheme]]
+	- [[verifier]]
+		- provides
+			- z ∈ 0,..p-1
+		- only randomness we use here is sampling z
+			- in general the [[randomness]] we use in the process
+				- is essential for
+					- both [[succinctness]] and [[zero knowledginess]]
+		- #gpt/4 the verifier selects a random value `z`
+			- from
+				- the [[finite field]] F_p (with elements from 0 to p-1)
+			- and sends it to
+				- the [[prover]]
+	- [[prover]]
+		- provides
+			- evaluation of polynomials
+				- P_1(z)... P_k(z)
+			- #gpt/4 the prover evaluates the polynomials at the point z and provides their evaluations to the verifier
+	- [[verifier]]
+		- decides whether to accept `S`
+- ((6428a1e3-b0f5-4863-be72-be983f5bd1a4))
+- Why doesn't the verifier evaluate the polynomials themselves?
+	- because
+		- the prover
+			- doesn't actually send
+				- all the polynomials
+			- to
+				- the verifier
+	- if
+		- they did
+	- we would lose [[succinctness]]
+	- they
+		- contain
+			- more information
+		- than
+			- our original statement
+	- so
+		- the prover
+			- just provides
+				- a [[polynomial/commitment]]

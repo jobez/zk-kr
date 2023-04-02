@@ -1,1 +1,37 @@
 - ((6425b8a8-c78d-486f-ba59-d81961754ed2))
+	- ![polynomial_commitments_paper.pdf](../assets/polynomial_commitments_paper_1680375258963_0.pdf)
+- "represents" a polynomial
+- allows you to verify
+	- [[polynomial/evaluation]] of that polynomial
+		- without needing to actually contain
+			- all of the data in the polynomial
+	- that is
+		- if
+			- someone gives you a commitment `c` representing `P(x)`
+				- they
+					- can give
+						- you
+							- a proof that can convince you
+								- for some specific `z`
+									- what the value of `P(z)` is
+		- there is a further mathematical result that says
+			- that
+				- over a sufficiently big field
+					- if
+						- certain kinds of equations about evaluated at random `z` are true
+							- chosen before `z` is known
+						- those same equations are true about the whole polynomial as well
+- for example
+	- if
+		- `P(z) * Q(z) + R(z) = S(z) + 5` for a particular `z`
+	- then
+		- we know its overwhelmingly likely that
+			- `P(x) * Q(x) + R(x) = S(x) + 5` for a particular `x` in general
+- using such polynomial commitments
+	- we
+		- could very easily check
+			- all of the above polynomial equations
+				- make the commitments
+					- use them as inputs to generate `z`
+					- prove what the evaluations are of each polynomial at `z`
+			- and

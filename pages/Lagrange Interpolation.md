@@ -1,2 +1,16 @@
 - ((6425b85d-e988-485f-b6cb-b4d4d12f6623))
--
+	- if you have a set of points then
+		- doing a Lagrange proposition on those points
+			- gives you
+				- a polynomial that passes through all those points
+	- if
+		- you have
+			- two points on a plane
+		- you can define
+			- a single straight line that passes through both
+	- for three points
+		- a single 2nd-degree curve will go through them
+			- `5x^2 + 2x + 1`
+				- will go through them
+	- for n points
+		- you can create an n-1 degree polynomial that will go through all of the points

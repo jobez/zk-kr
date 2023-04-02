@@ -1,4 +1,5 @@
 - is
+  collapsed:: true
 	- an expression
 		- that
 			- can be built from
@@ -10,11 +11,133 @@
 		- for example, consider the A(x) + B(x) = C(x)
 			- if this equation is true, then its also true that
 				- A(0)+B(0)=C(0)
-- have
-	- roots
-		- a polynomial p of a single variable x in a field K and with coefficients in that field
-			- the root r of P is an element K such that P(r) = 0
-			- B is said to divide another polynomial A when the later can be written as BC
+- ((64289687-c655-4dfd-af3e-b83f3500fbfb))
+  collapsed:: true
+	- polynomials are good [[error correcting codes]]
+	  id:: 64289696-3be9-4f6a-a832-cd69a4671a11
+		- if we have
+			- and
+				- polynomial of degree `d`
+					- over
+						- an [[encoding domain]] `D`
+				- two messages `m1` and `m2`
+		- then
+			- `m1` and `m2`
+				- will differ at
+					- `|D| - d` points
+		- this is important because
+			- we want
+				- the difference between a correct and incorrect statement to be large
+					- so
+						- easily found
+		- this leads to good [[sampling]], which helps [[succinctness]]
+			- we need only sample a few values
+				- to be sure that
+					- the probability of error is low enough to be negligble
+	- polynomials have efficient batch zero testing
+	  collapsed:: true
+		- this also helps with [[succinctness]]
+		- imagine
+			- we
+				- want to prove
+					- that
+						- a large degree polynomial P(x) (degree ~ 10 million)
+							- evaluates to
+								- zero
+									- at 1...1 million, but we want to do this with only one query
+		- imagine
+			- that
+				- our statement
+					- is
+						- that
+							- P
+								- vanishes on
+									- these points
+			- if
+				- the verifier
+					- just uses [[sampling]]
+				- the [[prover]]
+					- could easily cheat by providing
+						- a point that evaluates to zero, but the other 999,999 could be nonzero
+		- we solve this by
+			- take a set `S = 1...10^6`
+			- define `V` as the unique polynomial that vanishes on these points
+				- `(x-1)(x-2)(x-3)...`
+					- the degree V = size of S
+			- this is good because
+				- P(x) vanishes on S iff
+					- there exists P'(x) such that
+						- P(x) = P'(x).V(x)
+						- degree of P' = degree of P - size `s`
+			- it is the introduction of `V(x)` that allows us to check across the whole domain
+		-
+	- polynomials have multiplication property
+	  collapsed:: true
+		- we can 'wrap' a [[constraints]] around a polynomial
+		- for example
+			- if we have the constraint `C`
+				- that
+					- our evaluation will always be zero or one
+						- we could write this as
+							- `C(x) = x*(x-1)`
+								- you
+									- could imagine
+										- this
+											- constraining
+												- an output
+													- to be
+														- a boolean
+															- something
+																- that
+																	- may be useful for
+																		- [[computational integrity]]
+			- but here
+				- instead of
+					- `x`
+						- being
+							- just a point
+								- it
+									- could be
+										- the evaluation of a polynomial `P_1(x)`
+											- at
+												- a point
+				- i.e. `C(P1(x)) = P_1(x)*(P_1(x) - 1`
+					- and
+						- the degrees of the polynomials
+							- produced by
+								- the multiplication
+									- then are
+										- additive
+											- so degree of C(x) = 2 * degree of P1(x)
+				- we can then
+					- make
+						- the claim
+							- that
+								- if
+									- P_1(x)
+										- does indeed
+											- obey
+												- this constraint for our set `S`
+								- then as before we can say
+									- that
+										- there is some polynomial P'(x)
+											- such that
+												- C(P_1(x)) = P'(x)*V(x)
+				- if
+					- `P_1(x)`
+						- did not obey
+							- the constraint
+								- (for example if one value of `x*P_1(x) = 93`
+					- then
+						- we
+							- would not be able to find
+								- such polynomials
+						- and
+							- the equality wouldn't hold
+							- there
+								- would effectively be
+									- a remainder in the preceding equation
+				-
 - in zkps
 	- if a [[prover]]
 		- claims to know
@@ -36,7 +159,3 @@
 - for example, all elements of a field size q satisfy the identity
 	- x field size q = x
 		- the polynomials xq and X take the same values at all points, but do not have the same coefficients
-- [[Schwartz-Zippel Lemma]]
-- [[Lagrange Interpolation]]
-- [[polynomial/commitment]]
--

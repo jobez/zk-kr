@@ -1,0 +1,58 @@
+- ((6428af07-b41a-45d9-89d2-b8cf78bd71f1))
+	- can be viewed as a generalization of [[functional languages]]
+		- everything is [[referentially transparent]] and side-effect free
+		- there is no ordering of constraints
+		- composing two r1cs programs just means that their constraints are simultaneously satisfied
+			- https://coders-errand.com/constraint-systems-for-zk-snarks/
+	- the important thing to understand
+		- is that
+			- a r1cs
+				- is not
+					- a computer program
+	- you
+		- are not asking it
+			- to produce
+				- a vaue from certain inputs
+	- it is more of a verifier
+		- it shows that an already complete computation is correct
+	- the [[arithmetic circuit]]
+		- is a composition of
+			- multiplicative sub-circuites
+				- and
+					- a single multiplication gate
+					- multiple addition gates
+	- a rank 1 constraint system
+		- is
+		  collapsed:: true
+			- a set of these sub-circuits
+				- expressed as
+					- [[constraints]]
+						- each of the form
+							- AXB = C
+								- where
+									- A, B, C
+										- are each linear combbinations
+											- c1*v1+c2*v2+ ...
+												- the c_i are constant field elements
+								- doesn't mean that C is computed from A and B, just that A, B, C are consistent
+									- more generally
+										- an implementation of `x = f(a, b)`
+											- doesn't mean that
+												- x is computed from a and b
+													- just that
+														- x, a, and b are consistent
+		- thus our r1cs constins
+			- the constant 1
+			- all public inputs
+			- outputs of the function
+			- private inputs
+			- auxillary variables
+		- has
+			- one constraint per gate
+			- one constraint per circuit output
+	- example
+		- assume peggy wants to prove to victor that she knows
+			- c1, c2, c3
+				- such that
+					- (c1 * c2) * (c1 + c3) = 7
+						- we transform the expression above into an arithmetic circuit depicted below

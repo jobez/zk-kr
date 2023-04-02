@@ -1,0 +1,49 @@
+- ((6428a799-f7f9-41dd-a070-5426d5ab0357))
+	- [[trusted setup]]
+		- zksnarks require a one off setup to produce prover and verifier keys
+		- this step is generally seen as a drawback to zksnarks
+			- it requires an amount of [[trust]]
+			- if details of the setup are later leaked it would be possible to create false proofs
+	- a high level description is turned into an [[arithmetic circuit]]
+		- the creator of the zksnark
+			- uses
+				- a high level language
+					- to specify
+						- the algorithm
+							- that
+								- constitutes and tests the [[proof]]
+		- this high level specificiation is compiled into an arithmetic circuit
+		- the circuit constrains the allowed inputs that will lead to a correct proof
+			- if these constraints will hold, then our proof is correct
+	- further mathematical refinement
+		- the circuit
+			- is then turned into
+				- a [[r1cs]]
+			- and then
+				- a series of formulae called
+					- a [[QAD]]
+			- the end result
+				- is
+					- a proof in the form of series of bytes
+						- that
+							- is given to
+								- the [[verifier]]
+				- the verifier
+					- can pass
+						- this proof
+							- through
+								- a verifier function
+									- to receive
+										- a true or false result
+			- there
+				- is
+					- no information
+						- in
+							- the proof
+								- that
+									- the verifier
+										- can use to learn
+											- any further information
+												- about
+													- the prover or their witness
+	-

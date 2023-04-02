@@ -1,0 +1,11 @@
+- ((6428a6d4-b5d5-4cda-bc98-455184ac7fe6))
+	- [[arithmetisation]]
+		- [[flatten code]]
+		- [[arithmetic circuit]]
+		- [[r1cs]]
+		- [[QAP]]
+	- [[polynomial]]
+	- [[polynomial commitment scheme]]
+	- [[inner product argument]]
+	- [[cryptographic proving system]]
+	- make [[non-interactive]]

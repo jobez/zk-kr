@@ -1,0 +1,49 @@
+- ((6428a958-dcfe-4cf2-a534-01a4c28d73fc))
+	- [[zcash]] explanation
+		- snarks require something called the [[public parameters]]
+		- the snark public parameters
+			- are
+				- numbers with a specific cryptographic structure
+					- that
+						- are known to all of the participants in the system
+		- they
+			- are baked into
+				- and
+					- the protocol
+					- the software
+				- from
+					- the beginning
+		- the obvious way to construct snark [[public parameters]]
+			- is just to have
+				- someone
+					- generate
+						- a public/private keypair
+							- similar to
+								- an [[ECDSA]] keypair
+					- then destroy
+						- the [[private key]]
+			- the problem is that private key
+			- anybody who gets a copy of it can use it to counterfeit money
+				- however, it cannot violate any user's privacy
+					- the privacy of transactions
+						- is not at risk from this
+			- zcash used a [[secure multiparty computation]]
+				- in which
+					- multiple people each generate
+						- a "shard" of the public/private keypair
+						- then
+							- they
+								- each destroy their shard of the [[toxic waste]] [[private key]]
+						- and then
+							- they
+								- all bring together
+									- their shareds of the public key
+										- to form
+											- the snark public paratemers
+				- if that process works
+					- i.e. if atleast one of the participants
+						- successfully destroyed their private key shard
+					- then
+						- the toxic waste byproduct
+							- never comes into existence
+								- at all

@@ -1,0 +1,17 @@
+- [[Lagrange Interpolation]]
+- in [[zero knowledge proofs]] systems
+	- particular those based on [[polynomial/commitment]] (e.g. [[snarks]] )
+		- polynomials
+			- are used for
+				- ((6428526c-84ea-48d1-b52a-2fb7e9ebd9e0))
+		- through interpolation
+			- it
+				- is possible to construct
+					- a [[polynomial]] that passes through a given set of points
+						- effectively encoding the [[information]] contained in those points
+		- polynomial interpolation
+			- can be used to represent
+				- ((6428526c-84ea-48d1-b52a-2fb7e9ebd9e0))
+			- while
+				- preserving certain privacy and secority properties
+			-

@@ -1,0 +1,56 @@
+- ((6428ac6f-9d34-4b86-8c16-2ca0e6a151fe))
+	- [[flatten code]]
+	- [[r1cs]]
+	- formulation of the QAP
+- ((6428c03c-ba26-40a9-aa1c-3794b91fcb53))
+	- the next step
+		- is taking this [[r1cs]] and
+			- converting it into QAP form
+				- which implements
+					- the exact same logic
+						- except using
+							- [[dot products]]
+								- instead of
+									- a[[polynomial]]
+	- to create the polynomials
+		- we can use
+			- [[polynomial/interpolation]] of the values in our [[r1cs]]
+		- then
+			- instead of
+				- checking the constraints in the R1CS individually
+					- we
+						- can now check
+							- all of the constraints at the same time
+								- by doing
+									- the dot product check on the polynomials
+	- because in this case
+		- the [[dot product check]]
+			- is
+				- a series of additions and multiplications of polynomials
+		- the result is itself going to be a polynomial
+	- if
+		- the resulting polynomial
+			- evaluated at
+				- every x coordinate
+					- that
+						- we use above
+							- to represent
+								- a logic gate
+			- is
+				- equal to zero
+	- then
+		- that
+			- means
+				- that
+					- all of the checks pass
+	- if
+		- the resulting polynomial
+			- evaluated at
+				- at least one of the x coordinate representing a logic gate gives a nonzero value
+		- then
+			- that
+				- means
+					- that
+						- the values going into and out of that logic gate are
+							- [[inconsistent]]
+			-

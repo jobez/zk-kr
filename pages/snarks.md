@@ -39,13 +39,14 @@
 		- just proving the statement is true
 	- for instance, it alows me to prove that I know a secret key, rather than just that it exists
 - zksnark process
+  collapsed:: true
 	- general process
 		- [[arithmetisation]]
 			- flatten code
 			- arithmetic circuit
 			- [[r1cs]]1
 			  id:: 64231268-dd52-406b-9f75-71d57f1080f0
-			- qap
+			- [[QAP]]
 		- [[polynomial]]s
 			- stores data
 			- available for mathematical operands
@@ -54,16 +55,3 @@
 		- cryptographic [[Proving Systems]]
 		- make non interactive
 	- transformations in SNARKS
-	- process in PLONK
-		- [[trusted setup]]
-			- zksnarks require a one off setup to produce prover and verifier keys
-			- this step is generally seen as a drawback to zksnarks
-			- it requires an emount of trust
-			- if details of the setup are later leaked it would be possible to create false proofs
-		- a high level description is turned into an arithmetic circuit
-			- the creator of the zksnark uses a high level language to specify the algorithm that constitutes and tests the proof
-			- this high level specificiation is compiled into an arithmetic circuit
-			- the circuit constrains the allowed inputs that will lead to a correct proof
-				- if these constraints will hold, then our proof is correct
-		- further mathematical refinement
-		-

@@ -1,0 +1,5 @@
+- [[zcash]] recently introduced halo2 which eliminates the need for a [[trusted setup]]
+	- ((6428abda-88a1-4516-8854-0317fee2c9e0))
+- uses the curves [[Pallas]] and [[Vesta]] (collectively [[Pasta]] ) which are also used by [[Mina]]
+- the use [[nested amortization]]
+	- ((6428ac30-3836-4ad9-97d4-ca869e31c359))

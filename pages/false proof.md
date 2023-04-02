@@ -1,0 +1,61 @@
+- the probability of accepting a [[false proof]]
+  id:: 6428a1e3-b0f5-4863-be72-be983f5bd1a4
+	- is less than
+		- 10.d/p
+			- if p is a certain size 2^256
+			- and the degree of the polynomial d
+	- if the finite field has a large size (about 2^256), this probability becomes very small
+		- around 2^-230 for a polynomial of degree 10^6
+			- making it extremely unlikely for a verifier to accept a false proof
+	- #gpt/4 combing the concepts of
+		- ((64289696-3be9-4f6a-a832-cd69a4671a11))
+		  collapsed:: true
+			- ensures that
+				- the difference between correct and incorrect statements is large, making it easier to detect a [[false proof]]
+			- the larger
+				- the difference between the true and false statements
+			- the less likely it is for
+				- a false proof to be accepted
+		- [[Schwartz-Zippel Lemma]]
+		  collapsed:: true
+			- provides
+				- an upper bound
+					- on
+						- the [[probability]]
+							- that
+								- a non-zero polynomial
+									- evaluates to zero
+										- at
+											- a randomly chosen point
+			- this bound
+				- is given by
+					- d / |S|
+						- where
+							- d is the degree of the polynomial
+							- |S| is the size of the set from which the random point is chosen
+			- in the context of [[zero knowledge proofs]]
+				- this lemma
+					- helps establish
+						- the probability of error
+							- when using
+								- polynomial-based representations
+				-
+		- we can see that
+			- the probability of accepting a false proof
+				- is
+					- small
+				- when
+					- the field size is large
+					- the degree of the polynomial is relatively small
+	- #gpt/4 the intution behind this probability
+		- is that
+			- if
+				- a prover tries to cheat and provide false polynomial evaluations
+			- they
+				- would need to construct
+					- polynomials
+						- that
+							- satisfy
+								- the constraints at a random point `z`
+									- chosen by
+										- the [[verifier]]

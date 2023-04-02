@@ -1,0 +1,9 @@
+- the efficient evaluation of polynomials at different points is an essential operation in many [[zero knowledge proofs]] systems
+- fast polynomial evaluation techniques
+	- such as
+		- [[Fast Fourier Transformation]]
+	- can help reduce
+		- the computational complexity of ZKP operations
+			- which is crucial for
+				- making ZKP's practical in real world applications
+-
