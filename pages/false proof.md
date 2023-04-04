@@ -9,7 +9,6 @@
 			- making it extremely unlikely for a verifier to accept a false proof
 	- #gpt/4 combing the concepts of
 		- ((64289696-3be9-4f6a-a832-cd69a4671a11))
-		  collapsed:: true
 			- ensures that
 				- the difference between correct and incorrect statements is large, making it easier to detect a [[false proof]]
 			- the larger
@@ -17,7 +16,6 @@
 			- the less likely it is for
 				- a false proof to be accepted
 		- [[Schwartz-Zippel Lemma]]
-		  collapsed:: true
 			- provides
 				- an upper bound
 					- on

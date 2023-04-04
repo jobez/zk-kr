@@ -1,0 +1,5 @@
+- ((642c50dd-6a8a-4786-9b2a-7116aff07ef7))
+	- https://www.nucypher.com/
+	- alice encrypts data, sends to proxy
+		- alice can know bob's key, can send proxy reencryption key
+			- proxy can take reencryption key and reencrypt alice's encrypted data such that bob can access it

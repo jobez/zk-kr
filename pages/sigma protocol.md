@@ -1,0 +1,25 @@
+- ((642c4f1f-c768-45a8-a88d-c53aa32fcacc))
+	- follows these three steps
+		- [[commitment]]
+			- the prover
+				- generates a random number,
+				- creates a commitment to that [[randomness]]
+				- sends the commitment to the verifier
+		- [[challenge]]
+			- after getting the commitment
+				- the verifier generates a random number as a challenge and sends it to the prover
+			- it iis important that the verifier does not send the challenge before getting the commitment or else the prover can cheat
+		- response
+			- the prover takes the challenge and creates a response using the random number chosen in step 1, the challenge and the witness
+			- the prover will then send the response to the verifier who will do some computation and will or will not be convinced of the knowledge of the witness
+	- example [[Discrete Logarithm Problem]]
+		- to prove knowledge of x in g^x = y without revealing x
+			- the prover
+				- generates a random number r
+				- creates a commitment t = g^r and sends t to the verifier
+				- sends t tto the verifier
+			- the verifier stores t, generates a random challence c and sends it to the prover
+			- the prover on receiving the challenge creates a response `s - r +x.c.` the prover sends this response to the verifier
+			- the verifier can check that g^{s} equals y^{c}.t.
+	- ((642c50a9-d999-4f00-b106-755ab52fda08))
+		- the process generates a random numb

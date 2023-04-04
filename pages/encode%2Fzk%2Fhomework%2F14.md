@@ -1,0 +1,17 @@
+- Create a polynomial with the secret being the constant term , the other a values a_0 can be chosen at random The polynomial will be of the form
+	- $$ y(x) = a_4 x^4 + a_3 x^3 + a_2x^2 + a_1 x + a0  $$
+		- work out values a_{1..4}
+			- a0 -> 1337
+			- a1 -> 69
+			- a2 -> 420
+			- a3 -> 42069
+			- a4 -> 6942069
+- calculate the y values for five x values by evaluating the polynomial, these are the shares
+	- 10 -> 6946369402720
+	- 20 -> 1111074890717
+	- 30 -> 5624236191407
+	- 40 -> 17774446756097,
+	- 50-> 43393302304787}
+- reconstruct the polynomial using those shares and an online interpolation calculatur such as  https://planetcalc.com/8680/
+-
+-

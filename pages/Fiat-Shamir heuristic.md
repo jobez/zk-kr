@@ -1,0 +1,16 @@
+- ((6429d451-73fb-429e-a273-359f3ac52e54))
+	- this is a process
+		- by which
+			- we
+				- can make
+					- an [[interactive proof protocols]] [[non-interactive]]
+	- it
+		- works
+			- by
+				- providing
+					- commitments
+						- to
+							- the messages
+								- that would
+									- form the interaction
+	- the hash functions are used as a source of randomness

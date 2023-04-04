@@ -1,4 +1,5 @@
 - ((6428a799-f7f9-41dd-a070-5426d5ab0357))
+  collapsed:: true
 	- [[trusted setup]]
 		- zksnarks require a one off setup to produce prover and verifier keys
 		- this step is generally seen as a drawback to zksnarks
@@ -47,3 +48,43 @@
 												- about
 													- the prover or their witness
 	-
+- [[polynomial/commitment]]
+  collapsed:: true
+	- plonk uses kate commitments
+		- based on
+			- [[trusted setup]]
+			- [[Elliptic Curves]] pairing
+	- but can be swapped out with other schemes
+		- such as [[FRI]]
+		- ((6429e278-5246-4d39-9527-cf5b1e678dda)) #exploration/2
+- ((6429e732-6b8a-428a-aac3-70141c3770e3))
+	- what the prover and verifier can calculate ahead of time
+		- the program-specific polynomials that
+			- the prover and the verifier
+				- need to compute ahead of time are
+					- QL(x), QR(x), QO(x), QM (x), QC (x)
+						- which together represents
+							- the games in the circuit
+								- (note that encodes public inputs, so it may need to be computed or modified at runtime)
+	- the permutation polynomials σa(x), σb(x) σc(x)
+		- which encode the [[copy constraints]] between a,b, c wires
+	- given a program P
+		- you convert it into a circuit and generate a set of equations that look like this
+			- ((6429e7dc-f6db-42fe-ad69-f8ecafd38848))
+				- and a_i, b_i are the wire values
+			- each Q value is a constant, the constants in each equation (and the number of equations) will be different for each program
+				- ((6429e832-0b2b-4fc7-9d22-2b65a2382be1))
+					- you can convert this set of equations into a single polynomial equation
+						- ((6429e85b-0997-49ef-ae17-da3eefd83a66))
+					- you can also generate from the circuit a list of [[copy constraints]]
+						- from these copy constraints you generate the three polynomials representing the permuted wire indices
+							- ((6429e88c-d1d6-4872-a0ef-486ce00b5b28))
+						- to generate a proof, you compute the values of all the wires and convert them into three polynomias
+							- ((6429e8ae-2368-4ce4-b15e-d58839be7a6d))
+						- finally you compute the cofactors H_i(x)
+		- there is a set of equations between the polynomais that need to be checked
+			- you can do this by making commitments to the polynomials, opening them at some random z
+				- along with proofs that the openings are correct
+			- and running the equations on these evaluations instead of the original polynomials
+			- the proof itself is just a few commitments and openings and can be checked wit a few quations
+			-

@@ -1,0 +1,33 @@
+- before [[snarks/plonk]] ((6429d64c-79f8-4c22-b752-3c7d5b5308b1))
+	- early snark implementations such as [[groth16]]
+		- depend on
+			- a [[Common Reference String]]
+				- this a large set of points on [[Elliptic Curves]]
+					-
+					- while these numbers are created out of [[randomness]]
+						- internally these numbers in this list have
+							- strong algebraic relationships to one another
+					- these relationships are used as short-cuts for the complex mathematics required to create proofs
+					- knowledge of the randomness
+					  collapsed:: true
+						- could give an attrack to create  a [[false proof]]
+		- a [[trusted setup]] procedure
+			- generates
+				- a set of elliptic curve points
+					- G, G*s, G*s^2, ... G*s^n, as well as G'2*s
+						- where
+							- G and G2 are generators of two elliptic curve groups
+							- s is a secret that is forgotten once the procedure is finished
+				- note that there is a [[multi-party computation]] version of this setup, which is secure as long as atleast one of the participants forgets their share of the secret
+					- the [[Aztec]] reference string goes up to the 10066396th power
+		- a problem remains that if you change your program and introduce a new circuit you require a fresh trusted setup
+			- in january 2019
+				- Mary Maller, Sean Bowe et al released SONIC that has a universal setup
+					- with just one setup
+						- it could validate any conceivable circuit
+							- up to a predefined level of [[complexity theory]]
+					- this was unfortunately not very efficient, PLONK managed to optimise the process to make the proof process feasible
+	- [[trusted setup]]
+		- this is still needed, but is a universal and updateable trusted setup
+			- there is one single trusted setup for the whole scheme after which you can use the scheme with any program (up to some maximum size chosen when making the setup)
+			- There is a way for multiple parties to participate in the trusted setup such that it is secure as long as any one of them is honest, and this multi-party procedure is fully sequential:

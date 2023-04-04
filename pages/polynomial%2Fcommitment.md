@@ -1,5 +1,8 @@
 - ((6425b8a8-c78d-486f-ba59-d81961754ed2))
 	- ![polynomial_commitments_paper.pdf](../assets/polynomial_commitments_paper_1680375258963_0.pdf)
+- https://hackernoon.com/kzg10-ipa-fri-and-darks-analysis-of-polynomial-commitment-schemes
+	- ![](https://hackernoon.imgix.net/images/Ns6mVt8NqgNkfsouVyus9tAe3mB2-bqgk47ew.jpeg?auto=format&fit=max&w=1920)
+	-
 - "represents" a polynomial
 - allows you to verify
 	- [[polynomial/evaluation]] of that polynomial

@@ -1,1 +1,43 @@
 - ((63766b5c-ae7c-424b-a471-74c10c6c1a10))
+- ((642c492b-dbca-4606-89bd-f1752825a61e))
+	- based on the fact that
+		- k points are required to define a polynomial of k-1
+		- with our points being elements in a [[finite field]] F of size P-1
+			- where
+				- 0 < k <= n < P-1 <  P
+				- P is a prime number
+	- choose at random
+		- k - 1 positive integers $$ a_1 \dots a_{k-1} $$
+			- $$ a_i < P $$ and $$ A_0 = S $$
+	- the person splitting the secret builds a polynomial where the secret is the constant term a_0
+		- $$ f(x) = a_0 + a_1x + a_2x^2 + \dots + a_{k-1}x^{k-1}$$
+	- let us construct
+		- any n points out of it
+			- for instance
+				- set i= 1..n to retrieve (i, f(i))
+		- every participant
+			- is given
+				- a point (a non-zero integer input to the polynomial, and the corresponding integer output)
+			- along with
+				- the prime which defines the finite field to use
+		- given any subset of k of these pairs,
+			- we can find the coefficients of the polynomial using [[polynomial/interpolation]]
+	- the secret is the constant a_o
+	- properties of Shamir's (k, n) theshold scheme are:
+		- secure: information theoretic security
+		- minimal: the size of each piece does not exceed the size of the original data
+		- extensible: when k is kept fix, D_i pieces can be dynamically added or deleted w/o affecting the other pieces
+		- dynamic: security can be easily enhanced w/o changing the secret, but by chaning the polynomial occasionllay (keeping the same free term) and constructing new shares to the participants
+		- flexible: in organizations where hierarchy is important, we can supply each particiapnt different numbers of pieces according to their importance inside the organization
+			- for instance, the president can unlock the safe alone, whereas 3 subordinates are required together to unlock it
+	- additive secret sharing
+		- give  a secret $$ s \in F $$ the dealer D selects n - 1 random integers
+			- $$ R = r_1, r_2, r_n-1 $$ uniformly from F
+		- D then computes
+			- s_n =  s - sigma n minus one where i equals 1 mod F
+		- D sends each player P_i 1 less than equal to i less than equal to n minus 1
+			- the share s_i = r_i
+			- and the share s_n is sent to P_n
+		- the reconstruction of secret s in F is trivial; simply add all the shares together
+		- the above additive secret sharing scheme requires all participants to contribute their shares in order to reconstruct the secret
+		- if one or more of the participants are missing, no information about the original secret can be recovered; such a scheme is known as a perfect sharing scheme

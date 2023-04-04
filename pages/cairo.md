@@ -1,4 +1,30 @@
+- diagrams
+	- ```mermaid
+	  graph TD
+	  A[Computational Integrity] -- Steps as polynomials --> B[Algebraic Intermediate Representation AIR]
+	  B -- Quick testing and proof generation --> C[Optimized AIR Process]
+	  B -- Combination of AIRs --> D[Cairo]
+	  D -- Hardware analogy --> E[Asic AIR and CPU Multiple AIRs ]
+	  D -- Origin of Cairo name --> F[CPU built from AIRs CPU-AIR ]
+	  D -- Non-deterministic, turing complete, functional high-level language --> G[Cairo Properties]
+	  G -- Register-based memory model and compiler --> H[Compiler and Memory Model]
+	  H -- Produces trace table --> I[Trace]
+	  I -- Used by prover to construct AIRs --> J[STARK Proof]
+	  
+	  ```
+	-
+		- ((642afa9d-4c79-442c-8d95-e0829afb25d9))
+	- ```mermaid
+	  graph TD
+	  A[Interest in Computational Integrity] -- Trace of Cairo program --> B[Transformation to Proof]
+	  B -- Arithmetisation --> C[Trace to Polynomials]
+	  C -- Prover convinces Verifier --> D[Low-degree Polynomial]
+	  D -- Conviction implies correctness --> E[Correctness of Original Computation]
+	  
+	  ```
+		- [[stark/process]]
 - general description
+  collapsed:: true
 	- general computation on a blockchain allow a different relationship between results of interactions of stakeholders and  institutional oversight
 	- this different relationship that seeks to lessen the demand for 'fiat' institutional oversight to establish the legitimacy of results of interactions of stakeholders leads to a scaling problem.
 	- the scaling problem arises because the attempt to minimize institutional oversight leads to the verification of the results of interaction to be done across a permissionless class of participants, where each participant validates a computation.
@@ -15,6 +41,7 @@
 			- we would write a statement to check that for the parties involved the sum of balances hasn't changed
 			- each of the values in memory are chosen b
 - memory model
+  collapsed:: true
 	- ((641354b8-bcc3-42bb-8946-520c97786410))
 		- you run your logic and assert that is has been done correct
 	- read-only nondeterministic memory
@@ -31,6 +58,7 @@
 		- fp -- the [[frame pointer]], this points to the function we are in, and the variables in the function then offsets from that
 		- pc -- the [[program counter]], this gives us the current instruction
 - variables / references
+  collapsed:: true
 	- alias
 		- value reference: let a = 5
 			- compiler 'any time I see a in the code, I will replace a with five'

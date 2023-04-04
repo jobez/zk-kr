@@ -3,6 +3,7 @@
 	- [[r1cs]]
 	- formulation of the QAP
 - ((6428c03c-ba26-40a9-aa1c-3794b91fcb53))
+  collapsed:: true
 	- the next step
 		- is taking this [[r1cs]] and
 			- converting it into QAP form
@@ -54,3 +55,119 @@
 						- the values going into and out of that logic gate are
 							- [[inconsistent]]
 			-
+- ((64298d21-315c-4812-8920-c888d99dbfd9))
+	- we can change the problem into that of knowing a polynoial with certain properties
+	- this [paper](https://arxiv.org/pdf/1906.07221.pdf)
+	  collapsed:: true
+		- gives a
+			- reasonable explanation of how
+				- the polynomials
+					- are used to provent
+						- the prover
+							- cheating
+	- we converted
+	  collapsed:: true
+		- a set of vectors
+			- into
+				- polynomials
+					- that
+						- generate them when
+							- evaluated at
+								- certain fixed points
+	- we used these
+	  collapsed:: true
+		- fixed points
+			- to generate
+				- a [[vanishing polynomial]]
+					- that
+						- divides
+							- any polynomial that evaluates to 0 at least on all those points
+	- we created
+	  collapsed:: true
+		- a new polynomial
+			- that
+				- summarises
+					- all constraints and a particular assignment
+	- and
+	  collapsed:: true
+		- the consequence is
+			- that
+				- we
+					- can verify
+						- all constraints
+							- at once
+								- if
+									- we
+										- can divide
+											- that
+												- polynomial by the vanishing one without remainder
+		-
+	- from our QAP we have
+		- $ L := \Sigma_{i=1}^m ci* L_i  $
+		- $ R := \Sigma_{i=1}^{m}  ci* R_i  $
+		- $ O := \Sigma_{i=1}^{m} ci * O_i  $
+		- we define the polynomial P
+			- P := L * R - O
+			  id:: 64299546-b78e-4d0a-ace5-07be4eb6bd26
+			- defining the target polynomial
+				- V(x) := (x-1)*(x-2)
+					- this will be zero at the points that correspond to our gates
+						- but
+							- the ((64299546-b78e-4d0a-ace5-07be4eb6bd26))
+								- having all the constraints information would be some multiple of this if
+									- it is also zero at those points
+										- to be zero at those points, L*R - O must equate to zero
+											- which will only happen if our constraints are met
+												- so we want T to have [[polynomial/division]] with ((64299546-b78e-4d0a-ace5-07be4eb6bd26)) with no remainder
+													- this would show that P is indeed zero at those points
+		- if peggy has a satisfying assignment it means that
+			- defining L, R, O, P as above
+				- there exists a polynomial P' such that P = P'*V
+					- in paritcular for any z ∈ Fp we have P(z) = P'(z)*V(z)
+		- suppose now that Peggy doesnt have a satisfying [[witness]]
+			- but
+				- she still constructs L, R, O, P as above from some unsatisfying assignment (c1, ..., cm)(c1...cm)
+			- then we are guaranteed that V does not divide P
+			- this means that for any polynomial V of degree at most d-2, P and L R O V will be different polynomials
+				- note that P here is of degree at most 2(d-1), L, R, O here are of degree at most d-1 and V here is degree at d-2
+		- Remember the [[Schwartz-Zippel Lemma]] tells us that ((6429fa4e-8f15-4654-9911-779e89288e07))
+			- #gpt/3.5 In simpler terms, it means that if you have two polynomials that have the highest power of x (or any variable) as 'd', then they can only have at most 'd' intersection points where their values are equal. This is according to the Schwartz-Zippel Lemma, which is a mathematical theorem. In other words, if two polynomials have degree 'd' or less, they cannot be equal to each other at more than 'd' points in the same domain.
+				- #gpt/3.5 The Schwartz-Zippel lemma plays an important role in the QAP (Quadratic Arithmetic Program) step of zero knowledge proof systems.
+					- In this step,
+						- the prover
+							- wants to demonstrate that
+								- they
+									- know
+										- a [[witness]]
+											- that satisfies some input-output relation, without revealing anything about the witness itself.
+										- The witness
+											- can be represented as
+												- a polynomial,
+											- and
+											- the input-output relation
+												- can also be represented as
+													- a polynomial.
+							- The prover
+								- wants to show that
+									- these two polynomials
+										- intersect at
+											- the prescribed points,
+												- which correspond to
+													- the input and output values.
+							- The [[Schwartz-Zippel Lemma]]
+								- guarantees that
+									- if
+										- the degree of these polynomials is bounded by some value 'd',
+									- then
+										- the probability of a random evaluation point satisfying the intersection condition is at most 'd' divided by the size of the domain.
+							- This means that
+								- the prover
+									- can choose
+										- a small subset of evaluation points
+											- to check
+												- the intersection condition, and still convince
+												- the verifier
+													- that
+														- they know the witness, without revealing any additional information about it.
+		-
+	-

@@ -1,0 +1,5 @@
+- seems like its an abstract interface depending on ends
+	- in the case of zero knowledge proofs it seems the broad dispatching is wrt
+		- snarks/starks
+			- starks -> ((642afc60-98db-480d-9df7-c7d6ee768a12))
+-

@@ -1,0 +1,33 @@
+- ((6429e4f5-b8e5-48aa-8c0f-f2030e33de4f))
+	- [introducing plonky2](https://polygon.technology/blog/introducing-plonky2)
+	- allows us to speed [[proving times]]
+		- that don't involve recursion
+	- with [[FRI]]
+		- you can either have
+			- fast proofs that are big
+				- so they are more expensive to verify on [[Ethereum]]
+			- slow proofs that are small
+	- constructions that use FRI
+		- like
+			- the [[STARK]]s that [[StarkWare]] uses in their [[zkp rollups]]
+				- have to choose
+	- they cant have maximlally fast proving times and proof sizes that are small enough to reasonably verify on ethereum
+	- plonky2 eliminates this tradeoff
+		- in the case where [[proving times]] matter
+			- we can optimize for maximally fast proofs
+		- when these proofs are recursively aggregated
+			- we're left with a single proof that can be verified in a small circuit
+				- at this point
+					- we can optmize for [[proof size]]
+						- we can shrink our proof sizes down to 45kb with only 20s of proving time
+							- not a big deal since we generate when we submit to ethereum
+								- dramatically reducing costs relative to [[StarkWare]]
+	- plonky is natively compatible with [[Ethereum]]
+		- plonky2 requires only [[keccak-256]] to verify a proof
+		- we've estimated that the [[gas cost]] to verify a plonky2 size-optiimzied proof on ethereum will be approximately 1 million gas
+	- however
+		- this cost
+			- is donimated by the [[calldata]] costs to publish the proof on ethereum
+			- since calldata was repriced in EIP-448
+				- the verification cost of a plonky2 proof has dropped between 170-200k gas
+					- which could make it not only the fastest proving system, but also the cheapest to verify ethereum

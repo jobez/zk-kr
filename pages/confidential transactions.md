@@ -1,0 +1,16 @@
+- ((642c5238-6f2d-45f4-8a13-ee1b104ff674))
+	- [[pedersen hash]] can be seen as a [[commitment]]
+	- a [[cryptographic commitment scheme]] lets you keep a piece of data secret but commit to it so you can't change it later
+		- a simple commitment scheme can be constructed using a cryptographic hash
+			- commitment = hash(blinding_factor || data)
+	- if you tell someone only the commitment then they cannot determine what data you are commiting to
+		- given certain assumptions about the properties of the hash)
+			- but
+			- u can later reveal both the data and the blinding factor and they can run the hash and verify that the data you committed to matches
+		- the blinding factor is present because w/o one
+			- someone
+				- could try guessing at the data
+					- if
+						- your data is small and simple
+						- it might be easy to just guess it and compare the guess to the commitment
+			-

@@ -1,5 +1,4 @@
 - is
-  collapsed:: true
 	- an expression
 		- that
 			- can be built from
@@ -138,19 +137,20 @@
 								- would effectively be
 									- a remainder in the preceding equation
 				-
-- in zkps
-	- if a [[prover]]
-		- claims to know
-			- some polynomial (no matter how large its degree is) that the verifier also knows
-	- they can follow a simple protocol to verify the statement
-		- [[verifier]]
-			- chooses a random value for ex and evaluates his polynomial locally
-			- gives x to the prover and asks to evaluate the polynomial in question
-		- [[prover]]
-			- evaluates her polynomial at x and gives the result to the verifier
-		- [[verifier]]
-			- checks if the local result is equal to the prover's result, and if so then the statement is proven with a high confidence
-	- ((6410b228-22fe-4e3e-8930-f6ff904e4023))
+- ((6429fe54-48a2-4491-914b-599b2dc7f62c))
+	- in zkps
+		- if a [[prover]]
+			- claims to know
+				- some polynomial (no matter how large its degree is) that the verifier also knows
+		- they can follow a simple protocol to verify the statement
+			- [[verifier]]
+				- chooses a random value for ex and evaluates his polynomial locally
+				- gives x to the prover and asks to evaluate the polynomial in question
+			- [[prover]]
+				- evaluates her polynomial at x and gives the result to the verifier
+			- [[verifier]]
+				- checks if the local result is equal to the prover's result, and if so then the statement is proven with a high confidence
+		- ((6410b228-22fe-4e3e-8930-f6ff904e4023))
 - what does it mean to say that 2 polynomials are equal?
 	- they evaluate to the same value at all points
 	- they have the same coefficients

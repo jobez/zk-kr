@@ -29,6 +29,7 @@
 		- ![Homework8.pdf](../assets/Homework8_1679590814174_0.pdf)
 		- ![Lesson8.pdf](../assets/Lesson8_1679590823367_0.pdf)
 - week three
+  collapsed:: true
 	- monday [[Mar 27th, 2023]]
 		- ![Lesson9.pdf](../assets/Lesson9_1679923506285_0.pdf)
 		- ![Homework9.pdf](../assets/Homework9_1679923515061_0.pdf)
@@ -39,6 +40,12 @@
 		- ![Homework11.pdf](../assets/Homework11_1680101617830_0.pdf)
 		- ![Lesson11.pdf](../assets/Lesson11_1680101625334_0.pdf)
 	- thursday [[Mar 30th, 2023]]
-		- ![Lesson12.pdf](../assets/Lesson12_1680190229470_0.pdf)
+		- ![Lesson12 (1).pdf](../assets/Lesson12_(1)_1680447977303_0.pdf)
 		- ![Homework12.pdf](../assets/Homework12_1680190244526_0.pdf)
-		-
+- week four
+	- monday [[Apr 3rd, 2023]]
+		- ![Homework13.pdf](../assets/Homework13_1680522893656_0.pdf)
+		- ![Lesson13.pdf](../assets/Lesson13_1680522946500_0.pdf)
+	- tuesday [[Apr 4th, 2023]]
+		- ![Lesson14.pdf](../assets/Lesson14_1680622460123_0.pdf)
+		- ![Homework14.pdf](../assets/Homework14_1680622468012_0.pdf)

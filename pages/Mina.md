@@ -98,7 +98,7 @@
 				- a wide array of library functionality
 				- the Pickles Inductive Proof System
 	- kimchi
-		- based on the [[plonk]] family of [[snarks]] [[proof system]]s
+		- based on the [[snarks/plonk]] family of [[snarks]] [[proof system]]s
 			- one noteable improvement over plonk
 				- is that
 					- [[kimchi]] doesn't require a [[trusted setup]]

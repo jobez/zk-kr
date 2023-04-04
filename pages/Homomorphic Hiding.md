@@ -1,0 +1,56 @@
+- ((64299e38-1e39-4fa5-9176-f419473668f5))
+  collapsed:: true
+	- If `E(x)` is a function with the following properties
+		- Given E(x) it is hard to find x
+		- different inputs lead to different outputs
+		- we can compute E(x+y) given E(x) and E(y)
+	- The field real numbers with operations addition and multiplication allows this
+	- here's a toy examle of why Homomorphic Hiding is useful for [[zero knowledge proofs]]
+		- suppose alice
+			- wants to prove to
+				- Bob
+			- she
+				- knows
+					- numbers x, y
+						- such that
+							- x + y = 7
+		- alice sends E(x) and E(y) to Bob
+		- bob computes E(x + y) from these values
+			- which he is able to do since E is an HH
+		- bob also computes E(7) and now checks E(x + y) = E(7)
+			- he accepts alice's proof only if equality holds
+	- as different inputs are mapped by E to different hidings
+		- bob indeed accepts the proof if and only if Alice sent hidings of x,y such that x + 7 = 7
+		- on the other hand, bob does not learn x and y as he just has access to their hidings
+- ((6429acb2-dca8-4cb2-b7b1-514285cebe8e))
+	- ((6429ad02-8789-4e52-833b-865b4a67770e))
+		- suppose peggy has a polynomial of degree d and Victor has a point z in Field p that he chose randomly
+		- victor wishes to learn E(P(z)) without learning P
+			- which precludes the first option
+			- most importantly
+				- we dont want peggy to learn `z`, which rules out the second
+		- using homomorphic hiding, we can perform [[blind evaluation]] as follows
+			- victor sends peggy the hidings
+			- peggy computes E(P(z)) from the elements in the first step and sends E(P(z)) to Victor
+				- peggy can do this since E supports [[linear combinations]] and `P(z)` is a linear combination of 1, z1, ... z_q
+		- note that as only hidings were sent, neither peggy learned z nor victor learned P
+		- the rough intuition is that the verifier has a 'correct' polynomial in mind and wishes to check that the prover knows it
+		- making the prover blindly evaluate their polynomial at a random point not known to them
+			- ensures
+				- the prover will give the wrong answer [[false proof]] with high probability if their polynomial is not the correct one [[Schwartz-Zippel Lemma]]
+		- however
+			- the fact that peggy is able to compute E(P(z)) does not guarantee she will indeed send E(P(z)) to Victor, rather than some completely unrelated value
+		- our process then becomes
+			- peggy chooses polynomials L, R, O, P, P'
+			- Victor chooses random point z in field p and computes E(P(z))
+			- Peggy sends Victor the hidings of all these polynomials evaluated at z
+				- E(L(z))
+				- E(R(z))
+				- E(O(z))
+				- E(P(z))
+				- E(P'(z))
+		- furthermore we use
+			- [[randomness]] in random values added to our z to concel the z value
+			- [[The Knowledge of Coefficient Assumption]] to prove  Peggy can produce a [[linear combinations of [[polynomial]] ]]
+			- if peggy does not have a satisfying assignment, she will end up using polynomials where the equation does not hold identically, and thus does not hold at most choices of z. Therefore, Victor wil reject with high probability over his choice of z.
+-
