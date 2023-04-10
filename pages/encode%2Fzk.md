@@ -49,3 +49,8 @@
 	- tuesday [[Apr 4th, 2023]]
 		- ![Lesson14.pdf](../assets/Lesson14_1680622460123_0.pdf)
 		- ![Homework14.pdf](../assets/Homework14_1680622468012_0.pdf)
+	- wednesday [[Apr 5th, 2023]]
+		- ![Lesson15 (1).pdf](../assets/Lesson15_(1)_1680709011083_0.pdf)
+		- ![Homework15 (2).pdf](../assets/Homework15_(2)_1680709019019_0.pdf)
+	- thursday [[Apr 6th, 2023]]
+		- ![Lesson16 (1).pdf](../assets/Lesson16_(1)_1680795865589_0.pdf)

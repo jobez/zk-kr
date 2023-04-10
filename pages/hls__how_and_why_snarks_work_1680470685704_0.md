@@ -161,3 +161,153 @@ file-path:: ../assets/how_and_why_snarks_work_1680470685704_0.pdf
   hl-page:: 25
   hl-color:: blue
   id:: 642b5365-ac49-4056-a7eb-fab62bf1cb73
+- 4.1 Computation
+  ls-type:: annotation
+  hl-page:: 25
+  hl-color:: green
+  id:: 642c68fe-77e4-4796-8506-9fefba571f7f
+- 4.2 Single Operation
+  ls-type:: annotation
+  hl-page:: 25
+  hl-color:: green
+  id:: 642c8155-3b43-4622-94ba-09df27f98dd0
+- 4.2.1 Arithmetic Properties of Polynomials
+  ls-type:: annotation
+  hl-page:: 26
+  hl-color:: green
+  id:: 642c82b5-1939-484a-b498-d6123a4c37dc
+- 4.3 Enforcing Operation
+  ls-type:: annotation
+  hl-page:: 27
+  hl-color:: green
+  id:: 642c869b-e36f-42e3-b253-49a55f49aa1e
+- 4.4 Proof of Operation
+  ls-type:: annotation
+  hl-page:: 29
+  hl-color:: green
+  id:: 642ce2bf-3c1a-4200-977a-a48f1bd85617
+- why the evaluations of polynomials l(s), r(s), o(s) have to be provided separately by the prove
+  ls-type:: annotation
+  hl-page:: 29
+  hl-color:: green
+  id:: 643189ba-a2ff-4f59-a26b-7c4f797f2878
+- While the setup stage stays unchanged, here is the updated protocol:
+  ls-type:: annotation
+  hl-page:: 30
+  hl-color:: red
+  id:: 64318ebe-4364-4b1c-9b62-b0e49da191f7
+- Such protocol allows to prove that the result of multiplication of two values is computed correctly.
+  ls-type:: annotation
+  hl-page:: 30
+  hl-color:: purple
+  id:: 64318f0c-c606-4040-a900-773401f6e9de
+- 4.5 Multiple Operations
+  ls-type:: annotation
+  hl-page:: 30
+  hl-color:: purple
+  id:: 64318fb4-a6cf-4c56-b712-33b8ca5f4504
+- 4.5.1 Polynomial Interpolation
+  ls-type:: annotation
+  hl-page:: 32
+  hl-color:: green
+  id:: 64319869-ee28-4988-bb95-13113ef0d4b1
+- 4.5.2 Multi-Operation Polynomials
+  ls-type:: annotation
+  hl-page:: 33
+  hl-color:: blue
+  id:: 64319b01-dc74-430a-89ba-f10b07bc748f
+- 4.6 Variable Polynomials
+  ls-type:: annotation
+  hl-page:: 35
+  hl-color:: green
+  id:: 64319e80-8312-4ca0-88ea-67313c65be90
+- 4.6.1 Single-Variable Operand Polynomial
+  ls-type:: annotation
+  hl-page:: 36
+  hl-color:: red
+  id:: 6431ad10-31b4-4bad-8e20-7a95f5d3d1d6
+- Remark 4.1
+  ls-type:: annotation
+  hl-page:: 38
+  hl-color:: yellow
+  id:: 6431b0a4-83aa-46f3-a84f-af8c2c5eafb5
+- 4.9.3 Non-malleability of Variable and Variable Consistency Polynomials
+  ls-type:: annotation
+  hl-page:: 52
+  hl-color:: yellow
+  id:: 6431b10a-7350-49d3-a6a3-7f84eee97093
+- 4.6.2 Multi-Variable Operand Polynomial
+  ls-type:: annotation
+  hl-page:: 38
+  hl-color:: green
+  id:: 6431b139-668f-4a29-9227-8d48f37d9e01
+- 4.7 Construction Properties
+  ls-type:: annotation
+  hl-page:: 41
+  hl-color:: green
+  id:: 6431b1d8-45ec-4bc9-b80a-d806b7463ce7
+- 4.7.1 Constant Coefficients
+  ls-type:: annotation
+  hl-page:: 41
+  hl-color:: blue
+  id:: 64321302-7e90-4334-a4b3-45799d73751f
+- 4.7.2 Addition for Free
+  ls-type:: annotation
+  hl-page:: 42
+  hl-color:: blue
+  id:: 6432148b-0411-4a17-9adc-db4443006d89
+- 4.7.3 Addition, Subtraction and Division
+  ls-type:: annotation
+  hl-page:: 43
+  hl-color:: blue
+  id:: 64321628-9d15-4d7a-ba0d-173e1e6d5807
+- 4.8 Example Computation
+  ls-type:: annotation
+  hl-page:: 44
+  hl-color:: green
+  id:: 64321679-8384-4763-8386-91bdbc0d613a
+- 4.9 Verifiable Computation Protocol
+  ls-type:: annotation
+  hl-page:: 48
+  hl-color:: green
+  id:: 6432173b-b052-415c-bf85-02eb04b6cf97
+- 4.9.1 Non-Interchangeability of Operands and Output
+  ls-type:: annotation
+  hl-page:: 49
+  hl-color:: green
+  id:: 6432178d-b5d7-46bd-82da-debf23b52f32
+- 4.9.2 Variable Consistency Across Operands
+  ls-type:: annotation
+  hl-page:: 50
+  hl-color:: green
+  id:: 64324a9f-ea78-4f71-8d79-788641fc4d00
+- 4.9.4 Optimization of Variable Values Consistency Check
+  ls-type:: annotation
+  hl-page:: 54
+  hl-color:: green
+  id:: 64324c49-651a-436a-b1f6-f9056ae8b3e5
+- 4.10 Constraints
+  ls-type:: annotation
+  hl-page:: 55
+  hl-color:: green
+  id:: 64324c64-9ab9-4338-841e-b68e387724f0
+- Our analysis has been primarily focusing on the notion of operation. However, the protocol is not actually “computing” but rather is checking that the output value is the correct result of an operation for the operand’s values. That is why it is called a constraint, i.e., a verifier is constraining a prover to provide valid values for the predefined “program” no matter what are they. A multitude of constraints is called a constraint system (in our case it is a rank 1 constraint system or R1CS).
+  ls-type:: annotation
+  hl-page:: 55
+  hl-color:: blue
+  id:: 64324c8f-e74c-4381-9a2c-cc0e50685685
+- 4.11 Public Inputs and One
+  ls-type:: annotation
+  hl-page:: 57
+  hl-color:: green
+  id:: 64324cfc-04df-4cb7-b467-dbc7aaf4e6df
+- 4.12 Zero-Knowledge Proof of Computation
+  ls-type:: annotation
+  hl-page:: 58
+  hl-color:: green
+  id:: 64324d2b-173c-46b3-9d21-5645d38e5375
+- 4.13 zk-SNARK Protocol
+  ls-type:: annotation
+  hl-page:: 61
+  hl-color:: green
+  id:: 64324d8a-ea53-4b3c-a23c-7440c80ef691

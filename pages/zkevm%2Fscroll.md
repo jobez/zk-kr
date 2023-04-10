@@ -1,0 +1,2 @@
+- ((642e967f-a685-469c-a0da-5554bae2cf16))
+- [The mindset behind Scroll](https://hackmd.io/@yezhang/B167uMZRs)
