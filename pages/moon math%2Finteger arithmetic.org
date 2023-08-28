@@ -1,0 +1,68 @@
+* the heart of large parts of modern cryptography
+* integers are also known as [[whole numbers]]
+** numbers that can be written w/o fractional parts
+* symbol Z as a shorthand for the set of all integers
+* absolute value of an integer is the non-negative value of a without regard to its sign
+* we use N for the set of all positive integers, usually called the set of [[natural numbers]]
+* N doesn't include zero, N_0 does
+* Q is the set of all rational numbers
+** where N/M
+*** N is in the set of all integers
+*** M is in in the set of all natural numbers
+* a set of numbers of particular interest to us is the set of [[prime numbers]]
+** a prime number is a [[natural number]]
+*** p is a natural number and p is greater than or equal to 2
+*** only divisible by itself and by one
+* all prime numbers apart from two are [[odd prime numbers]]
+* the set of prime numbers P is an infinite set, and it can be ordered according to size
+** this means that
+*** for any prime number instance, one can always find another prime number where p is less than p prime
+*** as a result, there is no largest prime number
+* <img src="https://mermaid.ink/img/IGdyYXBoIFRECgogICAgSW50ZWdlcnNbSW50ZWdlcl0gLS0-IFBvc2l0aXZlSW50ZWdlcnNbUG9zaXRpdmUgSW50ZWdlcnMgTmF0dXJhbCBOdW1iZXJzXQogICAgSW50ZWdlcnMgLS0-IFdob2xlTnVtYmVyc1tXaG9sZSBOdW1iZXJzIDAsMSwyLC4uLl0KICAgIFBvc2l0aXZlSW50ZWdlcnMgLS0-IFByaW1lTnVtYmVyc1tQcmltZSBOdW1iZXJzXQogICAgSW50ZWdlcnMgLS0-IFJhdGlvbmFsTnVtYmVyc1tSYXRpb25hbCBOdW1iZXJzIEludGVnZXIgLyBJbnRlZ2VyLCBkZW5vbWluYXRvciBub3QtZXF1YWwgMF0KCiAgICBQcmltZU51bWJlcnMgLS0-IEZ1bmRhbWVudGFsVGhlb3JlbVtGdW5kYW1lbnRhbCBUaGVvcmVtIG9mIEFyaXRobWV0aWNdCiAgICBGdW5kYW1lbnRhbFRoZW9yZW0gLS0-IFVuaXF1ZVJlcHJlc2VudGF0aW9uW1ByaW1lIEZhY3Rvcml6YXRpb24gZm9yIG5hdHVyYWwgbnVtYmVycyA-IDFdCiAgICBVbmlxdWVSZXByZXNlbnRhdGlvbiAtLT4gT25lV2F5RnVuY3Rpb25bQXN5bW1ldHJ5IGluIGNvc3Qgb2YgdmVyaWZ5aW5nIHZzIGRlcml2aW5nIE9uZS1XYXkgRnVuY3Rpb25dCgogICAgc3ViZ3JhcGggUXVhbnR1bUNvbXB1dGluZ0NvbnRleHQKICAgIE9uZVdheUZ1bmN0aW9uIC0tPiBRdWFudHVtQ29uc2lkZXJhdGlvbltEZXBlbmRlbnQgb24gbm9uLXF1YW50dW0gY29tcHV0aW5nXQogICAgZW5kCgogICAgc3R5bGUgSW50ZWdlcnMgZmlsbDojZjlkNzliLHN0cm9rZTojZjM5YzEyLHN0cm9rZS13aWR0aDoycHgKICAgIHN0eWxlIFBvc2l0aXZlSW50ZWdlcnMgZmlsbDojZDVmNWUzLHN0cm9rZTojMjhiNDYzLHN0cm9rZS13aWR0aDoycHgKICAgIHN0eWxlIFByaW1lTnVtYmVycyBmaWxsOiNhYWI3YzQsc3Ryb2tlOiMzNDQ5NWUsc3Ryb2tlLXdpZHRoOjJweAogICAgc3R5bGUgRnVuZGFtZW50YWxUaGVvcmVtIGZpbGw6I2Q2ZWFmOCxzdHJva2U6IzJlODZjMSxzdHJva2Utd2lkdGg6MnB4CiAgICBzdHlsZSBRdWFudHVtQ29tcHV0aW5nQ29udGV4dCBmaWxsOiNmNWM3Yjgsc3Ryb2tlOiNkOTg4ODAsc3Ryb2tlLXdpZHRoOjJweAoKCg" />
+:PROPERTIES:
+:collapsed: true
+:END:
+{{renderer :mermaid_drqlaswif}}
+** ```mermaid
+graph TD
+
+    Integers[Integer] --> PositiveIntegers[Positive Integers Natural Numbers]
+    Integers --> WholeNumbers[Whole Numbers 0,1,2,...]
+    PositiveIntegers --> PrimeNumbers[Prime Numbers]
+    Integers --> RationalNumbers[Rational Numbers Integer / Integer, denominator not-equal 0]
+
+    PrimeNumbers --> FundamentalTheorem[Fundamental Theorem of Arithmetic]
+    FundamentalTheorem --> UniqueRepresentation[Prime Factorization for natural numbers > 1]
+    UniqueRepresentation --> OneWayFunction[Asymmetry in cost of verifying vs deriving One-Way Function]
+
+    subgraph QuantumComputingContext
+    OneWayFunction --> QuantumConsideration[Dependent on non-quantum computing]
+    end
+
+    style Integers fill:#f9d79b,stroke:#f39c12,stroke-width:2px
+    style PositiveIntegers fill:#d5f5e3,stroke:#28b463,stroke-width:2px
+    style PrimeNumbers fill:#aab7c4,stroke:#34495e,stroke-width:2px
+    style FundamentalTheorem fill:#d6eaf8,stroke:#2e86c1,stroke-width:2px
+    style QuantumComputingContext fill:#f5c7b8,stroke:#d98880,stroke-width:2px
+
+
+```
+* exercises
+** absolute value of integers
+*** -123 -> 123
+*** 27 -> 27
+*** 0 -> 0
+** compute the factorization of 30030 and double check your results using sage
+*** 2 x 3 x 5 x 7 x 11 x 13
+** consider the following equation
+*** 4x + 21 = 5
+*** natural numbers only positive, no solution
+*** integers, -4
+** consider the following equation
+*** 2x^3 - x^2 - 2x = -1
+*** x(2x^2 - x - 2) + 1= 0
+**** natural numbers: 1
+**** integers: -1, 1
+**** rational numbers: -1, 1/2, 1
+***
+***

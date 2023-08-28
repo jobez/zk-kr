@@ -1,0 +1,109 @@
+* abstract
+** usually
+:PROPERTIES:
+:collapsed: true
+:END:
+*** a [[proof of a theorem]]
+**** contains
+***** more knowledge than
+****** the mere fact that
+******* the theorem
+******** is true
+*** for instance,
+**** to prove that
+***** a graph
+****** is Hamiltonian
+**** it suffices to exhibit
+***** a Hamiltonian tour in it;
+**** however,
+***** this seems to contain
+****** more knowledge than
+******* the single bit Hamiltonian/non-Hamiltonian
+** in this paper
+:PROPERTIES:
+:collapsed: true
+:END:
+*** a computational complexity theory of the 'knowledge' contained in a proof is developed
+*** zero-knowledge proofs are defined as those proofs that convey no additional knowledge other than the correctness of the proposition in question
+*** examples of zero knowledge proof systems are given for the languages of [[quadratic residuousity]] and [[quadratic nonresiduousity]]
+*** these are the first examples of zero-knowledge proofs for languages not known to be efficiently recognizable
+* introduction
+** pointing out the analogy between [[computational complexity theory]] and proof systems
+*** it is often regarded that saying
+:PROPERTIES:
+:collapsed: true
+:END:
+**** a language L is in [[nondeterministic polynomial time]]
+***** is equivalent to saying that
+****** there is a polynomial time [[proof system]] for L
+*** the proof system we have in mind is one where
+:PROPERTIES:
+:collapsed: true
+:END:
+**** on input x,
+***** a [[prover]] creates a string, alpha
+***** the [[verifier]] then computes x and alpha in time polynomial in the length of the binary representation of x to check that x is indeed in L
+*** it is reasonable to ask if there is a more general, and perhaps more natural, notion of [[a polynomial time proof system]]. this paper proposes one such notion
+** the premise of [[interactive proof protocols]]
+*** we will allow the verifier
+**** only polynomial time
+*** and the prover
+**** [[arbitrary computing power]]
+*** but will now allow both parties to flip
+**** [[unbias coins]]
+*** the result is [[a probabilistic version of NP]]
+**** where
+***** [[a small probability of error]]
+*** however, to obtain what appears to be the full generality of this idea
+**** we must also allow the prover and verifier to [[interact]] (to talk back and forth) and to keep secret their coin tosses
+**** we call these proof systems [[interactive proof protocols]]
+***** this notion is formally defined in section 2
+****** where we also define what it means for a language to have an [[interactive proof protocols]]
+** the interesting question of how zero-knowledge should be defined
+*** if the [[prover]] is trying to prove to the [[verifier]] that y is a quadratic residue mod x,
+*** then certainly the verifier should not be able to trick the prover into revealing
+**** a square root of y mod x
+**** or the factorization of x,
+**** or any information which would help the verifier to compute these things much faster than before
+*** in fact, the prover should not reveal anything which would help the verifier compute *anything*  much faster than before
+*** the way to state this formally seems to be that
+**** what the verifier sees in the protocol (even if he cheats)
+***** should be
+****** something which the verifier could have computed for himself, merely from the fact that (x, y) included in QNR.
+*** of course, what the verifier sees in the protocol is really a [[probability distribution]]
+*** thus, zero knowledge means that
+**** one can compute in [[polynomial time]], from (x, y) inc QNR, without a prover, the same (or almost the same) [[probability distribution]] that the verifier would see with the prover.
+**** this is defined formally in section 3
+*** here, let us informally discuss whether the above interpactive system for QNR is zero-knowledge
+** definition of [[interacive turing machines]] and [[interactive proof protocols]]
+*** an interactive turing machines
+:PROPERTIES:
+:collapsed: true
+:END:
+**** is a [[turing machine]] equipped with
+***** a [[read-only input tape]]
+***** a [[work tape]]
+***** a [[random tape]]
+****** contains an infinite sequence of random bits and can be scanned only from left to right
+****** we can say that an [[interactive machine]]
+******* [[flips a coin]]
+******** meaning that
+********* it reads the next bit of its own random tape
+***** one [[read-only communication tape]]
+***** one [[write-only communication tape]]
+*** an [[interactive protocol]]
+**** is an ordered pair of interactive turing machines A and B
+***** such that
+****** A and be share the same [[input tape]]
+******* B's [[write-only communication tape]] is A's [[read-only input tape]] and vice versa
+******* Machine A is not [[computationally bounded]], while Machine B's computation time is bounded by a polynomial in the length of the common input
+****** two state machines take turns in being active
+******* with B being active first
+******* during an active stage machine A(B) first performs some internal computation using its input tape, work tapes, communication tape and random tape
+******* second, it writes a string for B(A) on its write only communication tape
+******* the ith message of A(B) is the entire string that A(B) writes on its communication tape during its ith active stage
+******* as soon as machine A(B) writes its message, it is deactived and machine B(A) becomes active, unless the protocol has been terminated
+****** either machine can terminate the computation of the protocol by not sending any message in an active stage
+****** machine b accepts (or rejects) the input by outputting accept or reject and terminating the protocol
+****** the computation time of machine B is the sum of B's computation time during its active stages
+****** and it is this time that is bounded by a polynomial in the length of the input, denoted |x|

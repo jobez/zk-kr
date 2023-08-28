@@ -1,0 +1,16 @@
+* [[../assets/12130.12137_1691846441493_0.pdf][12130.12137.pdf]]
+* [[Private Coins versus Public Coins In Interactive Proof Systems]]
+* <img src="https://mermaid.ink/img/IGdyYXBoIExSCkFbQ3VsdHVyYWwgVHJ1c3RdIC0tPnxGZWVkYmFjayBNZWNoYW5pc218IEJbSG9sZGluZyBQYXR0ZXJuIC0gQ3VsdHVyYWxdCkIgLS0-IENbU2hhcmVkIE1lYW5pbmdzICYgVmFsdWVzXQpDIC0tPiBBCkRbU29jaWV0YWwgVHJ1c3RdIC0tPnxGZWVkYmFjayBNZWNoYW5pc218IEVbSG9sZGluZyBQYXR0ZXJuIC0gU29jaWV0YWxdCkUgLS0-IEZbU2hhcmVkIE5vcm1zICYgUnVsZXNdCkYgLS0-IEQKQSAtLT58SW50ZXJhY3Rpb25zICYgTmVnb3RpYXRpb25zfCBECkQgLS0-fFZlcmlmaWNhdGlvbiAmIFJlZ3VsYXRvcnkgQ2hlY2tzfCBBCgo" />
+{{renderer :mermaid_sktgmtjl}}
+** ```mermaid
+graph LR
+A[Cultural Trust] -->|Feedback Mechanism| B[Holding Pattern - Cultural]
+B --> C[Shared Meanings & Values]
+C --> A
+D[Societal Trust] -->|Feedback Mechanism| E[Holding Pattern - Societal]
+E --> F[Shared Norms & Rules]
+F --> D
+A -->|Interactions & Negotiations| D
+D -->|Verification & Regulatory Checks| A
+
+```

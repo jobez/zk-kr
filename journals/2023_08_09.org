@@ -1,0 +1,26 @@
+* <img src="https://mermaid.ink/img/IGdyYXBoIFRECgogICAgQVtJbnRlcmFjdGl2ZSBUdXJpbmcgTWFjaGluZSBNb2RlbF0KICAgIEJbUHJvdmVycyBXb3JrIFRhcGVdCiAgICBDW1ZlcmlmaWVycyBXb3JrIFRhcGVdCiAgICBEW0NvbW11bmljYXRpb24gVGFwZXNdCiAgICBFW1JhbmRvbSBUYXBlIGZvciBDb2luIEZsaXBzXQogICAgCiAgICBGW0FyaXRobWV0aXphdGlvbiBQcm9jZXNzXQogICAgR1tMb2dpYyBHYXRlcyAtPiBQb2x5bm9taWFsIEVxdWF0aW9uc10KICAgIEhbUHJvb2YgUHJvdG9jb2wgRW5jb2RlZCBpbiBQb2x5bm9taWFsc10KICAgIElbQ3J5cHRvZ3JhcGhpYyBGdW5jdGlvbnMgJiBIYXNoaW5nXQogICAgSltOb24tSW50ZXJhY3RpdmUgWktQXQoKICAgIEEgLS0-fEludGVyYWN0aXZlIE1vZGVsfCBCCiAgICBBIC0tPnxJbnRlcmFjdGl2ZSBNb2RlbHwgQwogICAgQSAtLT58TWVzc2FnZXMgJiBSZXNwb25zZXN8IEQKICAgIEEgLS0-fFJhbmRvbW5lc3N8IEUKICAgIAogICAgQSAtLT4gRgogICAgRiAtLT58Q29udmVydCBPcGVyYXRpb25zfCBHCiAgICBGIC0tPnxFbmNvZGUgUHJvdG9jb2x8IEgKICAgIEYgLS0-fEVuYWJsZSBOb24tSW50ZXJhY3Rpdml0eXwgSQogICAgSSAtLT4gSgo" />
+{{renderer :mermaid_gwhsz}}
+** graph TD
+
+    A[Interactive Turing Machine Model]
+    B[Provers Work Tape]
+    C[Verifiers Work Tape]
+    D[Communication Tapes]
+    E[Random Tape for Coin Flips]
+    
+    F[Arithmetization Process]
+    G[Logic Gates -> Polynomial Equations]
+    H[Proof Protocol Encoded in Polynomials]
+    I[Cryptographic Functions & Hashing]
+    J[Non-Interactive ZKP]
+
+    A -->|Interactive Model| B
+    A -->|Interactive Model| C
+    A -->|Messages & Responses| D
+    A -->|Randomness| E
+    
+    A --> F
+    F -->|Convert Operations| G
+    F -->|Encode Protocol| H
+    F -->|Enable Non-Interactivity| I
+    I --> J

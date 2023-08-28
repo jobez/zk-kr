@@ -23,7 +23,6 @@
 					- multiple addition gates
 	- a rank 1 constraint system
 		- is
-		  collapsed:: true
 			- a set of these sub-circuits
 				- expressed as
 					- [[constraints]]

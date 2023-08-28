@@ -1,0 +1,4 @@
+* 2.1 [[Reed-Solomon Fingerprinting]]
+** the proof systems covered in this survey derive much of their power and efficiency from their use of [[randomness]]
+** before we discuss
+** [[deterministic procedure]]

@@ -1,0 +1,13 @@
+* the greatest common divisor of two non-zero integers a and b is defined as
+** the largest non-zero natural number d
+*** such that
+**** d divides both a and b
+***** that is
+****** d|a as well as d |b are true
+** we use the notation
+*** gcd(a, b) := d
+* a common method for computing the greatest common divisor is the so-called euclildean algorithm
+** extended euclidean algorithm
+*** a method for calculating the greatest common divisor of two natural numbers a and b
+**** as well as two additional integers s, t such that the following equations hold
+***** gcd(a, b) = s * a + t * b

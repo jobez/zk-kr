@@ -1,0 +1,27 @@
+* integers can be
+** added
+** subtracted
+** multiplied
+** result of these operations is guaranteed to always be an integer as well
+* however, it is always possible to divide any two integers if we consider *division with a remainder*
+* for example
+** 7 divided by 3 is equal to 2 with a remainder of 1
+*** since
+**** 7 = 2* 3 + 1
+* this section introduces division with a remainder for integers, usually called [[euclidean division]]
+* let a be a member of integers Z
+** then there is always another integer m and a natural number r with r being less than or equal to zero which is less than or equal to the absolute value of b
+*** such that
+**** the following holds
+***** a = m * b + r
+****** a is called the dividend
+****** m is called the quotient
+****** b is called the divisor
+****** r is called the remainder
+* a `div` b := m
+* a `mod` b := r
+* one of the most critical parts of this book is the [[Modular Arithmetic]] and its application in the computations of [[prime fields]]
+** to be able to do computations in modular arithmetic
+*** we have to get familiar with the so called [[extended euclidean algorithm]] used to calculate the [[greatest common divisor]] of integers
+* [[coprime integers]]
+*

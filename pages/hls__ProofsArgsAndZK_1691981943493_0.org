@@ -1,0 +1,27 @@
+#+file-path: ../assets/ProofsArgsAndZK_1691981943493_0.pdf
+:PROPERTIES:
+:file: [[../assets/ProofsArgsAndZK_1691981943493_0.pdf][ProofsArgsAndZK_1691981943493_0.pdf]]
+:file-path: ../assets/ProofsArgsAndZK_1691981943493_0.pdf
+:END:
+
+* The term information-theoretically secure here refers to the fact that NP proofs (like IPs, but unlike arguments) are secure against computationally unbounded provers.
+:PROPERTIES:
+:ls-type: annotation
+:hl-page: 8
+:hl-color: green
+:id: 64da9589-c10b-4f49-bc9e-61c388c65771
+:END:
+* More precisely, a PCP verifier is allowed to read as much of the proof as it wants. However, for the PCP to be considered efficient, it must be the case that the verifier only needs to read a tiny fraction of the proof to ascertain with high confidence whether or not the proof is valid.
+:PROPERTIES:
+:ls-type: annotation
+:hl-page: 13
+:hl-color: red
+:id: 64dacbbb-c5e0-479c-9c98-23eddd80a879
+:END:
+* Philosophically, MIPs and PCPs are extremely interesting objects to study, but they are not directly applicable in most cryptographic settings, because they make unrealistic or onerous assumptions about the prover(s). For example, soundness of any MIP only holds if the provers do not share information with each other regarding what challenges they receive from the verifier. This is not directly useful in most cryptographic settings, because typically in these settings there is only a single prover, and even if there is more than one, there is no way to force the provers not to communicate. Similarly, although the verifier only reads a few characters of a PCP, a direct implementation of a PCP would require the prover to transmit the whole proof to the verifier, and this would be the dominant cost in most real-world scenarios (the example of a lazy journal referee notwithstanding). That is, once the prover transmits the whole proof to the verifier, there is little real-world benefit to having the verifier avoid reading the whole proof. However, by combining MIPs and PCPs with cryptography, we will see how to turn them into argument systems, and these are directly applicable in cryptographic settings. For example, we will see in Section 9.2 how to turn a PCP into an argument system in which the prover does not have to send the whole PCP to the verifier. Section 10.2 of this survey in fact provides a unifying abstraction, called polynomial IOPs, of which all of the IPs, MIPs, and PCPs that we cover are a special case. It turns out that any polynomial IOP can be transformed into an argument system with short proofs, via a cryptographic primitive called a polynomial commitment scheme.
+:PROPERTIES:
+:ls-type: annotation
+:hl-page: 13
+:hl-color: blue
+:id: 64dace14-4f42-4a30-8996-2ac3a6f77f80
+:END:

@@ -229,6 +229,7 @@
  :property-pages/enabled? true
  :publishing/all-pages-public? true
  :feature/enable-whiteboards? true
+ :preferred-format :org
 
  ;; Properties to exclude from having property pages
  ;; E.g.:property-pages/excludelist #{:duration :author}

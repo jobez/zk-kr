@@ -17,35 +17,38 @@
 			- [[validity proof]] / [[validity rollup]]
 - diagrams
   collapsed:: true
-	- id:: 642a0300-5d51-43a9-928e-f0158b6d47ad
-	  ```mermaid
-	  graph LR
-	    Prover -->|Convince| Protocol
-	    Verifier -->|Learn| Protocol
-	    Protocol -->|Satisfy| Properties
-	    Properties --> Completeness
-	    Properties --> Soundness
-	    Properties --> ZeroKnowledge
-	  
-	    classDef goals fill:#FFA726,stroke:#333,stroke-width:2px;
-	    classDef properties fill:#4CAF50,stroke:#333,stroke-width:2px;
-	    class Prover,Verifier goals;
-	    class Completeness,Soundness,ZeroKnowledge properties;
-	  
-	    subgraph Completeness
-	      compDef1("if the statement is true then a prover can convince a verifier")
-	    end
-	  
-	    subgraph Soundness
-	      sndDef1("a cheating prover can not convince a verifier of a false statement")
-	    end
-	  
-	    subgraph ZeroKnowledge
-	      zkDef1("the interaction only reveals if a statement is true and nothing else")
-	    end
-	  
-	  
-	  ``` #gpt/4
+	- <img src="https://mermaid.ink/img/IGdyYXBoIExSCiAgUHJvdmVyIC0tPnxDb252aW5jZXwgUHJvdG9jb2wKICBWZXJpZmllciAtLT58TGVhcm58IFByb3RvY29sCiAgUHJvdG9jb2wgLS0-fFNhdGlzZnl8IFByb3BlcnRpZXMKICBQcm9wZXJ0aWVzIC0tPiBDb21wbGV0ZW5lc3MKICBQcm9wZXJ0aWVzIC0tPiBTb3VuZG5lc3MKICBQcm9wZXJ0aWVzIC0tPiBaZXJvS25vd2xlZGdlCgogIGNsYXNzRGVmIGdvYWxzIGZpbGw6I0ZGQTcyNixzdHJva2U6IzMzMyxzdHJva2Utd2lkdGg6MnB4OwogIGNsYXNzRGVmIHByb3BlcnRpZXMgZmlsbDojNENBRjUwLHN0cm9rZTojMzMzLHN0cm9rZS13aWR0aDoycHg7CiAgY2xhc3MgUHJvdmVyLFZlcmlmaWVyIGdvYWxzOwogIGNsYXNzIENvbXBsZXRlbmVzcyxTb3VuZG5lc3MsWmVyb0tub3dsZWRnZSBwcm9wZXJ0aWVzOwoKICBzdWJncmFwaCBDb21wbGV0ZW5lc3MKICAgIGNvbXBEZWYxKCJpZiB0aGUgc3RhdGVtZW50IGlzIHRydWUgdGhlbiBhIHByb3ZlciBjYW4gY29udmluY2UgYSB2ZXJpZmllciIpCiAgZW5kCgogIHN1YmdyYXBoIFNvdW5kbmVzcwogICAgc25kRGVmMSgiYSBjaGVhdGluZyBwcm92ZXIgY2FuIG5vdCBjb252aW5jZSBhIHZlcmlmaWVyIG9mIGEgZmFsc2Ugc3RhdGVtZW50IikKICBlbmQKCiAgc3ViZ3JhcGggWmVyb0tub3dsZWRnZQogICAgemtEZWYxKCJ0aGUgaW50ZXJhY3Rpb24gb25seSByZXZlYWxzIGlmIGEgc3RhdGVtZW50IGlzIHRydWUgYW5kIG5vdGhpbmcgZWxzZSIpCiAgZW5kCgoK" />
+	  id:: 64cf8f1f-83f7-4a6e-9faa-63941b0d3145
+	  {{renderer :mermaid_mrwwabgemg}}
+		- ```mermaid
+		  graph LR
+		    Prover -->|Convince| Protocol
+		    Verifier -->|Learn| Protocol
+		    Protocol -->|Satisfy| Properties
+		    Properties --> Completeness
+		    Properties --> Soundness
+		    Properties --> ZeroKnowledge
+		  
+		    classDef goals fill:#FFA726,stroke:#333,stroke-width:2px;
+		    classDef properties fill:#4CAF50,stroke:#333,stroke-width:2px;
+		    class Prover,Verifier goals;
+		    class Completeness,Soundness,ZeroKnowledge properties;
+		  
+		    subgraph Completeness
+		      compDef1("if the statement is true then a prover can convince a verifier")
+		    end
+		  
+		    subgraph Soundness
+		      sndDef1("a cheating prover can not convince a verifier of a false statement")
+		    end
+		  
+		    subgraph ZeroKnowledge
+		      zkDef1("the interaction only reveals if a statement is true and nothing else")
+		    end
+		  
+		  
+		  ```
+		-
 	- ```mermaid
 	  graph LR
 	    A[Polynomial Properties] --> B[Unique Identity]

@@ -1,0 +1,49 @@
+* the [[snarks]] requires
+** a [[trusted setup]]
+*** to produce the [[Common Reference String]]
+* unlike a [[uniform CRS]], which could be generated in public from a [[beacon]], our CRS is structured
+** this means the only effective way to [[sample]] from it is to first sample a few uniform values called [[trapdoors]], and then to derive CRS from these
+** the setup outputs the CRS, but it is very important that the [[trapdoor]] does not leak any way
+*** if it does, it's known as [[toxic waste]]
+** our [[Setup]] is appropriate for [[a trusted third party]]
+** [[multi-party computation]] or [[hardware enclaves]] would be preferable approaches to implementing the [[trusted setup]]
+* protocol
+** [[Setup]]
+*** the [[security parameter]] lambda and a set of polynomials are taken as input
+*** random values
+**** tau
+**** beta
+**** gamma are sampled from the field
+*** the [[Common Reference String]] sigma is created with elements from the group G including various powers of tau, as well as other values beta and gamma
+** prove(sigma, vector)
+*** the goal is to produce a proof, pi, given the CRS beta and input vector
+*** the polynomial `h(x)` is calculated using ui? polynomials and outputs ai
+*** H is the group element representation of h(tau)
+*** V_w and B_w are linear combinations of input values and u_i(tau) and beta*u_i(tau) respectively
+*** the proof pi is constructed as the tuple
+**** H
+**** V_w
+**** B_w
+** verify(sigma, statement)
+*** given
+**** [[Common Reference String]] is sigma
+**** a statement
+**** and a proof
+*** Vs is a linear combination of statement values
+*** two checks are performed using the [[bilinear pairing]] `e`
+**** the first ensures that the pairing of g with itself equals the pairing of V with itself
+**** the second compares the pairings B_w with gamma Group and gamma by beta Group and V_w
+* [[computing the exponent]]
+** perform the computation with exponents in a [[cryptographic group]]
+*** *H := [h(τ )]G*
+**** H is the group representation of the polynomial `h` evaluated  at the point tau
+**** the  bracket notation around h(tau) indicates this computation happens in group G
+***** meaning the result is a group element
+*** *h(X) = h0 + h1X + ... + hmXn*
+**** the polynomial h of x is defined as a [[linear combination of terms]] with [[coefficients]] and powers of X ranging from 0 to n
+*** *H = ∑ j hj[τ j ] G*:
+**** here H is represented as the sum of each coefficient h_k, multiplied with corresponding power of tau in group G
+**** its the group representation of the polynomial h(x) evaluated at the point `T`
+**** the summation goes over all the terms of the polynomial
+*** evaluate h(X) at tau without ever learning tau
+**** you know the results of operations involving tau but never. tau itself

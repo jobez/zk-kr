@@ -1,9 +1,7 @@
 - the most common proof system being used
-  collapsed:: true
 	- for example
 		- they form the basis for the privacy provided in [[zcash]]
 - the process of creating and using a zk-snark can be summarised as
-  collapsed:: true
 	- a zk-snark consists of three algorithims: C, P, V
 		- defined as follows
 			- The Creator takes a secret parameter lambda and a program C and generates two publicly available keys
@@ -38,4 +36,5 @@
 	- a proof of knowledge is stronger and more useful than
 		- just proving the statement is true
 	- for instance, it alows me to prove that I know a secret key, rather than just that it exists
-- ((642a0300-5d51-43a9-928e-f0158b6d47ad))
+- ```mermaid
+  t/4

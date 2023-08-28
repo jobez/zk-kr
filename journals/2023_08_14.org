@@ -1,0 +1,5 @@
+* [[../assets/15-Hedglin-Phillips-Reilley_1692035709785_0.pdf][15-Hedglin-Phillips-Reilley.pdf]]
+** Building a Fully Homomorphic Encryption Scheme in Python
+* [[Proofs, Arguments, and Zero-Knowledge]]
+* https://mit6875.github.io/fall2021.html
+* [[../assets/Proofs_That_Yield_Nothing_But_Their_Validity_or_All_Languages_in_NP_Have_Zero-Knowledge_Proof_Systems_1692062395280_0.pdf][Proofs_That_Yield_Nothing_But_Their_Validity_or_All_Languages_in_NP_Have_Zero-Knowledge_Proof_Systems.pdf]]

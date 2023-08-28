@@ -1,6 +1,5 @@
 - ((6429c756-8499-4909-bca3-a0c28fd214ad))
 	- Please generate a dialogue between a researcher and decider about the best way to explain  and expand  the below excerpt then represent the expanded explanation in diagram form, using mermaid syntax:
-	  collapsed:: true
 		- Excerpt: ((6429c7ec-5cbb-4d35-bfc5-fa8965309dec))
 			- ```mermaid
 			  graph TD
@@ -16,7 +15,6 @@
 - ((6429cd48-6ba3-4da0-90e7-bfc5dbee9908))
 	- victor is sending challenges to peggy
 		- if
-		  collapsed:: true
 			- peggy
 				- could know
 					- what exactly

@@ -1,0 +1,42 @@
+* abstract
+:PROPERTIES:
+:collapsed: true
+:END:
+** [[interactive proofs]] and arguments are
+*** [[cryptographic protocols]] that enable
+**** an [[untrusted prover]]
+***** to provide
+****** a guarantee that
+******* it performed a [[requested computation]] correctly
+** introduced in the 1980s,
+*** [[interactive proofs and arguments]]
+**** represented
+***** [[a major conceptual expansion of what constitutes a 'proof' that a statement is true]]
+****** traditionally,
+******* a [[proof]] is a [[static object]] that can easily checked [[step-by-step]] for [[correctness]]
+****** in contract
+******* [[interactive proofs]]
+******** allow for
+********* [[interaction]] between
+********** [[prover]]
+********** [[verifier]]
+******** as well as
+********* a tiny but nonzero probability that an invalid proof passes verification
+******* [[arguments]] (but not [[interactive proofs]]) even permit there to be "proofs" of [[false statements]], so long as those proofs require [[exorbitant computational power]] to find
+******* to an extent,
+******** these notions mimic [[in-person interactions]] that mathematicians use to convince each other that a claim is true, without going through the painstaking process of writing out and checking a [[traditional static proof]]
+****** celebrated theoretical results from 1980 and 1990s such as
+******* IP = [[PSPACE]]
+******* [[MIP]] equals [[NEXP]]
+******* showed that, in principle,
+******** suprisingly complicated statements can be proved efficiently
+******** what is more, any [[argument]] can in principle be transformed into one that is [[zero-knowledge]], which means that
+********* [[proofs reveal no information other than their own validity]]
+********* [[zero knowledge arguments]] have a myriad of applications in [[cryptography]]
+****** within the last decade,
+******* [[general-purpose zero knowledge arguments]]
+******** have made the jump from theory to practice
+******* this has opened new doors in the design of cryptographic systems
+******** and generated additional insight into the power of interactive proofs and arguments (zero knowledge or 
+[[otherwise]] )
+* [[P,A,ZK/Introduction]]

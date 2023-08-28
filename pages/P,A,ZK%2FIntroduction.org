@@ -1,0 +1,199 @@
+* this manuscript is about [[verifiable computing]]
+** verifiable computing refers to
+*** [[cryptographic protocols]] called [[interactive proofs and arguments]] that
+**** enable
+***** a prover
+****** to provide
+******* a guarantee to
+******** a verifier
+********* that
+********** [[the prover performed a requested computation correctly]]
+* introduced in the 1980s, IPs and arguments
+** represent [[a major conceptual expansion of what constitutes a 'proof' that a statement is true]]
+* celebrated theoretical results from the mid80s to early 90s indicated that, VC protocols can, at least in principle, accomplish [[amazing feats]]
+** these include
+*** enabling a cell phone to monitor the execution of a powerful but untrusted (even malicious) super computer
+*** enabling computationally weak peripheral devices to offload security-critical work to pwerful remote servers
+*** letting a mathematician obtain [[a high degree of confidence]] that a theorem is true by looking at only a few symbols of a purported proof
+* [[verifiable computing protocols]] can be especially useful in cryptographic contexts when they possess a property called [[zero-knowledge]]
+** zk means that
+*** the proof or argument reveals nothing but its own validity
+* to give a concrete sense of why zero knowledge protocols are useful
+** consider the following [[quintessential example from authentication]]
+*** suppose that Alice chooses a random password x and publishes a [[hash]] z = h(x)
+**** where h is a [[one-way function]]
+***** this means that given z = h(x) for a randomly chosen x, enormous computational power should be required to find a preimage of z under h, i.e. an x_prime such that h(x_prime) = z
+*** later,
+**** suppose that Alice
+***** wants to convince Bob
+****** she is the same person who published z
+**** she can do this by proving to Bob that she knows an input such that the one way function application of that input is equal to z
+***** this will convince Bob that Alice is the same person who published z,
+****** since it means that
+******* either
+******** Alice knew x to begin with
+******** or she inverted H (which is assumed to be beyond the [[computational capabilities]] of Alice)
+**** how can Alice convince Bob that she knows a [[preimage]] of z under h?
+***** a [[trivial proof]] is for Alice to send x to Bob, and Bob easily check that there is a one way input function and an an put such that it equals to z
+****** but this reveals much more information than Alice knows a preimage of z
+******* in particular it reveals the preimage itself
+******* bob can use this knowledge to [[impersonate]] Alice forever more, since now he too knows the preimage of z
+******* in order to prevent Bob from learning info that can compromise the password x, it is important that the proof reveals nothing beyond its own validity.
+******** this is exactly what the [[zero knowledginess]] guarantees
+***** a particular goal of this survey is to describe a variety of approaches to constructing so-called zero-knowledge succinct non-interactive arguments of knowledge
+****** [[snarks]] for short
+******* [[succint]] means that the proofs are short
+******* [[non-interactive]] means that the proof is [[static]], consisting of a single message from the prover
+******* 'of knowledge' means that
+******** the protocol establishes not only that
+********* a statement is true, but also that
+********** the prover *knows* a [[witness]] to [[the statement’s veracity]]
+****** [[argument systems]] satisfying all of these properties have a myriad of applications throughout cryptography
+***** [[practical zero-knowledge protocols for highly specialized statements of cryptographic relevance]]
+****** such as proving knowledge of a discrete logarithm
+******* have been known for decade
+***** however, [[general purpose zero-knowledge protocols]]
+****** have only recently become plausibly efficient enough for cryptographic deployment
+****** by [[general purpose]]
+******* we mean protocol design techniques that apply to [[arbitrary computations]]
+****** this exciting progress has involved the introduction of beautiful new protocols, and brought a surge of interest in zero-knowledge proofs and arguments
+****** this survey seeks to make accessible, in a unified manner, the main ideas and approaches to the design of these protocols
+****
+* background and context
+** in 1980s 1990s, [[theoretical computer scientists]] showed that [[interactive proofs and arguments]]
+*** can be vastly more efficient (at least in [[an asympiotic sense]]) than [[traditional NP proofs]]
+**** [[traditional NP proofs]] are [[static]] and [[information-theoretically secure]]
+***** ((64da9589-c10b-4f49-bc9e-61c388c65771))
+** the foundational results characterizing the prover of these protocols are some of the most influential and celebrated in [[computational complexity theory]]
+** theory to practice jump happened after
+*** the shift where naive implementations of the theory would have high concrete costs (trillions of years for the prover, even for very short computations)
+*** last decade has seen major improvements of the costs of verifiable computing protocols
+**** even though impls of general purpose verifiable computing protocols remain somewhat costly (especially for the prover)
+***** paying this cost can often be justified
+****** if
+******* the verifiable computing protocol is zero knowledge
+****** since zero knowledge protocols enable applications that may be totally impossible without them
+***** moreover, emerging applications to public blockchains have elevated the importance of proving relatively simple statements, on which it is feasible to run modern verifiable computing protocols despite their costs
+** approaches to zero knowledge protocol design, and philosophy of this survey
+:PROPERTIES:
+:collapsed: true
+:END:
+*** [[argument systems]] are typically developed in a two-step process
+*** first, an information-theoretically secure protocol, such as
+**** an [[interactive proofs]]
+**** [[multi-prover interactive proof]] (MIP)
+**** [[probabilistically checkable proof]] (PCP)
+**** is developed for
+***** a model involving one or more provers that are assumed to behave in some restricted manner
+****** (e.g., in an MIP, the provers are assumed not to send information to each  other about the challenges they receive from the verifier)
+*** second, the [[information-theoretically secure]] protocl is combined with cryptography to "force" a single prover to behave in the restricted manner, thereby yielding an [[argument systems]]
+**** this second step also often endows the resulting argument system with important properties, such as zero knowledge, succinctness, and non-interactivity
+**** if the resulting argument satisfies all of these properties, then it is in fact a zk-snark
+*** by now, there are a variety of promising approaches to developing efficient zk-snarks
+**** all  four informationally secure models
+**** an [[interactive proofs]]
+**** [[multi-prover interactive proof]] (MIP)
+**** [[probabilistically checkable proof]] (PCP)
+**** [[interactive oracle proofs]]
+**** [[linear probabilistically checkable proof]]
+*** these four informationally secure models can all be transformed into [[succinct interactive arguments]] by combining them with a [[cryptographic primitive]] called a [[polynomial commitment scheme]]
+*** the [[interactive arguments]] can then be rendered [[non-interactive]] and [[publically verifiable]] by applying a cryptographic technique called [[Fiat-Shamir heuristic]], yielding a [[snarks]]
+* 1.1 mathematical proof
+** this survey covers different notions of [[mathematical proofs]] and their applications in computer science and cryptography
+** informally, what we mean by a proof is
+*** [[anything that convinces someone that a statement is true]]
+** and a [[proof system]] is
+*** [[any procedure that decides what is and is not a convincing proof]]
+** that is,
+*** a proof system
+**** is specified by
+***** a [[verification procedure]] that takes as input any statement and a claimed "proof" that the statement is true, and decides whether or not the proof is valid
+** what properties do we want in a proof system?
+*** here are four obvious ones
+**** any [[true statement]] should have a convincing proof of its validity.
+***** this property is typically referred to as [[completeness]].
+**** no [[false statements]] should have a [[convincing proof]]
+***** this property is referred to as [[soundness]]
+**** ideally, the verification procedure will be [[efficient]]
+***** roughly, this means that [[simple statements]] should have short convincing proofs that can be [[checked]] quickly
+**** ideally, proving should be efficient too.
+***** roughly, this means that statements should have short convincing proofs that can be found quickly
+** traditionally, a [[mathematical proof]]
+*** is
+**** something that can be written and checked line-by-lline for correctness
+**** this [[traditional notion of proof]]
+***** is precisely the one captured by
+****** the complexity class [[NP]]
+*** however, over the last 30+ years,
+**** computer scientists have studied [[much more general and exotic notions of proofs]]
+*** this has transformed computer scientists' notion of what it means to prove something, and has lead to major advancements in complexity theory and cryptography
+** 1.2.1 interactive proofs
+*** to understand what an interactive proof is
+**** it is helpful to think of the following application
+***** imagine a business (verifier) that is using a commercial cloud computing provider to store and process its data
+***** the business sends all of its data up to the cloud (prover), which stores it, while the business stores only a very small 'secret' summary of the data
+****** meaning that the cloud does not know the user's secret summary
+**** later, the business asks the cloud a question about its data
+***** typically in the form of a computer program *f* that the business wants the cloud to run on its data using the cloud's vast computing infastructure
+***** the cloud does so, and sens the user the claimed output of the program f(data)
+****** rather than [[blindly trust]] that the cloud executed the program on the data correctly, the business can use an [[interactive proof system]] to obtain a [[formal guarantee]] that the [[claimed output]] is correct
+**** in the [[interactive proof system]]
+***** the business (verifier) interrogates the cloud
+****** sending [[a sequence of challenges]] and receiving [[a sequence of responses]]
+****** at the end of the interrogation, the business must decide whether to accept the answer as valid or reject it as invalid
+***** completness of the ip means that
+****** if the cloud correctly runs the program on the data and follows the prescribed protocol
+****** then the user will be convinced to accept the answer as valid
+***** soundness of the interactive protocl means that
+****** if the cloud returns the wrong output,
+****** then the user will reject the answer as invalid with high probability
+******* no matter how hard the cloud works to trick the user into accepting the answer as valud
+****** intuitively, the interactive nature of the interactive proof system lets the business exploit [[the element of surprise]]
+******* the fact that the cloud cannot predict the business' next challenge to catch a lying cloud in a lie
+***** [[transferrable]]
+****** the soundness of the interactive proof holds only if
+******* every time peggy sends a response to victor
+******** peggy does not know what challenge victor will respond with next
+********* the transcript alone does not give tammy a guarantee that this holds
+****
+** 1.2.2 argument systems
+*** argument systems are [[interactive proof systems]] but where the [[soundness guarantee]] need only hold against [[cheating provers]] that run in [[polynomial time]]
+*** argument systems make use of [[cryptography]]
+*** roughly speaking, in an argument system
+**** a [[cheating provers]] cannot trick the verifier into accepting a false statement
+***** unless it breaks some [[cryptosystem]]
+***** and breaking the [[cryptosystem]] is assumed to require [[superpolynomial time]]
+** 1.2.3 multi-prover interactive proofs, probabilistically checkable proofs, etc
+*** a mip is like an ip
+**** except that
+***** there are [[multiple provers]]
+***** these provers are not to share information with eachother regarding what challenges they receive from the verifier
+*** [[a common analogy for MIPs]] is
+**** placing two or more criminal suspects in separate rooms before interrogating them
+***** to see if they can keep their story straight
+**** law enforcement officers may be unsurprised to learn that the study of MIPs has lent theoretical justification to this practice
+**** specifically, the study of MIPs has revealed that if one locks the provers in separate rooms and then interrogates them separately, they can convince their interrogators of much more complicated statements than if they are uestioned together
+*** a probabilistically checkable proof
+**** the proof is [[static]] as in a traditional mathematical proof
+***** but the verifier is only allowed to read a small number of (possibly randomly chosen) characters from the proof
+**** this is an analogy to a lazy referee for a mathematical journal
+***** who does not feel like painstakingly checking the proofs in a submitted paper for correctness
+**** the [[pcp theorem]] essentially states that
+***** any traditional mathematical proof can be written in a format that enables this lazy reviewer to obtain a high degree of confidence in the validity of the proof by inspecting a few words of it
+**** philosophically, MIPs and PCP are [[extremely interesting objects to study]]
+***** but they are not directly applicable im most cryptographic settings, because they make unrealistic or onerous assumption about the provers
+****** for example, soundness of any MIP only holds if
+******* the provers do not share information with each other regarding what challenges they receive from the verifier
+****** this is not directly useful in most cryptographic settings
+******* because typically these settings there is only a single prover
+******* and even if there is more than one, there is no way to force the provers not to communicate
+***** similarly, although the verify reads only a few characters of a PCP, a direct implementation of a PCP would require the prover to transmit the whole proof to the verifier
+****** and this would be the dominant cost in most real-world scenarios (the example of a lazy journal referree notwithstanding)
+***** that is, once the prover transmits the whole proof to the verifier, there is little real world benefit to have the verifier avoid reading the whole proof
+**** however, by combining MIPs and PCPs with cryptography, we will see how to turn them into [[argument systems]]
+***** and these /are/ directed in cryptographic settings
+***** for example, we will see in section 9.2. how to turn a PCP into an argument system in which the prover does not have to send the whole PCP to the verifier
+**** section 10.2 of this survey in fact provides a [[unifying abstraction]] called [[polynomial IOPs]] of which all the IPs, MIPs, and PCPs that we cover are a special case
+**** it turns out that any polynomial IOP can be transofmred into an argument system with short proofs, via a cryptographic primitive called a [[polynomial commitment scheme]] ]
+***
+**

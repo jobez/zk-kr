@@ -1,0 +1,154 @@
+* abstract
+:PROPERTIES:
+:collapsed: true
+:END:
+** an [[interactive proof system]]
+:PROPERTIES:
+:collapsed: true
+:END:
+*** is
+**** a method by which
+***** one party of [[unlimited resources]] called the [[prover]]
+****** can convince a party of [[limited resources]], called the [[verifier]] of [[the proof of a proposition]]
+***** the verifier may
+****** toss [[coins]]
+****** ask repeated questions of the prover
+****** run efficient tests upon the prover's responses
+****** before deciding whether [[to be convinced]]
+***** this extends [[the familiar proof system implicit in the notion of NP]]
+****** in that there
+******* the verifier may not toss coins or speak, but only listen and verify
+** [[interactive proof systems]]
+:PROPERTIES:
+:collapsed: true
+:END:
+*** may not yield [[proof]] in the [[strict mathematical sense]]
+**** the proofs are [[probabilistic]] with an exceptionally small, though non-zero chance of error
+** we consider [[two notions of interactive proof system]]
+:PROPERTIES:
+:collapsed: true
+:END:
+*** one defined by [[Goldwasser]], [[Micali]], and [[Rackoff]]
+**** permits
+***** a coin that can be tossed in privite
+****** i.e. [[a secret source of randomness]]
+*** the second, due to [[Babai]], requires that the outcome of the verifier's coin tosses be public and thus accessible to the prover
+** our main result is that
+:PROPERTIES:
+:collapsed: true
+:END:
+*** these two systems are equivalent in power with respect to [[language recognition]]
+** the notion of [[interactive proof system]]
+:PROPERTIES:
+:collapsed: true
+:END:
+*** may be seen to yield
+**** a probabilistic analog to NP
+*** as much as
+**** BPP is the probabilistic analog to P
+*** we define [[the probabilistic, nondeterministic, polynomial time Turing machine]]
+**** and show that
+***** it is also equivalent in power to these systems
+* introduction
+** in this century, the notion of proof and computation have been formalized and understood
+** with the arrival of [[complexity theory]]
+*** the notion of what is [[efficiently provable]] became of interest
+**** the class [[NP]] captured this notion,
+***** containing those languages for which [[proof of membership]] can be verified by
+****** [[the probabilistic, nondeterministic, polynomial time Turing machine]]
+** we can view [[NP]] as
+*** [[a proof system consisting of two communicating Turing machines]]
+**** the [[prover]] who [[guesses]] the proof
+**** the [[verifier]], who checks [[the correctness of the proof]]
+** [[randomness]]
+*** has been recognized to be
+**** [[a fundamental ingredient in defining what is efficiently computable]]
+***** [[RP]], [[BPP]], [[RNC]]
+** in this paper, we seek to understand
+*** how [[randomness]]
+**** affects
+***** the definition of what is efficiently provable
+** a conventional deterministic NP verifier does not accept [[statistical evidence]] as a convincing argument, regardless of how overwhelming it may be
+*** as a consequence,
+**** the kind of languages contained in NP
+***** are precisely those whose
+****** [[proof of membership]] can be fully put down in writing and shown to others
+**** the verifier
+***** does not actively participate in the [[proof process]] or interact with the prover in any way
+**** it suffices for the prover to speak and the verifier to listen
+** [[randomization]] and [[interaction]] are essential ingredients of two recent formalizations of the concept of an [[efficient proof system]]
+*** one formalization is due to [[Babai]] and the other to Goldwasser, Micali and Rackoff
+*** both [[collapse]] to NP if no coins were flipped
+** [[interactive proof systems]]
+*** in defining what they call interactive proof systems
+**** Goldwasser, Micali, and Rackoff's intent was
+***** to make as general a definition as possible of
+****** what is
+******* provable to
+******** a probabilistic verifier willing to accept statistical evidence
+***** the broader goal was to define
+****** the concept of the [[knowledge]] communicated during a [[proof]]
+*** an interactive proof system
+**** consists of
+***** and
+****** [[a prover with unlimited computational power]]
+****** [[a probabilistic polynomial time verifier]]
+****** who receive a common input x
+**** the prover and verifier can exchange messages back and forth for a polynomial in the length of x number of times
+**** there are no restrictions on how the verifier may use his [[coin tosses]]
+***** he can
+****** toss coins,
+****** perform any polynomial time computation on them
+****** and send the outcome of the computation to the prover
+**** in particular, he need not show the outcome of the coins to the prover
+*** the secrecy of the verifier's coin tosses
+**** seemed essential to
+***** certain examples of [[interactive proof systems]]
+****** the most notable is a recent result of Goldreich, Micali and Widgerson showing
+******* [[an interactive proof system]] for [[the graph non-isomorphism problem]]
+******* this is somewhat remarkable in light of the fact that graph non-isomorphism is not known to be in NP
+*** the interactive proof system defines [[a hierarchy of languages]]
+**** namely L is in IP[k]
+***** if there exists
+****** a k-move interactive proof system
+****** (k alternations of message exchanges between the provier and verifier with the verifier sending the first message)
+****** such that
+******* for every input x in L
+******** the probability that the verifier accepts is greater than 2/3
+******* and for every input x not in L
+******** the probability that the verifier accepts is less than 1/3
+* definition
+:PROPERTIES:
+:collapsed: true
+:END:
+** [[the probabilistic, nondeterministic, polynomial time Turing machine]]
+:PROPERTIES:
+:collapsed: true
+:END:
+*** is defined conventionally except that
+**** it has two kinds of [[nondeterministic states]]
+***** [[random states]]
+***** [[guess states]]
+*** given a configuration, c of such a machine
+**** we assign it a [[probability]] p(c) of accepting as follows:
+***** if `c` is an accept configuration then p(c)=1
+***** if `c` is a reject configuration then p(c) = 0
+***** if c is a deterministic configuration then p(c) = p(c')
+****** where c' is the successor of c
+***** if `c` is a random configuration, then p(c) is the average of p(c')
+***** and if c is a guess state then p(c) is the maximum of p(c') for c' a successor
+**** we say that Pr[N(w) accepts] = p(c_start)
+***** where c_start is
+****** the starting configuration for N on input w
+*** one way to think of computations on these machines is that
+**** at every [[random state]]
+***** a coin is flipped to determine the successor
+**** and at every [[guess state]]
+***** the successor with the highest probability of eventually accepting is selected
+** say that W is included in BPNP
+*** if there is a probabilistic, nondeterministic, polynomial time N such that for all w in Sigma*
+**** if w includes in W then Pr[N(w) accepts] > 2/3
+**** if w includes in W then Pr[N(w) accepts] < 1/3
+*** Theorem: IP = AM(poly) = BPNP
+*** proof: immediate. these machines are just a reformulation of [[Arthur-Merlin games]]
+****
